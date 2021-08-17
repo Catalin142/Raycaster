@@ -1,6 +1,6 @@
 #include "Core/RaycastPCH.h"
 #include "Renderer.h"
-#include "Utils/Tools.h"
+#include "Utils/Color.h"
 
 std::shared_ptr<ScreenBuffer> Renderer::m_Buffer;
 uint32* Renderer::m_BuffersBuffer;
@@ -19,9 +19,10 @@ void Renderer::drawQuad(const vec2& pos, const vec2& size, unsigned long color)
 	float startX = Clamp(pos.x, 0, m_Buffer->m_Width);
 	float endX = Clamp(pos.x + size.x, 0, m_Buffer->m_Width);
 
+	uint32* pixel;
 	for (int y = startY; y < endY; y++)
 	{
-		uint32* pixel = (uint32*)m_Buffer->m_MemoryBuffer + (int)startX + (int)y * m_Buffer->m_Width;
+		pixel = (uint32*)m_BuffersBuffer + (int)startX + (int)y * m_Buffer->m_Width;
 		for (int x = startX; x < endX; x++)
 		{
 			*(pixel++) = color;

@@ -32,7 +32,11 @@ bool Sprite::loadSprite(const std::string& filepath)
 
 unsigned long Sprite::getPixelColor(float x, float y)
 {
+	if (x < 0) x = -x;
+	if (y < 0) y = -y;
+
 	float xCoord = x * m_Width;
-	float yCoord = m_Height - y * m_Height;
-	return m_Buffer[(int)yCoord * m_Width + (int)xCoord];
+	float yCoord = y * m_Height;
+
+	return *(m_Buffer + (int)yCoord * m_Width + (int)xCoord);
 }

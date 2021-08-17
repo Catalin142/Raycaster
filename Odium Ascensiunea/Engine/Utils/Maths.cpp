@@ -38,6 +38,11 @@ vec2 operator*(const vec2& left, float scalar)
 	return vec2(left.x * scalar, left.y * scalar);
 }
 
+vec2 operator/(const vec2& left, float scalar)
+{
+	return vec2(left.x / scalar, left.y / scalar);
+}
+
 vec3 operator+(const vec3& left, const vec3& right)
 {
 	return vec3(left.x + right.x, left.y + right.y, left.z + right.z);

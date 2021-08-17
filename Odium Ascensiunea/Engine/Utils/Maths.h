@@ -9,6 +9,7 @@ class vec2
 	friend vec2 operator/(const vec2& left, const vec2& right);
 
 	friend vec2 operator*(const vec2& left, float scalar);
+	friend vec2 operator/(const vec2& left, float scalar);
 
 public:
 	vec2() = default;

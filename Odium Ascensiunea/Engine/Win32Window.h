@@ -10,7 +10,7 @@ class Window
 friend LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 public:
-	Window(const wchar_t* name, uint16 width, uint16 height, unsigned long flags = WS_OVERLAPPEDWINDOW);
+	Window(const wchar_t* name, uint16 width, uint16 height, unsigned long flags = WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME ^ WS_MAXIMIZEBOX);
 
 	void pollEvents();
 

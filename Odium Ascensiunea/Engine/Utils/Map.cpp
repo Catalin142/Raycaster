@@ -1,10 +1,14 @@
 #include "Core/RaycastPCH.h"
 #include "Map.h"
 
+#include "Renderer/Renderer.h"
+
 char Map::m_Map[50 * 50];
 
 uint Map::m_Width;
 uint Map::m_Height;
+
+vec2 Map::m_PlayerPos = { -1.0f, -1.0f };
 
 void Map::setMap(const std::string& filepath, const std::string& mapname)
 {
@@ -53,4 +57,29 @@ void Map::loadMap(const std::string& filepath, const std::string& mapname)
 		}
 	}
 
+}
+
+void Map::Draw(float x, float y, float sizex, float sizey)
+{
+	float posY = y + sizey * m_Height;
+	for (int i = 0; i < m_Height; i++)
+	{
+		float posX = x;
+		for (int j = 0; j < m_Width; j++)
+		{
+			if (m_Map[i * m_Width + j] == '#')
+				Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x00000000);
+
+			if (j == (int)m_PlayerPos.x && i == (int)m_PlayerPos.y)
+				Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x000000ff);
+
+			posX += sizex;
+		}
+		posY -= sizey;
+	}
+}
+
+void Map::updatePlayerPosition(const vec2& pos)
+{
+	m_PlayerPos = pos;
 }

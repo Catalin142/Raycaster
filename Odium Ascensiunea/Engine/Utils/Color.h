@@ -15,3 +15,6 @@ static vec3 createRGB(unsigned long hex)
 	Color.z = ((hex) & 0xFF) / 255.0f;
 	return Color;
 }
+
+#define White {1.0f, 1.0f, 1.0f}
+#define Black (0.0f, 0.0f, 0.0f)

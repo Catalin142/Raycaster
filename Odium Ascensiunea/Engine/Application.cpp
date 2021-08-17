@@ -3,7 +3,7 @@
 #include "Win32Window.h"
 #include "ScreenBuffer.h"
 #include "Renderer/Renderer.h"
-#include "Utils/Tools.h"
+#include "Utils/Color.h"
 #include "Renderer/Camera.h"
 #include "Utils/Raycaster.h"
 

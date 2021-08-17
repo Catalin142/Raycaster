@@ -80,21 +80,17 @@ static RaycastResult castRay(const std::shared_ptr<Camera>& cam, float angle)
 			break;
 	}
 
-	length *= cos(angle - cam->m_CameraAngle);
 	
 	vec2 linePosition = cam->m_Position + rayDir * length;
 	
 	RaycastResult res;
 
 	if (Side == 1)
-	{
 		res.HitPosition = linePosition.y - (int)linePosition.y;
-	}
 	else
-	{
 		res.HitPosition = linePosition.x - (int)linePosition.x;
-	}
 
+	length *= cos(angle - cam->m_CameraAngle);
 	res.Length = length;
 	res.Side = Side;
 
