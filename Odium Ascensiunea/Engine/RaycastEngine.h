@@ -5,6 +5,7 @@
 
 #include "Renderer/Camera.h"
 #include "Renderer/Renderer.h"
+#include "Renderer/WorldRenderer.h"
 
 #include "Utils/Input.h"
 #include "Utils/Maths.h"

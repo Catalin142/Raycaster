@@ -9,11 +9,10 @@ static unsigned long createHex(int r, int g, int b)
 
 static vec3 createRGB(unsigned long hex)
 {
-	vec3 Color;
-	Color.x = ((hex >> 16) & 0xFF) / 255.0f;
-	Color.y = ((hex >> 8) & 0xFF) / 255.0f;
-	Color.z = ((hex) & 0xFF) / 255.0f;
-	return Color;
+	float r = ((hex >> 16) & 0xFF);
+	float g = ((hex >> 8) & 0xFF);
+	float b = ((hex) & 0xFF);
+	return vec3(r, g, b) / 255.0f;
 }
 
 #define White {1.0f, 1.0f, 1.0f}

@@ -37,14 +37,16 @@ void Renderer::drawQuad(const vec2& pos, const vec2& size, const vec3& color)
 	drawQuad(pos, size, hexColor);
 }
 
-void Renderer::setPixel(const vec2& pos, const vec3& color, bool check)
+void Renderer::setPixel(const vec2& pos, const vec3& color)
 {
-	if (check)
-		if (checkPixel(pos))
-			return;
-
 	int pixel = pos.y * m_Buffer->m_Width + pos.x;
 	*(m_BuffersBuffer + pixel) = createHex(color.r * 255, color.g * 255, color.b * 255);
+}
+
+void Renderer::setPixel(const vec2& pos, unsigned long hexColor)
+{
+	int pixel = pos.y * m_Buffer->m_Width + pos.x;
+	*(m_BuffersBuffer + pixel) = hexColor;
 }
 
 bool Renderer::checkPixel(const vec2& pos)

@@ -34,7 +34,7 @@ unsigned long Sprite::getPixelColor(float x, float y)
 {
 	if (x < 0) x = -x;
 	if (y < 0) y = -y;
-
+	
 	float xCoord = x * m_Width;
 	float yCoord = y * m_Height;
 

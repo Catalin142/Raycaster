@@ -11,6 +11,7 @@ class vec2
 	friend vec2 operator*(const vec2& left, float scalar);
 	friend vec2 operator/(const vec2& left, float scalar);
 
+
 public:
 	vec2() = default;
 	vec2(float x_, float y_) : x(x_), y(y_) { }
@@ -20,6 +21,8 @@ public:
 
 	vec2 normalize();
 	float magnitude();
+
+	bool operator==(const vec2& other) const;
 };
 
 class vec3

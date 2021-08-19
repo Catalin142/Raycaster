@@ -9,6 +9,8 @@ struct RaycastResult
 	float Length;
 	float HitPosition;
 	int Side;
+
+	char Symbol;
 };
 
 static RaycastResult castRay(const std::shared_ptr<Camera>& cam, float angle)
@@ -56,6 +58,8 @@ static RaycastResult castRay(const std::shared_ptr<Camera>& cam, float angle)
 	float length = 0;
 	int collide = 0;
 
+	RaycastResult res;
+
 	while (collide == 0)
 	{
 		if (startRay.x < startRay.y)
@@ -73,17 +77,21 @@ static RaycastResult castRay(const std::shared_ptr<Camera>& cam, float angle)
 			Side = 0;
 		}
 
-		if (Map::Get()->getBuffer()[(int)lineMapPos.y * Map::Get()->getWidth() + (int)lineMapPos.x] == '#')
-			collide = 1;
+		for (const auto& elem : Map::Get()->getElements())
+		{
+			if (elem.isWall == true)
+				if (Map::Get()->getBuffer()[(int)lineMapPos.y * Map::Get()->getWidth() + (int)lineMapPos.x] == elem.Symbol)
+				{
+					collide = 1;
+					res.Symbol = elem.Symbol;
+				}
+		}
 
 		if (length > 200.0f)
 			break;
 	}
-
 	
 	vec2 linePosition = cam->m_Position + rayDir * length;
-	
-	RaycastResult res;
 
 	if (Side == 1)
 		res.HitPosition = linePosition.y - (int)linePosition.y;

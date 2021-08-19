@@ -10,9 +10,34 @@ uint Map::m_Height;
 
 vec2 Map::m_PlayerPos = { -1.0f, -1.0f };
 
-void Map::setMap(const std::string& filepath, const std::string& mapname)
+std::vector<MapElement> Map::m_Elements;
+std::unordered_map<char, std::shared_ptr<Sprite>> Map::m_SymbolCache;
+
+void Map::setMap(const std::string& filepath)
 {
-	loadMap(filepath, mapname);
+	loadMap(filepath);
+}
+
+std::shared_ptr<Sprite>& Map::getSprite(char symbol)
+{
+	if (m_SymbolCache.find(symbol) == m_SymbolCache.end())
+	{
+		auto it = std::find_if(m_Elements.begin(), m_Elements.end(), [&](const MapElement& elem) -> bool {
+			return (elem.Symbol == symbol); }
+		);
+
+		if (it != m_Elements.end())
+		{
+			m_SymbolCache[symbol] = it->Sprite;
+			return it->Sprite;
+		}
+	}
+	return m_SymbolCache[symbol];
+}
+
+std::shared_ptr<Sprite>& Map::getSprite(int x, int y)
+{
+	return getSprite(m_Map[y * m_Width + x]);
 }
 
 std::shared_ptr<Map> Map::Get()
@@ -21,7 +46,7 @@ std::shared_ptr<Map> Map::Get()
 	return map;
 }
 
-void Map::loadMap(const std::string& filepath, const std::string& mapname)
+void Map::loadMap(const std::string& filepath)
 {
 	std::ifstream stream(filepath.c_str());
 
@@ -33,30 +58,33 @@ void Map::loadMap(const std::string& filepath, const std::string& mapname)
 	std::string line;
 	while (std::getline(stream, line))
 	{
-		if (line.find('[') != std::string::npos && mapFound == true)
-			stream.close();
+		if (line[0] == 'm')
+			strcat_s(m_Map, std::string(line.begin() + 2, line.end()).c_str());
 
-		if (line.find(mapname) != std::string::npos)
-			mapFound = true;
+		if (line[0] == 'w')
+			m_Width = std::atoi(std::string(line.begin() + 2, line.end()).c_str());
 
-		if (mapFound == true)
+		if (line[0] == 'h')
+			m_Height = std::atoi(std::string(line.begin() + 2, line.end()).c_str());
+
+		else if (line[0] == 's' || line[0] == 'f')
 		{
-			if (line.find('m') != std::string::npos)
-			{
-				strcat_s(m_Map, std::string(line.begin() + 2, line.end()).c_str());
-			}
+			std::string m_Filepath = "Resources/" + std::string(line.begin() + 4, line.end());
+			char Symbol = line[2];
+			std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>(m_Filepath);
+			bool isWall;
+			if (line[0] == 's')
+				isWall = true;
+			else isWall = false;
 
-			if (line.find('w') != std::string::npos)
-			{
-				m_Width = std::atoi(std::string(line.begin() + 2, line.end()).c_str());
-				break;
-			}
+			MapElement newElem;
+			newElem.isWall = isWall;
+			newElem.Sprite = sprite;
+			newElem.Symbol = Symbol;
 
-			if (line.find('h') != std::string::npos)
-				m_Height = std::atoi(std::string(line.begin() + 2, line.end()).c_str());
+			m_Elements.push_back(newElem);
 		}
 	}
-
 }
 
 void Map::Draw(float x, float y, float sizex, float sizey)

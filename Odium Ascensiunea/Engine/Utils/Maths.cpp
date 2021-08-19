@@ -99,6 +99,11 @@ float vec2::magnitude()
 	return InvSqrt(n) * n;
 }
 
+bool vec2::operator==(const vec2& other) const
+{
+	return (x == other.x && y == other.y);
+}
+
 vec3 vec3::normalize()
 {
 	float n = x * x + y * y + z * z;

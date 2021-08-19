@@ -43,9 +43,14 @@ void Camera::onUpdate(float dt)
 
 	m_CameraAngle -= delta;
 
-	vec2 CollisionPoint = m_Position + m_Velocity.normalize() * m_Speed * dt * 7.0f;
-	if (Map::Get()->getBuffer()[(int)CollisionPoint.y * Map::Get()->getWidth() + (int)CollisionPoint.x] != '#')
+	if (!(m_Velocity == vec2(0.0f, 0.0f)))
 	{
-		m_Position = m_Position + m_Velocity.normalize() * m_Speed * dt;
+		vec2 CollisionPoint = m_Position + m_Velocity.normalize() * m_Speed * dt * 10.0f;
+		for (const auto& sym : Map::Get()->getElements())
+			if (sym.isWall)
+				if (Map::Get()->getBuffer()[(int)CollisionPoint.y * Map::Get()->getWidth() + (int)CollisionPoint.x] != sym.Symbol)
+				{
+					m_Position = m_Position + m_Velocity.normalize() * m_Speed * dt;
+				}
 	}
 }

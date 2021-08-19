@@ -20,7 +20,9 @@ public:
 
 	static void renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& pos, const vec2& size);
 
-	static void setPixel(const vec2& pos, const vec3& color, bool check = true); // nu mai verific nimic aici
+	static void setPixel(const vec2& pos, const vec3& color); // nu mai verific nimic aici
+	static void setPixel(const vec2& pos, unsigned long hexColor);
+	
 	static bool checkPixel(const vec2& pos);
 
 private:
