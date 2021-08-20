@@ -6,8 +6,10 @@
 #include "Utils/Color.h"
 #include "Renderer/Camera.h"
 #include "Utils/Raycaster.h"
+#include "Utils/Random.h"
 
 #include "Application.h"
+
 
 float Time::deltaTime = 0.0f;
 
@@ -25,6 +27,7 @@ void Application::Run()
 
 	onCreate();
 	Renderer::Init(m_Buffer);
+	Random::Init;
 
 	while (m_Window->isRunning())
 	{

@@ -13,6 +13,6 @@ m 133332333331
 m 133332111131
 m 133332333331
 m 111111111111
-s 1 map2/Wall.spr
-f 2 map2/apa.spr
-f 3 map2/iarba.spr
+s 1 map2/WallCuZapada.spr
+f 2 map2/Zapada.spr
+f 3 map2/Zapada.spr

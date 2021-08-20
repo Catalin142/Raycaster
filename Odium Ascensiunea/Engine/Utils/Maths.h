@@ -45,6 +45,8 @@ public:
 
 	vec3 normalize();
 	float magnitude();
+
+	bool operator==(const vec3& other) const;
 };
 
 static float Clamp(float value, float min, float max)
@@ -58,4 +60,5 @@ float degToRad(float deg);
 float radToDeg(float rad);
 
 float lerp(float a, float b, float t);
+vec2 lerp(const vec2& left, const vec2& right, float t);
 vec3 lerp(const vec3& left, const vec3& right, float t);

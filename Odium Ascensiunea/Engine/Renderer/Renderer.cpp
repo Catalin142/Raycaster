@@ -79,7 +79,7 @@ void Renderer::renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& p
 		float posX = pos.x;
 		for (int j = 0; j < sprite->m_Width; j++)
 		{
-			if (sprite->m_Buffer[i * sprite->m_Width + j] != -1)
+			if (!(sprite->m_Buffer[i * sprite->m_Width + j] == vec3(0.0f, 0.0f, 0.0f)))
 				Renderer::drawQuad({ posX, posY }, size, sprite->m_Buffer[i * sprite->m_Width + j]);
 			posX += size.x;
 		}

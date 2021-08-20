@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+#include "Utils/Maths.h"
+
 class Sprite
 {
 	friend class Renderer;
@@ -11,10 +13,10 @@ public:
 	~Sprite() = default;
 
 	bool loadSprite(const std::string& filepath);
-	unsigned long getPixelColor(float x, float y);
+	vec3& getPixelColor(float x, float y);
 
 private:
-	long* m_Buffer = nullptr;
+	vec3* m_Buffer = nullptr;
 
 	int m_Width;
 	int m_Height;

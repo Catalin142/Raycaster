@@ -121,9 +121,19 @@ float vec3::magnitude()
 	return InvSqrt(n) * n;
 }
 
+bool vec3::operator==(const vec3& other) const
+{
+	return (x == other.x && y == other.y && z == other.z);
+}
+
 float lerp(float a, float b, float t)
 {
 	return a + (b - a) * t;
+}
+
+vec2 lerp(const vec2& left, const vec2& right, float t)
+{
+	return vec2(lerp(left.x, right.x, t), lerp(left.y, right.y, t));
 }
 
 vec3 lerp(const vec3& left, const vec3& right, float t)

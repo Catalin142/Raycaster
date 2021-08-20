@@ -13,5 +13,7 @@
 #include "Utils/Color.h"
 #include "Utils/Types.h"
 #include "Utils/Map.h"
+#include "Utils/Random.h"
 
 #include "Graphics/Sprite.h"
+#include "Graphics/ParticleSystem.h"

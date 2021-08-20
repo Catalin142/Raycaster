@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Utils/Maths.h"
-#include "../ScreenBuffer.h"
-#include "../Graphics/Sprite.h"
+#include "Utils/Maths.h"
+#include "ScreenBuffer.h"
+#include "Graphics/Sprite.h"
 
 #include <memory>
 
@@ -20,7 +20,7 @@ public:
 
 	static void renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& pos, const vec2& size);
 
-	static void setPixel(const vec2& pos, const vec3& color); // nu mai verific nimic aici
+	static void setPixel(const vec2& pos, const vec3& color);
 	static void setPixel(const vec2& pos, unsigned long hexColor);
 	
 	static bool checkPixel(const vec2& pos);

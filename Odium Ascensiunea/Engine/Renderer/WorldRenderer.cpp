@@ -11,13 +11,24 @@ std::shared_ptr<Map> WorldRenderer::m_Map;
 float WorldRenderer::m_ShadeIntensity = 1.0f;
 bool WorldRenderer::m_UseIntensity = false;
 
+unsigned long WorldRenderer::m_CeilColor = 0x0000000;
+std::shared_ptr<Sprite> WorldRenderer::m_CeilTexture;
+
+vec3 WorldRenderer::Gradient::m_StartColor;
+vec3 WorldRenderer::Gradient::m_EndColor;
+float WorldRenderer::Gradient::m_Intensity;
+
+WorldRenderer::Gradient WorldRenderer::m_CeilGradient;
+
+CeilShadingMode WorldRenderer::m_CeilMode = CeilShadingMode::SOLID;
+
 void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_ptr<Camera>& cam)
 {
 	m_Map = Map::Get();
 	vec2 wallSize;
 	vec2 wallPos;
 
-	unsigned long Color = 0x0000000;
+	vec3 Color = { 0.0f, 0.0f, 0.0f };
 
 	vec2 BufferDim = { (float)buffer->getWidth(), (float)buffer->getHeight() };
 
@@ -43,11 +54,11 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 			{
 				float Plane = (BufferDim.y / 2.0f) / ((BufferDim.y / 2.0f) - float(y));
 
+				if (m_UseIntensity == true)
+					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_ShadeIntensity / Plane);
+
 				vec2 planePoint = cam->m_Position + rayDir * Plane * fishEyeCorrection;
 				vec2 pixel;
-
-				if (m_UseIntensity == true)
-					Shade = vec3(1.0f, 1.0f, 1.0f) * (0.5f / Plane);
 
 				pixel.x = planePoint.x - (int)planePoint.x;
 				pixel.y = planePoint.y - (int)planePoint.y;
@@ -60,8 +71,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 			{
 				if (m_UseIntensity == true)
 					if (res.Length > 0.5f)
-						Shade = vec3(1.0f, 1.0f, 1.0f) * (0.5f / res.Length);
-
+						Shade = vec3(1.0f, 1.0f, 1.0f) * (m_ShadeIntensity / res.Length);
 				Color = wallSpr->getPixelColor(res.HitPosition, (y - wallPos.y) / (int)(wallSize.y));
 			}
 
@@ -70,22 +80,36 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 			{
 				float Plane = (BufferDim.y / 2.0f) / ((BufferDim.y / 2.0f) - float(y));
 
-				vec2 planePoint = cam->m_Position - rayDir * Plane * fishEyeCorrection;
-				vec2 pixel;
-
 				if (m_UseIntensity == true)
-					Shade = vec3(1.0f, 1.0f, 1.0f) * (0.5f / (-Plane));
+					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_ShadeIntensity / (-Plane));
 
-				pixel.x = planePoint.x - (int)planePoint.x;
-				pixel.y = planePoint.y - (int)planePoint.y;
+				switch (m_CeilMode)
+				{
+				case CeilShadingMode::SOLID:
+					Color = { 1.0f, 1.0f, 1.0f };
+					break;
 
-				Color = wallSpr->getPixelColor(pixel.x, pixel.y);
+				case CeilShadingMode::TEXTURE:
+					vec2 planePoint = cam->m_Position - rayDir * Plane * fishEyeCorrection;
+					vec2 pixel;
+
+					pixel.x = planePoint.x - (int)planePoint.x;
+					pixel.y = planePoint.y - (int)planePoint.y;
+
+					Color = m_CeilTexture->getPixelColor(pixel.x, pixel.y);
+					break;
+
+				case CeilShadingMode::LERP:
+					vec3 col = lerp(m_CeilGradient.m_StartColor, m_CeilGradient.m_EndColor, m_CeilGradient.m_Intensity / y);
+					Color = col;
+					break;
+				}
 			}
 
 			if (m_UseIntensity == false)
 				Renderer::setPixel({ (float)x, (float)y }, Color);
-			else
-				Renderer::setPixel({ (float)x, (float)y }, createRGB(Color) * Shade);
+			else // aici merge ff prost ca il fac in rgb dupa iara in hex pt fiecare pixel si ia prea mult
+				Renderer::setPixel({ (float)x, (float)y }, Color * Shade);
 		}
 
 	}
@@ -93,7 +117,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 }
 
 // merge ff prost in debug mode da in release am 400+ fps
-unsigned long WorldRenderer::samplePixel(const vec2& loc, const vec2& pixel)
+vec3& WorldRenderer::samplePixel(const vec2& loc, const vec2& pixel)
 {
 	return m_Map->getSprite(m_Map->m_Map[(int)loc.y * m_Map->m_Width + (int)loc.x])->getPixelColor(pixel.x, pixel.y);
 }
