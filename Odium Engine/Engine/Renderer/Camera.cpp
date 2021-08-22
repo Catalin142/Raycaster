@@ -3,7 +3,7 @@
 #include "Camera.h"
 #include "Utils/Input.h"
 #include "Utils/Map.h"
-#include "Win32Window.h"
+#include "System/Win32Window.h"
 
 Camera::Camera(float posx, float posy, float fov, float speed) : m_Position(posx, posy), m_FOV(fov), m_Speed(speed), m_LastMousePosition(0.0f, 0.0f), 
 m_Velocity(0.0f, 0.0f) { }

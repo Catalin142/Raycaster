@@ -8,4 +8,5 @@ workspace "Odium Ascensiunea"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+include "Odium Engine"
 include "Odium Ascensiunea"

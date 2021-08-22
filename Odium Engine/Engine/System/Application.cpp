@@ -7,16 +7,32 @@
 #include "Renderer/Camera.h"
 #include "Utils/Raycaster.h"
 #include "Utils/Random.h"
+#include "Layer.h"
 
 #include "Application.h"
 
-
+Application* Application::m_Instance;
 float Time::deltaTime = 0.0f;
 
 Application::Application(const wchar_t* title, uint32 width, uint32 height, uint32 bufferWidth, uint32 bufferHeight) :
 	m_Window(std::make_shared<Window>(title, width, height)),
 	m_Buffer(std::make_shared<ScreenBuffer>(m_Window, bufferWidth, bufferHeight))
-{ }
+{ 
+	m_Instance = this;
+}
+
+void Application::setLayer(Layer* layer)
+{
+	if (m_CurrentLayer)
+	{
+		m_CurrentLayer->onDetach();
+		delete m_CurrentLayer;
+		m_CurrentLayer = nullptr;
+	}
+
+	m_CurrentLayer = layer;
+	m_CurrentLayer->onAttach();
+}
 
 void Application::Run()
 {
@@ -25,12 +41,13 @@ void Application::Run()
 
 	float lastFrameChange = 0.4f;
 
-	onCreate();
 	Renderer::Init(m_Buffer);
-	Random::Init;
+	Random::Init();
 
 	while (m_Window->isRunning())
 	{
+		m_Buffer->ClearDepthBuffer();
+
 		timeNow = std::chrono::system_clock::now();
 		Time::deltaTime = std::chrono::duration<float>(timeNow - oldTime).count();
 
@@ -43,7 +60,7 @@ void Application::Run()
 			lastFrameChange = 0.0f;
 		}
 
-		onUpdate(Time::deltaTime);
+		m_CurrentLayer->onUpdate(Time::deltaTime);
 
 		lastFrameChange += Time::deltaTime;
 

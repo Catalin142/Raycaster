@@ -1,5 +1,5 @@
-project "Odium Ascensiunea"
-	kind "ConsoleApp"
+project "Odium Engine"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "on"
@@ -7,23 +7,20 @@ project "Odium Ascensiunea"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
-		"Odium/**.h",
-		"Odium/**.cpp",
-		"**.cpp"
-	}
+	pchheader "Core/RaycastPCH.h"
+	pchsource "Engine/Core/RaycastPCH.cpp"
 
 	includedirs
 	{
-		"%{wks.location}/Odium Engine/Engine",
+		"Engine",
 	}
 
-	links 
+	files
 	{
-		"Odium Engine"
+		"Engine/**.h",
+		"Engine/**.cpp",
+		"**.cpp",
 	}
-
 
 	filter "system:windows"
 		systemversion "latest"

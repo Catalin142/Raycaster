@@ -37,9 +37,13 @@ void ParticleEmmiter::Emit(const ParticleProps& props, float deltaTime)
 			newParticle->m_Active = true;
 
 			newParticle->m_Scale = props.m_Scale;
+			newParticle->m_Radius = props.m_Radius;
 
 			newParticle->m_LifeTime = props.m_LifeTime;
 			newParticle->m_RemainingTime = newParticle->m_LifeTime;
+
+			newParticle->m_BegColor = props.m_BegColor;
+			newParticle->m_EndColor = props.m_EndColor;
 
 			newParticle->m_Position = props.m_Position;
 
@@ -57,7 +61,7 @@ void ParticleEmmiter::Emit(const ParticleProps& props, float deltaTime)
 
 void ParticleEmmiter::Update(float deltaTime)
 {
-	for (int i = 0; i < m_PoolSize; i++)
+	for (unsigned int i = 0; i < m_PoolSize; i++)
 	{
 		if (m_ParticlePool[i].m_RemainingTime <= 0.0f)
 			m_ParticlePool[i].m_Active = false;
@@ -76,14 +80,36 @@ void ParticleEmmiter::Update(float deltaTime)
 
 void ParticleEmmiter::Render()
 {
-	for (int i = 0; i < m_PoolSize; i++)
+	for (unsigned int i = 0; i < m_PoolSize; i++)
 	{
 		if (m_ParticlePool[i].m_Active == false)
 			continue;
 
 		float time = m_ParticlePool[i].m_RemainingTime / m_ParticlePool[i].m_LifeTime;
+		if (time < 0.0f)
+			time = -time;
 
-		Renderer::drawQuad(m_ParticlePool[i].m_Position, m_ParticlePool[i].m_Scale, m_Color);
+		vec3 color = lerp(m_ParticlePool[i].m_EndColor, m_ParticlePool[i].m_BegColor, time);
+		
+		drawType(&m_ParticlePool[i], color);
+
+	}
+}
+
+void ParticleEmmiter::drawType(const Particle* part, const vec3& color)
+{
+	switch (m_Type)
+	{
+	case ParticleType::QUAD:
+		Renderer::drawQuad(part->m_Position, part->m_Scale, color);
+		break;
+
+	case ParticleType::CIRCLE:
+		Renderer::drawCircle(part->m_Position, part->m_Radius, color);
+		break;
+
+	default:
+		break;
 	}
 }
 

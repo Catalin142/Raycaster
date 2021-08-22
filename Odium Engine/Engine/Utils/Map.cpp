@@ -90,10 +90,10 @@ void Map::loadMap(const std::string& filepath)
 void Map::Draw(float x, float y, float sizex, float sizey)
 {
 	float posY = y + sizey * m_Height;
-	for (int i = 0; i < m_Height; i++)
+	for (uint i = 0; i < m_Height; i++)
 	{
 		float posX = x;
-		for (int j = 0; j < m_Width; j++)
+		for (uint j = 0; j < m_Width; j++)
 		{
 			if (m_Map[i * m_Width + j] == '#')
 				Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x00000000);

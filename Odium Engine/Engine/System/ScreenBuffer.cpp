@@ -11,6 +11,8 @@ ScreenBuffer::ScreenBuffer(std::shared_ptr<Window>& window, int width, int heigh
 
 	setViewport(m_Width, m_Height);
 
+	m_DepthBuffer = new float[m_Width];
+
 	m_BitMapInfo.bmiHeader.biSize = sizeof(m_BitMapInfo.bmiHeader);
 	m_BitMapInfo.bmiHeader.biPlanes = 1;
 	m_BitMapInfo.bmiHeader.biBitCount = sizeof(uint32) * 8;
@@ -20,6 +22,7 @@ ScreenBuffer::ScreenBuffer(std::shared_ptr<Window>& window, int width, int heigh
 ScreenBuffer::~ScreenBuffer()
 {
 	VirtualFree(m_MemoryBuffer, 0, MEM_FREE);
+	delete[] m_DepthBuffer;
 }
 
 void ScreenBuffer::setViewport(int width, int height)
@@ -29,7 +32,11 @@ void ScreenBuffer::setViewport(int width, int height)
 
 	if (m_MemoryBuffer)
 		VirtualFree(m_MemoryBuffer, 0, MEM_RELEASE);
+	if (m_DepthBuffer)
+		delete[] m_DepthBuffer;
+
 	m_MemoryBuffer = VirtualAlloc(0, m_Width * m_Height * sizeof(uint32), MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+	m_DepthBuffer = new float[m_Width];
 
 	m_BitMapInfo.bmiHeader.biWidth = (LONG)m_Width;
 	m_BitMapInfo.bmiHeader.biHeight = (LONG)m_Height;
@@ -45,6 +52,11 @@ void ScreenBuffer::Clear(float r, float g, float b)
 
 	for (uint i = 0; i < m_BufferSize; i++)
 		*(first++) = color;
+}
+
+void ScreenBuffer::ClearDepthBuffer()
+{
+	memset(m_DepthBuffer, 0, m_Width * sizeof(float));
 }
 
 void ScreenBuffer::Render()

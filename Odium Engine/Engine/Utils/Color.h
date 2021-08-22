@@ -16,7 +16,7 @@ static unsigned long createHex(const vec3& color)
 
 static vec3 createRGB(unsigned long hex)
 {
-	return vec3(((hex >> 16) & 0xff), ((hex >> 8) & 0xff), ((hex) & 0xff)) / 255.0f;
+	return vec3(float((hex >> 16) & 0xff), float((hex >> 8) & 0xff), float((hex) & 0xff)) / 255.0f;
 }
 
 #define White {1.0f, 1.0f, 1.0f}

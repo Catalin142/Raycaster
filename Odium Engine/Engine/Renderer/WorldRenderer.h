@@ -5,7 +5,7 @@
 #include "Utils/Maths.h"
 
 #include "Graphics/Sprite.h"
-#include "ScreenBuffer.h"
+#include "System/ScreenBuffer.h"
 
 #include "Camera.h"
 #include "Utils/Map.h"
@@ -27,18 +27,20 @@ enum class WorldLightMode : short
 
 class WorldRenderer
 {
+	friend class Entity;
+
 public:
 	static void Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_ptr<Camera>& cam);
 
-	static void setIntensity(float intensity) { m_UseIntensity = true; m_ShadeIntensity = intensity; }
+	static void setIntensity(float intensity) { m_UseIntensity = true; m_GlobalIlluminationIntensity = intensity; }
 	static void setIntensity(bool state) { m_UseIntensity = state; }
 
 	static void setCeilTexture(const std::shared_ptr<Sprite>& tex) { m_CeilTexture = tex; m_CeilMode = CeilShadingMode::TEXTURE; }
-	static void setCeilColor(const vec3& color) { m_CeilColor = createHex(color.x * 255, color.y * 255, color.z * 255); m_CeilMode = CeilShadingMode::SOLID; }
+	static void setCeilColor(const vec3& color) { m_CeilColor = createHex((int)color.x * 255, (int)color.y * 255, (int)color.z * 255); m_CeilMode = CeilShadingMode::SOLID; }
 	static void setCeilGradient(const vec3& from, const vec3& to, float intensity) {
 		m_CeilGradient.m_StartColor = from;
 		m_CeilGradient.m_EndColor = to;
-		m_CeilGradient.m_Intensity = intensity;
+		m_CeilGradient.m_Scale = intensity;
 		m_CeilMode = CeilShadingMode::LERP;
 	}
 
@@ -54,12 +56,12 @@ private:
 	{
 		static vec3 m_StartColor;
 		static vec3 m_EndColor;
-		static float m_Intensity;
+		static float m_Scale;
 	} static m_CeilGradient;
 
 	static CeilShadingMode m_CeilMode;
 
-	static float m_ShadeIntensity;
+	static float m_GlobalIlluminationIntensity;
 	static bool m_UseIntensity;
 
 private:

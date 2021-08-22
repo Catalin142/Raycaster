@@ -12,6 +12,7 @@ public:
 
 	void setViewport(int width, int height);
 	void Clear(float r, float g, float b);
+	void ClearDepthBuffer();
 
 	void* getBuffer() { return m_MemoryBuffer; }
 	int getWidth() { return m_Width; }
@@ -21,6 +22,8 @@ public:
 
 private:
 	void* m_MemoryBuffer = nullptr;
+	float* m_DepthBuffer = nullptr;
+
 	BITMAPINFO m_BitMapInfo;
 
 	std::shared_ptr<Window> m_Window;

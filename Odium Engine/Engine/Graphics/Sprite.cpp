@@ -30,7 +30,9 @@ bool Sprite::loadSprite(const std::string& filepath)
 	for (int i = 0; i < m_Width * m_Height; i++)
 	{
 		readFile.read((char*)&temp, sizeof(long));
-		m_Buffer[i] = createRGB(temp);
+		if (temp != -1)
+			m_Buffer[i] = createRGB(temp);
+		else m_Buffer[i] = { -1.0f, -1.0f, -1.0f };
 	}
 
 	return true;

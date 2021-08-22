@@ -8,7 +8,7 @@
 
 std::shared_ptr<Map> WorldRenderer::m_Map;
 
-float WorldRenderer::m_ShadeIntensity = 1.0f;
+float WorldRenderer::m_GlobalIlluminationIntensity = 1.0f;
 bool WorldRenderer::m_UseIntensity = false;
 
 unsigned long WorldRenderer::m_CeilColor = 0x0000000;
@@ -16,7 +16,7 @@ std::shared_ptr<Sprite> WorldRenderer::m_CeilTexture;
 
 vec3 WorldRenderer::Gradient::m_StartColor;
 vec3 WorldRenderer::Gradient::m_EndColor;
-float WorldRenderer::Gradient::m_Intensity;
+float WorldRenderer::Gradient::m_Scale;
 
 WorldRenderer::Gradient WorldRenderer::m_CeilGradient;
 
@@ -55,7 +55,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 				float Plane = (BufferDim.y / 2.0f) / ((BufferDim.y / 2.0f) - float(y));
 
 				if (m_UseIntensity == true)
-					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_ShadeIntensity / Plane);
+					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / Plane);
 
 				vec2 planePoint = cam->m_Position + rayDir * Plane * fishEyeCorrection;
 				vec2 pixel;
@@ -71,8 +71,9 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 			{
 				if (m_UseIntensity == true)
 					if (res.Length > 0.5f)
-						Shade = vec3(1.0f, 1.0f, 1.0f) * (m_ShadeIntensity / res.Length);
+						Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / res.Length);
 				Color = wallSpr->getPixelColor(res.HitPosition, (y - wallPos.y) / (int)(wallSize.y));
+				Renderer::setDepthPixel(x, res.Depth);
 			}
 
 			// tavan
@@ -81,7 +82,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 				float Plane = (BufferDim.y / 2.0f) / ((BufferDim.y / 2.0f) - float(y));
 
 				if (m_UseIntensity == true)
-					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_ShadeIntensity / (-Plane));
+					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / (-Plane));
 
 				switch (m_CeilMode)
 				{
@@ -100,7 +101,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 					break;
 
 				case CeilShadingMode::LERP:
-					vec3 col = lerp(m_CeilGradient.m_StartColor, m_CeilGradient.m_EndColor, m_CeilGradient.m_Intensity / y);
+					vec3 col = lerp(m_CeilGradient.m_StartColor, m_CeilGradient.m_EndColor, m_CeilGradient.m_Scale / y);
 					Color = col;
 					break;
 				}

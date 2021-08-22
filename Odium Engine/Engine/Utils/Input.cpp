@@ -1,15 +1,15 @@
 #include "Core/RaycastPCH.h"
 
 #include "Input.h"
-#include "Win32Window.h"
+#include "System/Win32Window.h"
 
 vec2 getMousePosition()
 {
-	POINT p = { 0.0f, 0.0f };
+	POINT p = { 0.0, 0.0 };
 	GetCursorPos(&p);
 	ScreenToClient(Window::Get()->getHandle(), &p);
 
-	return vec2(p.x, p.y);
+	return vec2((float)p.x, (float)p.y);
 }
 
 void setMousePosition(int x, int y)

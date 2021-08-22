@@ -7,6 +7,8 @@
 struct RaycastResult
 {
 	float Length;
+	float Depth;
+
 	float HitPosition;
 	int Side;
 
@@ -97,6 +99,8 @@ static RaycastResult castRay(const std::shared_ptr<Camera>& cam, float angle)
 		res.HitPosition = linePosition.y - (int)linePosition.y;
 	else
 		res.HitPosition = linePosition.x - (int)linePosition.x;
+	
+	res.Depth = length;
 
 	length *= cos(angle - cam->m_CameraAngle);
 	res.Length = length;

@@ -1,7 +1,8 @@
 #pragma once
-#include "Application.h"
-#include "ScreenBuffer.h"
-#include "Win32Window.h"
+#include "System/Application.h"
+#include "System/ScreenBuffer.h"
+#include "System/Win32Window.h"
+#include "System/Layer.h"
 
 #include "Renderer/Camera.h"
 #include "Renderer/Renderer.h"
@@ -17,3 +18,6 @@
 
 #include "Graphics/Sprite.h"
 #include "Graphics/ParticleSystem.h"
+
+#include "Entity/Entity.h"
+#include "Entity/Scene.h"

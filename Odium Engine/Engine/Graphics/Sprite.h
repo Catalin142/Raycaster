@@ -15,6 +15,8 @@ public:
 	bool loadSprite(const std::string& filepath);
 	vec3& getPixelColor(float x, float y);
 
+	float getAspectRatio() { return (float)m_Width / (float)m_Height; }
+
 private:
 	vec3* m_Buffer = nullptr;
 
