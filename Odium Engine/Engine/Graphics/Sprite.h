@@ -6,6 +6,7 @@
 class Sprite
 {
 	friend class Renderer;
+	friend class TextBox;
 
 public:
 	Sprite() = default;

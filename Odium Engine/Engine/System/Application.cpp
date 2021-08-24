@@ -60,11 +60,11 @@ void Application::Run()
 			lastFrameChange = 0.0f;
 		}
 
+		m_Buffer->Render();
 		m_CurrentLayer->onUpdate(Time::deltaTime);
 
 		lastFrameChange += Time::deltaTime;
 
-		m_Buffer->Render();
 		m_Window->pollEvents();
 
 
@@ -75,7 +75,7 @@ void Application::Run()
 	}
 }
 
-void Application::setCamera(int posx, int posy, float fov)
+void Application::setCamera(int posx, int posy, float fov, float speed)
 {
-	m_Camera = std::make_shared<Camera>(posx + 0.5f, posy + 0.5f, fov);
+	m_Camera = std::make_shared<Camera>(posx + 0.5f, posy + 0.5f, fov, speed);
 }

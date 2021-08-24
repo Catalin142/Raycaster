@@ -18,6 +18,3 @@ static vec3 createRGB(unsigned long hex)
 {
 	return vec3(float((hex >> 16) & 0xff), float((hex >> 8) & 0xff), float((hex) & 0xff)) / 255.0f;
 }
-
-#define White {1.0f, 1.0f, 1.0f}
-#define Black (0.0f, 0.0f, 0.0f)

@@ -13,6 +13,7 @@ public:
 private:
 	vec2 m_Velocity;
 	float m_Speed = 5.0f;
+	float m_Sprint = 5.0f;
 
 	vec2 m_LastMousePosition;
 

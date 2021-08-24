@@ -70,7 +70,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 			else if (y > (int)wallPos.y && y <= (int)wallPos.y + wallSize.y)
 			{
 				if (m_UseIntensity == true)
-					if (res.Length > 0.5f)
+					if (res.Length > 0.9f)
 						Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / res.Length);
 				Color = wallSpr->getPixelColor(res.HitPosition, (y - wallPos.y) / (int)(wallSize.y));
 				Renderer::setDepthPixel(x, res.Depth);

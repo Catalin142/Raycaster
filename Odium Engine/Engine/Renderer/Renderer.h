@@ -4,8 +4,18 @@
 #include "System/ScreenBuffer.h"
 #include "Graphics/Sprite.h"
 #include "Entity/Scene.h"
+#include "Graphics/Font.h"
 
 #include <memory>
+
+enum TextAnchorFlags
+{
+	TextCenter =		(1 << 0),
+	TextLeft =			(1 << 1),
+	TextRight =			(1 << 2),
+	TextTop =			(1 << 3),
+	TextBottom =		(1 << 4),
+};
 
 class Renderer
 {
@@ -38,6 +48,9 @@ public:
 	static float getPixelDepth(int column);
 
 	static bool checkPixel(const vec2& pos);
+
+	static void drawText(const std::string& text, const std::shared_ptr<Font>& font, const vec2& pos, float size, const vec3& color, float space = 1.0f);
+	static void drawText(const std::string& text, const std::shared_ptr<Font>& font, int flags, float size, const vec3& color, float space = 1.0f);
 
 private:
 	static std::shared_ptr<ScreenBuffer> m_Buffer;

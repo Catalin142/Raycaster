@@ -23,7 +23,7 @@ public:
 	void setLayer(Layer* layer);
 
 	void Run();
-	void setCamera(int posx, int posy, float fov);
+	void setCamera(int posx, int posy, float fov, float speed = 5.0f);
 
 	static Application* Get() { return m_Instance; }
 

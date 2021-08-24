@@ -45,9 +45,9 @@ void Entity::onDraw()
 		for (int x = 0; x < objWidth; x++)
 			for (int y = 0; y < objHeight; y++)
 			{
-				int nObjectColumn = (int)(objMiddle + x - (objWidth / 2.0f));
+				int objColumn = (int)(objMiddle + x - (objWidth / 2.0f));
 
-				if (distFromPlayer <= Renderer::getPixelDepth(nObjectColumn))
+				if (distFromPlayer <= Renderer::getPixelDepth(objColumn))
 				{
 					vec2 samplePoint = { (float)x / objWidth, (float)y / objHeight };
 					vec3 color = m_Sprite->getPixelColor(samplePoint.x, samplePoint.y);
@@ -60,8 +60,8 @@ void Entity::onDraw()
 					if (m_UseObjIntensity)
 						color = color * (m_ObjectIntensity / distFromPlayer);
 
-					Renderer::setPixel_s(vec2((int)nObjectColumn, (int)objFloor + y), color);
-					Renderer::setDepthPixel(nObjectColumn, distFromPlayer);
+					Renderer::setPixel_s(vec2((int)objColumn, (int)objFloor + y), color);
+					Renderer::setDepthPixel(objColumn, distFromPlayer);
 				}
 			}
 	}

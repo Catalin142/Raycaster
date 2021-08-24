@@ -38,8 +38,8 @@ void Camera::onUpdate(float dt)
 	vec2 MousePos = getMousePosition();
 	float delta = (Window::Get()->getClientRectSize().x / 2.0f - MousePos.x) * 0.0003f;
 
-	if (!GetAsyncKeyState('T'))
-		pinMouse();
+	//if (!GetAsyncKeyState('T'))
+	//	pinMouse();
 
 	m_CameraAngle -= delta;
 
@@ -50,7 +50,12 @@ void Camera::onUpdate(float dt)
 			if (sym.isWall)
 				if (Map::Get()->getBuffer()[(int)CollisionPoint.y * Map::Get()->getWidth() + (int)CollisionPoint.x] != sym.Symbol)
 				{
-					m_Position = m_Position + m_Velocity.normalize() * m_Speed * dt;
+					if (GetAsyncKeyState(VK_LSHIFT))
+					{
+						m_Position = m_Position + m_Velocity.normalize() * m_Sprint * dt;
+
+					}
+					else m_Position = m_Position + m_Velocity.normalize() * m_Speed * dt;
 				}
 	}
 }

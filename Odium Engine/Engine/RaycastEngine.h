@@ -18,6 +18,9 @@
 
 #include "Graphics/Sprite.h"
 #include "Graphics/ParticleSystem.h"
+#include "Graphics/Font.h"
 
 #include "Entity/Entity.h"
 #include "Entity/Scene.h"
+
+#include "UI/TextBox.h"

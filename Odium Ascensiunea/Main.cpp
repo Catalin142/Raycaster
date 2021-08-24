@@ -11,7 +11,7 @@ public:
 int main()
 {
 	Application* Odium = new Game(L"Odium Ascensiunea");
-	Odium->setCamera(1, 1, 60.0f);
+	Odium->setCamera(1, 1, 60.0f, 3.0f);
 
 	Odium->Run();
 

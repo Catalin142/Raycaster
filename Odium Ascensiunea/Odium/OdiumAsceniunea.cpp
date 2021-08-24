@@ -1,10 +1,16 @@
-#include "Core/RaycastPCH.h"
-
 #include "OdiumAsceniunea.h"
 
 void OdiumAsceniunea::onAttach()
 {
 	m_CeilTex = std::make_shared<Sprite>("Resources/Floor.spr");
+
+	m_Frame = std::make_shared<Sprite>("Resources/Frame.spr");
+	m_Font = std::make_shared<Font>("Resources/Font1.spr", 6, 7);
+
+	m_TextBox = std::make_shared<TextBox>(m_Frame, m_Font, 250, 50);
+	m_TextBox->setPosition({ 35.0f, 25.0f });
+	m_TextBox->setText("asudhasdasjkldhasj kdhajksdhajksdhasgdasdasdasdasdasdasdasdsasudhasdasjkldhasjasudhasdasjkldhasj kdhajksdhajksdhasgdasdasdasdasdasdasdasdsasudhasdasjkldhasj", 
+		TextCenter, { 1.0f, 1.0f, 1.0f });
 
 	m_Scene = std::make_shared<Scene>();
 	m_Snowman = std::make_shared<Entity>("Resources/Snowman.spr");
@@ -16,7 +22,7 @@ void OdiumAsceniunea::onAttach()
 
 	WorldRenderer::setCeilGradient({ 0.5f, 0.8f, 1.0f }, { 1.0f, 1.0f, 1.0f }, 120.0f);
 	//WorldRenderer::setCeilTexture(m_Enemy);
-	WorldRenderer::setIntensity(0.6f);
+	WorldRenderer::setIntensity(0.8f);
 
 	ParticleProps Snow;
 	Snow.m_Scale = { 1.0f, 1.0f };
@@ -35,10 +41,13 @@ void OdiumAsceniunea::onAttach()
 	m_Emmiter.setType(ParticleType::QUAD);
 
 	ParticleManager::addParticleType("Snow", Snow);
+
+	FontManager::addFont("Odium", m_Font);
 }
 
 void OdiumAsceniunea::onUpdate(float dt)
 {
+	/*
 	auto m_Buffer = getBuffer();
 	auto m_Camera = getCamera();
 	WorldRenderer::Render(m_Buffer, m_Camera);
@@ -46,11 +55,14 @@ void OdiumAsceniunea::onUpdate(float dt)
 	Renderer::renderScene(m_Scene);
 
 	ParticleManager::getParticle("Snow").m_Position.x = Random::Float() * m_Buffer->getWidth();
-	float sc = Random::Float();
-	ParticleManager::getParticle("Snow").m_Scale.x = sc;
-	ParticleManager::getParticle("Snow").m_Scale.y = sc;
 
 	m_Emmiter.Emit(ParticleManager::getParticle("Snow"), dt);
 	m_Emmiter.Update(dt);
 	m_Emmiter.Render();
+
+	Renderer::drawText("Padurea Spanzuratilor", m_Font, TextCenter | TextTop, 1, { 0.0f, 0.0f, 0.0f });
+	*/
+
+	m_TextBox->Render();
+
 }
