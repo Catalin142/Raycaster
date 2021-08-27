@@ -3,6 +3,11 @@
 #include "Win32Window.h"
 #include "ScreenBuffer.h"
 
+#include "Events/EventDispatcher.h"
+#include "Events/MouseEvents.h"
+
+#include "Utils/Input.h"
+
 Window* Window::m_Instance = nullptr;
 
 static LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -15,6 +20,46 @@ static LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPAR
 		window->m_Width = LOWORD(lParam);
 		window->m_Height = HIWORD(lParam);
 
+	} break;
+
+	case WM_LBUTTONDOWN:
+	{
+		vec2 pt;
+		pt.x = GET_X_LPARAM(lParam);
+		pt.y = GET_Y_LPARAM(lParam);
+
+		MousePressedEvent ev(VK_MOUSE_LEFT, pt.x, pt.y);
+		EventDispatcher::Dispatch(ev);
+	} break;
+
+	case WM_RBUTTONDOWN:
+	{
+		vec2 pt;
+		pt.x = GET_X_LPARAM(lParam);
+		pt.y = GET_Y_LPARAM(lParam);
+
+		MousePressedEvent ev(VK_MOUSE_RIGHT, pt.x, pt.y);
+		EventDispatcher::Dispatch(ev);
+	} break;
+
+	case WM_LBUTTONUP:
+	{
+		vec2 pt;
+		pt.x = GET_X_LPARAM(lParam);
+		pt.y = GET_Y_LPARAM(lParam);
+
+		MouseReleasedEvent ev(VK_MOUSE_LEFT, pt.x, pt.y);
+		EventDispatcher::Dispatch(ev);
+	} break;
+
+	case WM_RBUTTONUP:
+	{
+		vec2 pt;
+		pt.x = GET_X_LPARAM(lParam);
+		pt.y = GET_Y_LPARAM(lParam);
+
+		MouseReleasedEvent ev(VK_MOUSE_RIGHT, pt.x, pt.y);
+		EventDispatcher::Dispatch(ev);
 	} break;
 
 	case WM_CLOSE:
@@ -34,7 +79,7 @@ static LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPAR
 
 Window::Window(const wchar_t* name, uint16 width, uint16 height, unsigned long flags) : m_Name(const_cast<wchar_t*>(name)), m_Width(width), m_Height(height), m_isRunning(true)
 {
-	ShowCursor(false);
+	//ShowCursor(false);
 	m_Instance = this;
 	
 	m_WindowClass = { };

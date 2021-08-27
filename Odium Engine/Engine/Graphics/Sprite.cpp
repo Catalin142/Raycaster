@@ -24,7 +24,7 @@ bool Sprite::loadSprite(const std::string& filepath)
 
 	if (m_Buffer != nullptr)
 		delete[] m_Buffer;
-
+	
 	m_Buffer = new vec3[m_Width * m_Height];
 	long temp = 0;
 	for (int i = 0; i < m_Width * m_Height; i++)

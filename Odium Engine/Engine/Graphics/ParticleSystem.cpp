@@ -4,6 +4,7 @@
 #include "Renderer/Renderer.h"
 
 #include "ParticleSystem.h"
+#include "Tools/Benchmark.h"
 
 std::unordered_map<std::string, ParticleProps> ParticleManager::m_ParticleProps;
 
@@ -80,6 +81,7 @@ void ParticleEmmiter::Update(float deltaTime)
 
 void ParticleEmmiter::Render()
 {
+	START_SCOPE_PROFILE("Particle Render");
 	for (unsigned int i = 0; i < m_PoolSize; i++)
 	{
 		if (m_ParticlePool[i].m_Active == false)

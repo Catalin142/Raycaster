@@ -38,8 +38,8 @@ void Camera::onUpdate(float dt)
 	vec2 MousePos = getMousePosition();
 	float delta = (Window::Get()->getClientRectSize().x / 2.0f - MousePos.x) * 0.0003f;
 
-	//if (!GetAsyncKeyState('T'))
-	//	pinMouse();
+	if (!GetAsyncKeyState('T'))
+		pinMouse();
 
 	m_CameraAngle -= delta;
 

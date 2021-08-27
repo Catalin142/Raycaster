@@ -3,6 +3,7 @@
 #include "Renderer/Camera.h"
 #include "Map.h"
 #include <cmath>
+#include "Tools/Benchmark.h"
 
 struct RaycastResult
 {

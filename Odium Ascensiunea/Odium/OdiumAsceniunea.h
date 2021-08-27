@@ -8,6 +8,7 @@ public:
 
 	virtual void onAttach() override;
 	virtual void onUpdate(float dt) override;
+	virtual bool onEvent(Event& event) override;
 
 private:
 	std::shared_ptr<Sprite> m_CeilTex;
@@ -16,8 +17,12 @@ private:
 
 	std::shared_ptr<Font> m_Font;
 
+	std::shared_ptr<Button> m_Button;
+
 	std::shared_ptr<TextBox> m_TextBox;
 	std::shared_ptr<Sprite> m_Frame;
 
 	ParticleEmmiter m_Emmiter;
+
+	std::shared_ptr<Camera> m_Camera;
 };

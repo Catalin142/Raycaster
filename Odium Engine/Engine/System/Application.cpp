@@ -8,6 +8,7 @@
 #include "Utils/Raycaster.h"
 #include "Utils/Random.h"
 #include "Layer.h"
+#include "Tools/Benchmark.h"
 
 #include "Application.h"
 
@@ -21,17 +22,34 @@ Application::Application(const wchar_t* title, uint32 width, uint32 height, uint
 	m_Instance = this;
 }
 
-void Application::setLayer(Layer* layer)
+void Application::pushLayer(Layer* layer)
 {
-	if (m_CurrentLayer)
-	{
-		m_CurrentLayer->onDetach();
-		delete m_CurrentLayer;
-		m_CurrentLayer = nullptr;
-	}
+	m_Layers.emplace_back(layer);
+	m_NoOfLayers++;
+	layer->onAttach();
+}
 
-	m_CurrentLayer = layer;
-	m_CurrentLayer->onAttach();
+void Application::pushOverlay(Layer* layer)
+{
+	m_Layers.emplace(m_Layers.begin() + m_NoOfLayers, layer);
+	layer->onAttach();
+}
+
+void Application::popLayer()
+{
+	auto lastLayer = m_Layers.begin() + m_NoOfLayers;
+	(*lastLayer)->onDetach();
+	m_NoOfLayers--;
+	m_Layers.erase(lastLayer);
+}
+
+void Application::popOverlay()
+{
+	if (m_Layers.size() > m_NoOfLayers)
+	{
+		m_Layers.back()->onDetach();
+		m_Layers.pop_back();
+	}
 }
 
 void Application::Run()
@@ -46,36 +64,31 @@ void Application::Run()
 
 	while (m_Window->isRunning())
 	{
+		START_SCOPE_PROFILE("Main loop");
 		m_Buffer->ClearDepthBuffer();
 
 		timeNow = std::chrono::system_clock::now();
 		Time::deltaTime = std::chrono::duration<float>(timeNow - oldTime).count();
-
-		m_Camera->onUpdate(Time::deltaTime);
 
 		if (lastFrameChange >= 0.5f)
 		{
 			std::wstring title = m_Window->getName() + L": FPS " + std::to_wstring(int(1 / Time::deltaTime));
 			SetWindowText(m_Window->getHandle(), title.c_str());
 			lastFrameChange = 0.0f;
-		}
+		} // TODO scoatel
 
-		m_Buffer->Render();
-		m_CurrentLayer->onUpdate(Time::deltaTime);
+		for (const auto& Layer : m_Layers)
+			if (Layer->m_Active)
+				Layer->onUpdate(Time::deltaTime);
 
 		lastFrameChange += Time::deltaTime;
 
 		m_Window->pollEvents();
-
 
 		if (GetAsyncKeyState(VK_ESCAPE))
 			m_Window->isRunning() = false; // TODO scoatel
 
 		oldTime = timeNow;
 	}
-}
 
-void Application::setCamera(int posx, int posy, float fov, float speed)
-{
-	m_Camera = std::make_shared<Camera>(posx + 0.5f, posy + 0.5f, fov, speed);
 }

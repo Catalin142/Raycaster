@@ -7,6 +7,7 @@ class Sprite
 {
 	friend class Renderer;
 	friend class TextBox;
+	friend class InteractableUI;
 
 public:
 	Sprite() = default;

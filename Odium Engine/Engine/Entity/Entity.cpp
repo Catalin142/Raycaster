@@ -4,6 +4,8 @@
 #include "Renderer/Renderer.h"
 #include "Renderer/WorldRenderer.h"
 
+#include "Tools/Benchmark.h"
+
 #include "System/Application.h"
 
 Entity::Entity(const std::string& filepath)
@@ -16,17 +18,18 @@ Entity::Entity(const std::shared_ptr<Sprite>& spr)
 	m_Sprite = spr;
 }
 
-void Entity::onDraw()
+void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 {
-	auto m_Camera = Application::Get()->m_Camera;
+	START_SCOPE_PROFILE("Entity render");
+
 	auto m_Buffer = Application::Get()->m_Buffer;
 
 	vec2 Dist;
-	Dist.x = m_Position.x - m_Camera->m_Position.x;
-	Dist.y = m_Position.y - m_Camera->m_Position.y;
+	Dist.x = m_Position.x - cam->m_Position.x;
+	Dist.y = m_Position.y - cam->m_Position.y;
 
 	float distFromPlayer = Dist.magnitude();
-	vec2 pDirection = { cos(m_Camera->m_CameraAngle), sin(m_Camera->m_CameraAngle) };
+	vec2 pDirection = { cos(cam->m_CameraAngle), sin(cam->m_CameraAngle) };
 	float objAng = atan2f(pDirection.x, pDirection.y) - atan2f(Dist.x, Dist.y);
 
 	if (objAng < -PI)
@@ -34,13 +37,13 @@ void Entity::onDraw()
 	if (objAng > PI)
 		objAng -= 2.0f * PI;
 
-	if (fabs(objAng) < degToRad(m_Camera->m_FOV) / 2.0f && distFromPlayer > 1.0f)
+	if (fabs(objAng) < degToRad(cam->m_FOV) / 2.0f && distFromPlayer > 1.0f)
 	{
 		float objHeight = (1600.0f / 900.0f) * m_Buffer->getHeight() / distFromPlayer;
 		float objFloor = m_Buffer->getHeight() / 2.0f - objHeight / 2.0f;
 		float objCeil = m_Buffer->getHeight() - objFloor;
 		float objWidth = objHeight / m_Sprite->getAspectRatio();
-		float objMiddle = (0.5f * (objAng / (degToRad(m_Camera->m_FOV) / 2.0f)) + 0.5f) * (float)m_Buffer->getWidth();
+		float objMiddle = (0.5f * (objAng / (degToRad(cam->m_FOV) / 2.0f)) + 0.5f) * (float)m_Buffer->getWidth();
 
 		for (int x = 0; x < objWidth; x++)
 			for (int y = 0; y < objHeight; y++)

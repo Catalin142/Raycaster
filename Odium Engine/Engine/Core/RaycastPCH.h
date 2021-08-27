@@ -11,6 +11,9 @@
 #include <fstream>
 #include <cstdio>
 #include <chrono>
+#include <iomanip>
+#include <mutex>
+#include <sstream>
 #include <assert.h>
 
 #include <vector>
@@ -22,6 +25,8 @@
 
 #define NOMINMAX
 #include <Windows.h>
+#include <windowsx.h>
 #include <filesystem>
 #include <windef.h>
 #include <cassert>
+#include <thread>

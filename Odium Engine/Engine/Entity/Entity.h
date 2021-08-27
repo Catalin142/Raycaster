@@ -3,6 +3,7 @@
 
 #include "Graphics/Sprite.h"
 #include "Utils/Maths.h"
+#include "Renderer/Camera.h"
 
 class Entity
 {
@@ -19,7 +20,7 @@ public:
 	virtual void onCreate() { }
 	virtual void onUpdate(float dt) { }
 
-	void onDraw();
+	void onDraw(const std::shared_ptr<Camera>& cam);
 	void setSprite(const std::string& filepath);
 
 	void setPosition(float x, float y) { m_Position = { x, y }; }

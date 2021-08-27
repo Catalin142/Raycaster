@@ -6,16 +6,22 @@ class Font
 {
 	friend class Renderer;
 	friend class TextBox;
+	friend class InteractableUI;
 
 public:
 	Font(const std::string& path, int glyphWidth, int glyphHeight);
 	~Font() = default;
+
+	uint getWidthGlyph(char c) { return m_CharacterSize[c - 'a']; }
+	uint getTextWidth(const std::string& text);
 
 private:
 	std::shared_ptr<Sprite> m_FontSheet;
 
 	uint m_GlyphHeight;
 	uint m_GlyphWidth;
+
+	uint m_CharacterSize[26];
 };
 
 class FontManager

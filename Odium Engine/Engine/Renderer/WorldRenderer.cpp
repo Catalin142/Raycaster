@@ -5,6 +5,7 @@
 #include "Utils/Map.h"
 #include "Renderer.h"
 #include "Utils/Raycaster.h"
+#include "Tools/Benchmark.h"
 
 std::shared_ptr<Map> WorldRenderer::m_Map;
 
@@ -24,6 +25,8 @@ CeilShadingMode WorldRenderer::m_CeilMode = CeilShadingMode::SOLID;
 
 void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_ptr<Camera>& cam)
 {
+	START_SCOPE_PROFILE("Raycasting Render");
+
 	m_Map = Map::Get();
 	vec2 wallSize;
 	vec2 wallPos;
@@ -31,6 +34,8 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 	vec3 Color = { 0.0f, 0.0f, 0.0f };
 
 	vec2 BufferDim = { (float)buffer->getWidth(), (float)buffer->getHeight() };
+	vec2 rayDir;
+	vec3 Shade = { 1.0f, 1.0f, 1.0f };
 
 	for (int x = 0; x < BufferDim.x; x++)
 	{
@@ -38,15 +43,15 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 
 		auto res = castRay(cam, rayAng);
 
-		wallSize = { 1.0f, (1600.0f / 900.0f) * BufferDim.y / res.Length };
+		wallSize = { 1.0f, buffer->getAspectRatio() * BufferDim.y / res.Length };
 		wallPos = { (float)x, BufferDim.y / 2.0f - wallSize.y / 2.0f };
 
-		vec2 rayDir = { cos(rayAng), sin(rayAng) };
+		rayDir = { cos(rayAng), sin(rayAng) };
 
-		float fishEyeCorrection = (1600.0f / 900.0f) / std::cos(rayAng - cam->m_CameraAngle);
+		float fishEyeCorrection = buffer->getAspectRatio() / std::cos(rayAng - cam->m_CameraAngle);
 
 		auto& wallSpr = m_Map->getSprite(res.Symbol);
-		vec3 Shade = { 1.0f, 1.0f, 1.0f };
+		Shade = { 1.0f, 1.0f, 1.0f };
 		for (int y = 0; y < BufferDim.y; y++)
 		{
 			// podea

@@ -27,8 +27,10 @@ project "Odium Engine"
 
 	filter "configurations:Debug"
 		runtime "Debug"
+		defines "DEBUG=1"
 		symbols "on"
 
 	filter "configurations:Release"
 		runtime "Release"
+		defines "RELEASE=1"
 		optimize "on"

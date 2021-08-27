@@ -2,15 +2,30 @@
 #include "Renderer.h"
 #include "Utils/Color.h"
 
+#include "Tools/Benchmark.h"
+
 std::shared_ptr<ScreenBuffer> Renderer::m_Buffer;
+std::shared_ptr<Camera> Renderer::m_Camera;
+
 uint32* Renderer::m_BuffersBuffer;
 float* Renderer::m_DepthBuffer;
+
+void Renderer::endScene()
+{
+	START_SCOPE_PROFILE("Draw");
+	m_Buffer->Render();
+}
 
 void Renderer::Init(std::shared_ptr<ScreenBuffer>& buffer)
 {
 	m_Buffer = buffer;
 	(uint32*)m_BuffersBuffer = (uint32*)m_Buffer->m_MemoryBuffer;
 	m_DepthBuffer = m_Buffer->m_DepthBuffer;
+}
+
+void Renderer::Clear(float r, float g, float b)
+{
+	m_Buffer->Clear(r, g, b);
 }
 
 void Renderer::drawQuad(const vec2& pos, const vec2& size, unsigned long color)
@@ -70,7 +85,7 @@ void Renderer::renderScene(const std::shared_ptr<Scene>& scene)
 	for (const auto& ent : scene->m_Entities)
 	{
 		if (ent->m_Visible)
-			ent->onDraw();
+			ent->onDraw(m_Camera);
 	}
 }
 
@@ -166,42 +181,57 @@ void Renderer::plotCircle(const vec2& pos, float radius, unsigned long color)
 	}
 }
 
-void Renderer::renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& pos, const vec2& size)
+void Renderer::renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& pos, const vec2& size, const vec3& color)
 {
 	float posY = pos.y;
+
 	for (int i = 0; i < sprite->m_Height; i++)
 	{
 		float posX = pos.x;
 		for (int j = 0; j < sprite->m_Width; j++)
 		{
 			if (!(sprite->m_Buffer[i * sprite->m_Width + j] == vec3(-1.0f, -1.0f, -1.0f)))
-				Renderer::drawQuad({ posX, posY }, size, sprite->m_Buffer[i * sprite->m_Width + j]);
+				Renderer::drawQuad({ posX, posY }, size, sprite->m_Buffer[i * sprite->m_Width + j] * color);
 			posX += size.x;
 		}
 		posY += size.y;
 	}
 }
 
-void Renderer::drawText(const std::string& text, const std::shared_ptr<Font>& font, const vec2& pos, float size, const vec3& color, float space)
+void Renderer::drawText(const std::string& Text, const std::shared_ptr<Font>& font, const vec2& pos, float size, const vec3& color)
 {
+	START_SCOPE_PROFILE("Text rendering");
+
 	auto hexColor = createHex(color);
 	float aspectRatio = (float)font->m_GlyphWidth / (float)font->m_GlyphHeight;
 
-	float spacing = 0;
-	for (const auto& c : text)
+	std::string text = Text; 
+	
+	std::for_each(text.begin(), text.end(), [](char& c) { c = std::tolower(c); });
+
+	float prevPosition = 0;
+	for (int ch = 0; ch < text.size(); ch++)
 	{
+		char c = text[ch];
 		if (c == ' ')
 		{
-			spacing++;
+			prevPosition += 5;
 			continue;
 		}
 
-		int offset = std::tolower(c) - 'a';
+		int offset =  c - 'a';
+
 		float posY = pos.y;
+		float posX = 0;
+
+		if (ch == 0)
+			prevPosition = pos.x;
+
 		for (int i = 0; i < font->m_GlyphHeight; i++)
 		{
-			float posX = spacing / space * font->m_GlyphWidth * size + pos.x;
-			for (int j = offset * font->m_GlyphWidth; j < offset * font->m_GlyphWidth + font->m_GlyphWidth; j++)
+			posX = prevPosition;
+
+			for (int j = offset * font->m_GlyphWidth + 1; j < offset * font->m_GlyphWidth + font->getWidthGlyph(c) + 1; j++)
 			{
 				if (!(font->m_FontSheet->m_Buffer[i * font->m_FontSheet->m_Width + j] == vec3(-1.0f, -1.0f, -1.0f)))
 					Renderer::drawQuad({ posX, posY }, { size, size }, hexColor);
@@ -209,34 +239,32 @@ void Renderer::drawText(const std::string& text, const std::shared_ptr<Font>& fo
 			}
 			posY += size;
 		}
-		if (c == 'i')
-			spacing += 0.8f / space;
-		else spacing++;
+		prevPosition = posX + 1;
 	}
 }
 
-void Renderer::drawText(const std::string& text, const std::shared_ptr<Font>& font, int flags, float size, const vec3& color, float space)
+void Renderer::drawText(const std::string& text, const std::shared_ptr<Font>& font, int flags, float size, const vec3& color)
 {
 	vec2 Pos = {0.0f, 0.0f};
-	auto textSize = text.length() * size * font->m_GlyphWidth;
+	auto textSize = font->getTextWidth(text);
 
-	if (flags & TextCenter)
+	if (flags & Center)
 	{
-		Pos.x = m_Buffer->getWidth() / 2.0f - textSize / 2.0f / space;
+		Pos.x = m_Buffer->getWidth() / 2.0f - textSize / 2.0f;
 		Pos.y = m_Buffer->getHeight() / 2.0f  - font->m_GlyphHeight / 2.0f;
 	}
 
-	if (flags & TextLeft)
+	if (flags & Left)
 		Pos.x = 0;
 
-	if (flags & TextRight)
-		Pos.x = m_Buffer->getWidth() - textSize / space;
+	if (flags & Right)
+		Pos.x = m_Buffer->getWidth() - textSize;
 
-	if (flags & TextBottom)
+	if (flags & Bottom)
 		Pos.y = 0;
 
-	if (flags & TextTop)
+	if (flags & Top)
 		Pos.y = m_Buffer->getHeight() - font->m_GlyphHeight * size;
 
-	drawText(text, font, Pos, size, color, space);
+	drawText(text, font, Pos, size, color);
 }

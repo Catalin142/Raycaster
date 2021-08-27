@@ -16,23 +16,31 @@ class Application
 	friend class Layer;
 	friend class Entity;
 
+	friend vec2 WindowToBufferCoordonates(const vec2& vec);
+
 public:
 	Application(const wchar_t* title, uint32 width = 1600, uint32 height = 900, uint32 bufferWidth = 320, uint32 bufferHeight = 200);
 	virtual ~Application() = default;
 	
-	void setLayer(Layer* layer);
+	void pushLayer(Layer* layer);
+	void pushOverlay(Layer* layer);
+
+	void popLayer();
+	void popOverlay();
 
 	void Run();
-	void setCamera(int posx, int posy, float fov, float speed = 5.0f);
+
+	std::shared_ptr<Window>& getWindow() { return m_Window; }
+	std::shared_ptr<ScreenBuffer>& getBuffer() { return m_Buffer; }
 
 	static Application* Get() { return m_Instance; }
 
 protected:
 	std::shared_ptr<Window> m_Window;
 	std::shared_ptr<ScreenBuffer> m_Buffer;
-	std::shared_ptr<Camera> m_Camera;
 
-	Layer* m_CurrentLayer = nullptr;
+	std::vector<Layer*> m_Layers;
+	int m_NoOfLayers = 0;
 
 	static Application* m_Instance;
 };

@@ -4,16 +4,17 @@ class Game : public Application
 {
 public:
 	Game(const wchar_t* title) : Application(title) {
-		setLayer(new OdiumAsceniunea());
+		pushLayer(new OdiumAsceniunea());
 	}
 };
 
 int main()
 {
 	Application* Odium = new Game(L"Odium Ascensiunea");
-	Odium->setCamera(1, 1, 60.0f, 3.0f);
 
+	BEGIN_SESSION("Main", "profile.json");
 	Odium->Run();
+	END_SESSION;
 
 	delete Odium;
 	return 0;
