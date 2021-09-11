@@ -23,19 +23,12 @@ WorldRenderer::Gradient WorldRenderer::m_CeilGradient;
 
 CeilShadingMode WorldRenderer::m_CeilMode = CeilShadingMode::SOLID;
 
-void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_ptr<Camera>& cam)
+void WorldRenderer::Render(const std::shared_ptr<ScreenBuffer>& buffer, const std::shared_ptr<Camera>& cam)
 {
 	START_SCOPE_PROFILE("Raycasting Render");
-
 	m_Map = Map::Get();
-	vec2 wallSize;
-	vec2 wallPos;
-
-	vec3 Color = { 0.0f, 0.0f, 0.0f };
 
 	vec2 BufferDim = { (float)buffer->getWidth(), (float)buffer->getHeight() };
-	vec2 rayDir;
-	vec3 Shade = { 1.0f, 1.0f, 1.0f };
 
 	for (int x = 0; x < BufferDim.x; x++)
 	{
@@ -43,15 +36,16 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 
 		auto res = castRay(cam, rayAng);
 
-		wallSize = { 1.0f, buffer->getAspectRatio() * BufferDim.y / res.Length };
-		wallPos = { (float)x, BufferDim.y / 2.0f - wallSize.y / 2.0f };
+		vec2 wallSize = { 1.0f, buffer->getAspectRatio() * BufferDim.y / res.Length };
+		vec2 wallPos = { (float)x, BufferDim.y / 2.0f - wallSize.y / 2.0f };
 
-		rayDir = { cos(rayAng), sin(rayAng) };
+		vec2 rayDir = { cos(rayAng), sin(rayAng) };
 
 		float fishEyeCorrection = buffer->getAspectRatio() / std::cos(rayAng - cam->m_CameraAngle);
 
 		auto& wallSpr = m_Map->getSprite(res.Symbol);
-		Shade = { 1.0f, 1.0f, 1.0f };
+		vec3 Shade = { 1.0f, 1.0f, 1.0f };
+		vec3 Color = { 0.0f, 0.0f, 0.0f };
 		for (int y = 0; y < BufferDim.y; y++)
 		{
 			// podea
@@ -78,6 +72,7 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 					if (res.Length > 0.9f)
 						Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / res.Length);
 				Color = wallSpr->getPixelColor(res.HitPosition, (y - wallPos.y) / (int)(wallSize.y));
+
 				Renderer::setDepthPixel(x, res.Depth);
 			}
 
@@ -117,13 +112,13 @@ void WorldRenderer::Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_pt
 			else // aici merge ff prost ca il fac in rgb dupa iara in hex pt fiecare pixel si ia prea mult
 				Renderer::setPixel({ (float)x, (float)y }, Color * Shade);
 		}
-
 	}
+
 	Map::Get()->updatePlayerPosition(cam->m_Position);
 }
 
 // merge ff prost in debug mode da in release am 400+ fps
-vec3& WorldRenderer::samplePixel(const vec2& loc, const vec2& pixel)
+const vec3& WorldRenderer::samplePixel(const vec2& loc, const vec2& pixel)
 {
 	return m_Map->getSprite(m_Map->m_Map[(int)loc.y * m_Map->m_Width + (int)loc.x])->getPixelColor(pixel.x, pixel.y);
 }

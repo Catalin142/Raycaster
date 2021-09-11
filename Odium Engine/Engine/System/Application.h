@@ -15,8 +15,7 @@ class Application
 {
 	friend class Layer;
 	friend class Entity;
-
-	friend vec2 WindowToBufferCoordonates(const vec2& vec);
+	friend class Input;
 
 public:
 	Application(const wchar_t* title, uint32 width = 1600, uint32 height = 900, uint32 bufferWidth = 320, uint32 bufferHeight = 200);

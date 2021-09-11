@@ -1,14 +1,28 @@
 #pragma once
 #include "Maths.h"
 
-vec2 getMousePosition();
+class Input
+{
+public:
+	static bool isPressed(int code);
+	static void blockInput(bool b) { m_BlockInput = b; }
 
-void setMousePosition(int x, int y);
-void setCursorVisibility(bool cursor);
+	static vec2 getMousePosition();
 
-void pinMouse();
+	static void setMousePosition(int x, int y);
+	static void setCursorVisibility(bool cursor);
 
-vec2 WindowToBufferCoordonates(const vec2& vec);
+	static void pinMouse(bool status);
+
+	static vec2 WindowToBufferCoordonates(const vec2& vec);
+
+private:
+	static bool m_BlockInput;
+
+private:
+	Input() = default;
+	~Input() = default;
+};
 
 #define VK_MOUSE_LEFT 1
 #define VK_MOUSE_RIGHT 2

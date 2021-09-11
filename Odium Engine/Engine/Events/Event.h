@@ -5,6 +5,9 @@ enum class EventType : int
 	MousePressed,
 	MouseReleased,
 	MouseMoved,
+
+	KeyDown,
+	KeyUp,
 };
 
 class Event

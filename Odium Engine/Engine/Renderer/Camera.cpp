@@ -11,35 +11,34 @@ m_Velocity(0.0f, 0.0f) { }
 void Camera::onUpdate(float dt)
 {
 	m_Velocity = { 0.0f, 0.0f };
-	if (GetAsyncKeyState('W'))
+	if (Input::isPressed('W'))
 	{
 		m_Velocity.x += cos(m_CameraAngle);
 		m_Velocity.y += sin(m_CameraAngle);
 	}
 
-	if (GetAsyncKeyState('S'))
+	if (Input::isPressed('S'))
 	{
 		m_Velocity.x -= cos(m_CameraAngle);
 		m_Velocity.y -= sin(m_CameraAngle);
 	}
 
-	if (GetAsyncKeyState('A'))
+	if (Input::isPressed('A'))
 	{
 		m_Velocity.x += sin(m_CameraAngle);
 		m_Velocity.y -= cos(m_CameraAngle);
 	}
 
-	if (GetAsyncKeyState('D'))
+	if (Input::isPressed('D'))
 	{
 		m_Velocity.x -= sin(m_CameraAngle);
 		m_Velocity.y += cos(m_CameraAngle);
 	}
 
-	vec2 MousePos = getMousePosition();
+	vec2 MousePos = Input::getMousePosition();
 	float delta = (Window::Get()->getClientRectSize().x / 2.0f - MousePos.x) * 0.0003f;
 
-	if (!GetAsyncKeyState('T'))
-		pinMouse();
+	Input::pinMouse(false);
 
 	m_CameraAngle -= delta;
 
@@ -50,7 +49,7 @@ void Camera::onUpdate(float dt)
 			if (sym.isWall)
 				if (Map::Get()->getBuffer()[(int)CollisionPoint.y * Map::Get()->getWidth() + (int)CollisionPoint.x] != sym.Symbol)
 				{
-					if (GetAsyncKeyState(VK_LSHIFT))
+					if (Input::isPressed(VK_LSHIFT))
 					{
 						m_Position = m_Position + m_Velocity.normalize() * m_Sprint * dt;
 

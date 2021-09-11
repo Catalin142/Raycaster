@@ -38,7 +38,7 @@ bool Sprite::loadSprite(const std::string& filepath)
 	return true;
 }
 
-vec3& Sprite::getPixelColor(float x, float y)
+const vec3& Sprite::getPixelColor(float x, float y) const
 {
 	if (x < 0) x = -x;
 	if (y < 0) y = -y;

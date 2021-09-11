@@ -5,6 +5,7 @@
 
 #include "Events/EventDispatcher.h"
 #include "Events/MouseEvents.h"
+#include "Events/KeyboardEvents.h"
 
 #include "Utils/Input.h"
 
@@ -20,6 +21,12 @@ static LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wParam, LPAR
 		window->m_Width = LOWORD(lParam);
 		window->m_Height = HIWORD(lParam);
 
+	} break;
+
+	case WM_KEYDOWN:
+	{
+		KeyDownEvent ev(wParam);
+		EventDispatcher::Dispatch(ev);
 	} break;
 
 	case WM_LBUTTONDOWN:

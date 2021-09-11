@@ -18,7 +18,9 @@ float Time::deltaTime = 0.0f;
 Application::Application(const wchar_t* title, uint32 width, uint32 height, uint32 bufferWidth, uint32 bufferHeight) :
 	m_Window(std::make_shared<Window>(title, width, height)),
 	m_Buffer(std::make_shared<ScreenBuffer>(m_Window, bufferWidth, bufferHeight))
-{ 
+{
+	START_SCOPE_PROFILE("Init");
+	Font::Init("Resources/Font.spr", "Resources/Numbers.spr", "Resources/Font.spr", 6, 7);
 	m_Instance = this;
 }
 

@@ -1,19 +1,18 @@
 #include "Core/RaycastPCH.h"
 #include "TextBox.h"
+#include "Tools/Benchmark.h"
 
 #include "Renderer/Renderer.h"
 
-TextBox::TextBox(const std::shared_ptr<Sprite>& fr, const std::shared_ptr<Font>& font, float width, float height) : m_Frame(fr), m_Font(font), 
+TextBox::TextBox(const std::shared_ptr<Sprite>& fr, float width, float height) : m_Frame(fr), 
 m_Width(width / (float)fr->m_Width), 
 m_Height(height / (float)fr->m_Height)
-{  }
+{ }
 
-TextBox::TextBox(const std::string & filepath, const std::shared_ptr<Font>&font, float width, float height) : m_Frame(std::make_shared<Sprite>(filepath)),
-m_Font(font), 
+TextBox::TextBox(const std::string & filepath, float width, float height) : m_Frame(std::make_shared<Sprite>(filepath)),
 m_Width(width / (float)m_Frame->m_Width),
 m_Height(height / (float)m_Frame->m_Height)
-{
-}
+{ }
 
 int row = 0;
 void TextBox::Render()
@@ -29,7 +28,7 @@ void TextBox::Render()
 	else
 	{
 		for (int i = row; i < m_SubStrings.size(); i++)
-			Renderer::drawText(m_SubStrings[i].m_String, m_Font, m_SubStrings[i].m_Position, 1, m_TextLayout.m_Color);
+			Renderer::drawText(m_SubStrings[i].m_String, m_SubStrings[i].m_Position, 1, m_TextLayout.m_Color);
 	}
 
 }
@@ -62,6 +61,7 @@ void TextBox::setPosition(int flags)
 // iau fiecare rand din text ii gasesc pozitia si tot ce trebe si dupa il adaug in vector si dupa randez in functia de mai sus  :)
 void TextBox::setText(const std::string& text, int flags, const vec3& color)
 {
+	START_SCOPE_PROFILE("Set text");
 	vec2 dim = { m_Frame->m_Width * m_Width, m_Frame->m_Height * m_Height };
 
 	m_SubStrings.clear();
@@ -69,9 +69,8 @@ void TextBox::setText(const std::string& text, int flags, const vec3& color)
 	m_Text = text;
 	std::for_each(m_Text.begin(), m_Text.end(), [](char& c) { c = std::tolower(c); });
 
-	m_TextLayout.m_TextSize = m_Font->getTextWidth(m_Text);
-	m_TextLayout.m_CharactersOnRow = dim.x / m_Font->m_GlyphWidth - 2;
-	m_TextLayout.m_Rows = std::ceil((float)m_TextLayout.m_TextSize / (float)dim.x);
+	m_TextLayout.m_TextSize = Font::getTextWidth(m_Text);
+	m_TextLayout.m_Rows = std::round((float)m_TextLayout.m_TextSize / (float)(dim.x - m_xOffset * 2));
 	m_TextLayout.m_Flags = flags;
 	m_TextLayout.m_Color = color;
 
@@ -87,32 +86,46 @@ void TextBox::setText(const std::string& text, int flags, const vec3& color)
 			if (m_TextLayout.m_Rows == 2)
 				n = 0;
 			else n = (float)m_TextLayout.m_Rows / 2.0f;
-			startintYposition = m_Position.y + ((float)dim.y / 2.0f) + (((float)m_Font->m_GlyphHeight / 2.0f) * n);
+			startintYposition = m_Position.y + ((float)dim.y / 2.0f) + (((float)Font::m_GlyphHeight / 2.0f) * n);
 		}
 
 		else
-			startintYposition = m_Position.y + ((float)dim.y / 2.0f) - ((float)m_Font->m_GlyphHeight / 2.0f) + (m_Font->m_GlyphHeight *
+			startintYposition = m_Position.y + ((float)dim.y / 2.0f) - ((float)Font::m_GlyphHeight / 2.0f) + (Font::m_GlyphHeight *
 				((m_TextLayout.m_Rows - 1.0f) / 2.0f));
 	}
 
 	if (m_TextLayout.m_Flags & Bottom)
-		startintYposition = m_Position.y + (m_TextLayout.m_Rows - 1) * m_Font->m_GlyphHeight + m_yOffset;
+		startintYposition = m_Position.y + (m_TextLayout.m_Rows - 1) * Font::m_GlyphHeight;
 
 	if (m_TextLayout.m_Flags & Top)
-		startintYposition = m_Position.y + dim.y - m_Font->m_GlyphHeight - m_yOffset;
+		startintYposition = m_Position.y + dim.y - Font::m_GlyphHeight;
 
+	int nTotalInsertedCharacters = 0;
 	for (int i = 0; i < m_TextLayout.m_Rows; i++)
 	{
-		std::string currentString(m_Text.begin() + i * m_TextLayout.m_CharactersOnRow,
-			m_Text.begin() + i * m_TextLayout.m_CharactersOnRow + std::min(totalCharacters, m_TextLayout.m_CharactersOnRow));
+		std::string currentString;
+
+		int nCharacters = 0;
+		int nTextWidth = 0;
+		while (nTextWidth < dim.x - (m_xOffset * 2))
+		{
+			if (nCharacters >= totalCharacters)
+				break;
+
+			auto c = *(m_Text.begin() + nTotalInsertedCharacters + nCharacters);
+			currentString += c;
+			if (c == ' ')
+				nTextWidth += 5;
+			else nTextWidth += Font::getGlyphWidth(c) + 1;
+
+			nCharacters++;
+		}
 
 		vec2 Pos = m_Position;
 
-		float currentTextSize = m_Font->getTextWidth(currentString);
-
 		if (m_TextLayout.m_Flags & Center)
 		{
-			Pos.x = m_Position.x + dim.x / 2.0f - currentTextSize / 2.0f;
+			Pos.x = m_Position.x + dim.x / 2.0f - nTextWidth / 2.0f;
 			Pos.y = startintYposition;
 		}
 
@@ -120,16 +133,17 @@ void TextBox::setText(const std::string& text, int flags, const vec3& color)
 			Pos.x = m_Position.x + m_xOffset;
 
 		else if (m_TextLayout.m_Flags & Right)
-			Pos.x = m_Position.x + dim.x - currentTextSize - m_xOffset;
+			Pos.x = m_Position.x + dim.x - nTextWidth - m_xOffset;
 
 		if (m_TextLayout.m_Flags & Bottom)
-			Pos.y = startintYposition;
+			Pos.y = startintYposition + m_yOffset;
 
 		else if (m_TextLayout.m_Flags & Top)
-			Pos.y = startintYposition;
+			Pos.y = startintYposition - m_yOffset ;
 
-		totalCharacters -= m_TextLayout.m_CharactersOnRow;
-		startintYposition -= m_Font->m_GlyphHeight;
+		nTotalInsertedCharacters += nCharacters;
+		totalCharacters -= nCharacters;
+		startintYposition -= Font::m_GlyphHeight;
 
 		m_SubStrings.push_back({ currentString, Pos });
 	}

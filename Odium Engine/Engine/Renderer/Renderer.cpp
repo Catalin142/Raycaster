@@ -54,6 +54,22 @@ void Renderer::drawQuad(const vec2& pos, const vec2& size, const vec3& color)
 	drawQuad(pos, size, hexColor);
 }
 
+void Renderer::plotQuad(const vec2& pos, const vec2& size, unsigned long color)
+{
+	drawLine(pos, pos + vec2(size.x, 0), color);
+	drawLine(pos, pos + vec2(0, size.y), color);
+
+	drawLine(pos + vec2(0, size.y - 1), pos + vec2(size.x, size.y), color);
+	drawLine(pos + vec2(size.x - 1, 0), pos + vec2(size.x, size.y), color);
+}
+
+void Renderer::plotQuad(const vec2& pos, const vec2& size, const vec3& color)
+{
+	auto hexColor = createHex(color.r * 255, color.g * 255, color.b * 255);
+
+	plotQuad(pos, size, hexColor);
+}
+
 void Renderer::setPixel(const vec2& pos, const vec3& color)
 {
 	int pixel = (int)pos.y * m_Buffer->m_Width + (int)pos.x;
@@ -108,6 +124,12 @@ bool Renderer::checkPixel(const vec2& pos)
 // Bresenham alg http://members.chello.at/~easyfilter/bresenham.html
 void Renderer::drawLine(const vec2& begin, const vec2& end, const vec3& color)
 {
+	auto hex = createHex(color);
+	drawLine(begin, end, hex);
+}
+
+void Renderer::drawLine(const vec2& begin, const vec2& end, unsigned long color)
+{
 	vec2 dt = end - begin;
 	double length = dt.magnitude();
 	vec2 addFactor = dt.normalize();
@@ -115,9 +137,9 @@ void Renderer::drawLine(const vec2& begin, const vec2& end, const vec3& color)
 	dt.x = begin.x;
 	dt.y = begin.y;
 
-	for (double i = 0; i < length; i ++)
+	for (double i = 0; i < length; i++)
 	{
-		setPixel({ dt.x, dt.y }, color);
+		setPixel_s({ dt.x, dt.y }, color);
 		dt.x += addFactor.x;
 		dt.y += addFactor.y;
 	}
@@ -198,60 +220,43 @@ void Renderer::renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& p
 	}
 }
 
-void Renderer::drawText(const std::string& Text, const std::shared_ptr<Font>& font, const vec2& pos, float size, const vec3& color)
+void Renderer::drawText(const std::string& text, const vec2& pos, float size, const vec3& color)
 {
 	START_SCOPE_PROFILE("Text rendering");
 
 	auto hexColor = createHex(color);
-	float aspectRatio = (float)font->m_GlyphWidth / (float)font->m_GlyphHeight;
+	float aspectRatio = (float)Font::m_GlyphWidth / (float)Font::m_GlyphHeight;
 
-	std::string text = Text; 
+	vec2 Position = pos;
 	
-	std::for_each(text.begin(), text.end(), [](char& c) { c = std::tolower(c); });
-
-	float prevPosition = 0;
 	for (int ch = 0; ch < text.size(); ch++)
 	{
 		char c = text[ch];
+		if (std::isupper(c))
+			c = std::tolower(c);
+
 		if (c == ' ')
 		{
-			prevPosition += 5;
+			Position.x += 5;
 			continue;
 		}
 
-		int offset =  c - 'a';
-
-		float posY = pos.y;
-		float posX = 0;
-
-		if (ch == 0)
-			prevPosition = pos.x;
-
-		for (int i = 0; i < font->m_GlyphHeight; i++)
-		{
-			posX = prevPosition;
-
-			for (int j = offset * font->m_GlyphWidth + 1; j < offset * font->m_GlyphWidth + font->getWidthGlyph(c) + 1; j++)
-			{
-				if (!(font->m_FontSheet->m_Buffer[i * font->m_FontSheet->m_Width + j] == vec3(-1.0f, -1.0f, -1.0f)))
-					Renderer::drawQuad({ posX, posY }, { size, size }, hexColor);
-				posX += size;
-			}
-			posY += size;
-		}
-		prevPosition = posX + 1;
+		if (std::isdigit(c))
+			drawNumber(c, Position, size, hexColor);
+		else drawChar(c, Position, size, hexColor);
 	}
 }
 
-void Renderer::drawText(const std::string& text, const std::shared_ptr<Font>& font, int flags, float size, const vec3& color)
+void Renderer::drawText(const std::string& Text, int flags, float size, const vec3& color)
 {
 	vec2 Pos = {0.0f, 0.0f};
-	auto textSize = font->getTextWidth(text);
+
+	auto textSize = Font::getTextWidth(Text);
 
 	if (flags & Center)
 	{
 		Pos.x = m_Buffer->getWidth() / 2.0f - textSize / 2.0f;
-		Pos.y = m_Buffer->getHeight() / 2.0f  - font->m_GlyphHeight / 2.0f;
+		Pos.y = m_Buffer->getHeight() / 2.0f  - Font::m_GlyphHeight / 2.0f;
 	}
 
 	if (flags & Left)
@@ -264,7 +269,51 @@ void Renderer::drawText(const std::string& text, const std::shared_ptr<Font>& fo
 		Pos.y = 0;
 
 	if (flags & Top)
-		Pos.y = m_Buffer->getHeight() - font->m_GlyphHeight * size;
+		Pos.y = m_Buffer->getHeight() - Font::m_GlyphHeight * size;
 
-	drawText(text, font, Pos, size, color);
+	drawText(Text, Pos, size, color);
+}
+
+void Renderer::drawChar(char c, vec2& pos, float size, unsigned int hexColor)
+{
+	int offset = c - 'a';
+
+	float posY = pos.y;
+	float posX = pos.x;
+
+	for (int i = 0; i < Font::m_GlyphHeight; i++)
+	{
+		posX = pos.x;
+
+		for (int j = offset * Font::m_GlyphWidth + 1; j < offset * Font::m_GlyphWidth + Font::getGlyphWidth(c) + 1; j++)
+		{
+			if (!(Font::m_FontSheet->m_Buffer[i * Font::m_FontSheet->m_Width + j] == vec3(-1.0f, -1.0f, -1.0f)))
+				Renderer::drawQuad({ posX, posY }, { size, size }, hexColor);
+			posX += size;
+		}
+		posY += size;
+	}
+	pos.x = posX + 1;
+}
+
+void Renderer::drawNumber(char n, vec2& pos, float size, unsigned int hexColor)
+{
+	int offset = n - '0';
+
+	float posY = pos.y;
+	float posX = pos.x;
+
+	for (int i = 0; i < Font::m_GlyphHeight; i++)
+	{
+		posX = pos.x;
+
+		for (int j = offset * Font::m_GlyphWidth + 1; j < offset * Font::m_GlyphWidth + Font::getGlyphWidth(n) + 1; j++)
+		{
+			if (!(Font::m_NumbersSheet->m_Buffer[i * Font::m_NumbersSheet->m_Width + j] == vec3(-1.0f, -1.0f, -1.0f)))
+				Renderer::drawQuad({ posX, posY }, { size, size }, hexColor);
+			posX += size;
+		}
+		posY += size;
+	}
+	pos.x = posX + 1;
 }

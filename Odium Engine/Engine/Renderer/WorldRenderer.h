@@ -30,7 +30,7 @@ class WorldRenderer
 	friend class Entity;
 
 public:
-	static void Render(std::shared_ptr<ScreenBuffer>& buffer, std::shared_ptr<Camera>& cam);
+	static void Render(const std::shared_ptr<ScreenBuffer>& buffer, const std::shared_ptr<Camera>& cam);
 
 	static void setIntensity(float intensity) { m_UseIntensity = true; m_GlobalIlluminationIntensity = intensity; }
 	static void setIntensity(bool state) { m_UseIntensity = state; }
@@ -47,7 +47,7 @@ public:
 private:
 	static std::shared_ptr<Map> m_Map;
 
-	static vec3& samplePixel(const vec2& loc, const vec2& pixel);
+	static const vec3& samplePixel(const vec2& loc, const vec2& pixel);
 
 	static unsigned long m_CeilColor;
 	static std::shared_ptr<Sprite> m_CeilTexture;

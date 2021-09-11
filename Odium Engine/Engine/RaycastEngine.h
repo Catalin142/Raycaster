@@ -25,7 +25,10 @@
 
 #include "UI/TextBox.h"
 #include "UI/Button.h"
+#include "UI/DropdownMenu.h"
+#include "UI/InputBox.h"
 
 #include "Events/MouseEvents.h"
+#include "Events/KeyboardEvents.h"
 
 #include "Tools/Benchmark.h"

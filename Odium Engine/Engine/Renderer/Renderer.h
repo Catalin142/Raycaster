@@ -32,7 +32,11 @@ public:
 	static void drawQuad(const vec2& pos, const vec2& size, const vec3& color);
 	static void drawQuad(const vec2& pos, const vec2& size, unsigned long color);
 
+	static void plotQuad(const vec2& pos, const vec2& size, const vec3& color);
+	static void plotQuad(const vec2& pos, const vec2& size, unsigned long color);
+
 	static void drawLine(const vec2& begin, const vec2& end, const vec3& color);
+	static void drawLine(const vec2& begin, const vec2& end, unsigned long color);
 
 	static void drawCircle(const vec2& pos, float radius, const vec3& color);
 	static void plotCircle(const vec2& pos, float radius, const vec3& color);
@@ -54,12 +58,16 @@ public:
 
 	static bool checkPixel(const vec2& pos);
 
-	static void drawText(const std::string& text, const std::shared_ptr<Font>& font, const vec2& pos, float size, const vec3& color);
-	static void drawText(const std::string& text, const std::shared_ptr<Font>& font, int flags, float size, const vec3& color);
+	static void drawText(const std::string& text, const vec2& pos, float size, const vec3& color);
+	static void drawText(const std::string& text, int flags, float size, const vec3& color);
 
 private:
 	static std::shared_ptr<ScreenBuffer> m_Buffer;
 	static std::shared_ptr<Camera> m_Camera;
 	static uint32* m_BuffersBuffer; // ;-?
 	static float* m_DepthBuffer;
+
+private:
+	static void drawChar(char c, vec2& pos, float size, unsigned int color);
+	static void drawNumber(char n, vec2& pos, float size, unsigned int color);
 };

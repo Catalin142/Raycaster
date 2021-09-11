@@ -10,10 +10,11 @@ public:
 
 int main()
 {
-	Application* Odium = new Game(L"Odium Ascensiunea");
-
 	BEGIN_SESSION("Main", "profile.json");
+
+	Application* Odium = new Game(L"Odium Ascensiunea");
 	Odium->Run();
+
 	END_SESSION;
 
 	delete Odium;

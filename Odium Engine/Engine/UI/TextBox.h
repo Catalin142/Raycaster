@@ -6,8 +6,8 @@
 class TextBox
 {
 public:
-	TextBox(const std::shared_ptr<Sprite>& fr, const std::shared_ptr<Font>& font, float width, float height);
-	TextBox(const std::string& filepath, const std::shared_ptr<Font>& font, float width, float height);
+	TextBox(const std::shared_ptr<Sprite>& fr, float width, float height);
+	TextBox(const std::string& filepath, float width, float height);
 	~TextBox() = default;
 
 	void Render();
@@ -21,7 +21,6 @@ public:
 
 private:
 	std::shared_ptr<Sprite> m_Frame;
-	std::shared_ptr<Font> m_Font;
 
 	float m_Width;
 	float m_Height;
@@ -33,7 +32,6 @@ private:
 	struct TextLayout
 	{
 		int m_Rows;
-		int m_CharactersOnRow;
 		int m_TextSize;
 		int m_Flags;
 		vec3 m_Color;

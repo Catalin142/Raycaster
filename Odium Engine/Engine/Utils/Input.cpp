@@ -4,7 +4,16 @@
 #include "System/Win32Window.h"
 #include "System/Application.h"
 
-vec2 getMousePosition()
+bool Input::m_BlockInput = false;
+
+bool Input::isPressed(int code)
+{
+	if (m_BlockInput) return false;
+
+	return GetAsyncKeyState(code);
+}
+
+vec2 Input::getMousePosition()
 {
 	POINT p = { 0.0, 0.0 };
 	GetCursorPos(&p);
@@ -13,7 +22,7 @@ vec2 getMousePosition()
 	return vec2((float)p.x, (float)p.y);
 }
 
-vec2 WindowToBufferCoordonates(const vec2& vec)
+vec2 Input::WindowToBufferCoordonates(const vec2& vec)
 {
 	vec2 normalPos = vec;
 	auto app = Application::Get();
@@ -26,23 +35,26 @@ vec2 WindowToBufferCoordonates(const vec2& vec)
 	return normalPos;
 }
 
-void setMousePosition(int x, int y)
+void Input::setMousePosition(int x, int y)
 {
 	SetCursorPos(x, y);
 }
 
-void pinMouse()
+void Input::pinMouse(bool status)
 {
-	RECT rct;
-	GetClientRect(Window::Get()->getHandle(), &rct);
+	if (status)
+	{
+		RECT rct;
+		GetClientRect(Window::Get()->getHandle(), &rct);
 
-	POINT pt = { rct.right / 2, rct.bottom / 2 };
-	ClientToScreen(Window::Get()->getHandle(), &pt);
+		POINT pt = { rct.right / 2, rct.bottom / 2 };
+		ClientToScreen(Window::Get()->getHandle(), &pt);
 
-	setMousePosition(pt.x, pt.y);
+		setMousePosition(pt.x, pt.y);
+	}
 }
 
-void setCursorVisibility(bool cursor)
+void Input::setCursorVisibility(bool cursor)
 {
 	ShowCursor(cursor);
 }

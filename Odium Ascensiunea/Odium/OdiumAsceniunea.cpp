@@ -3,16 +3,21 @@
 void OdiumAsceniunea::onAttach()
 {
 	Subscribe<MousePressedEvent>();
+	Subscribe<KeyDownEvent>();
 
 	m_CeilTex = std::make_shared<Sprite>("Resources/Floor.spr");
 
 	m_Frame = std::make_shared<Sprite>("Resources/Frame.spr");
-	m_Font = std::make_shared<Font>("Resources/Font.spr", 6, 7);
 
-	m_TextBox = std::make_shared<TextBox>(m_Frame, m_Font, 250.0f, 30.0f);
+	m_InputBox = std::make_shared<InputBox>(vec3(0.5f, 0.8f, 1.0f), 130.0f, 10.0f);
+	m_InputBox->setPosition(Center);
+	m_InputBox->setTextAlignment(Center);
+	m_InputBox->setTextColor({ 0.5f, 0.2f, 1.0f });
+
+	m_TextBox = std::make_shared<TextBox>(m_Frame, 250.0f, 30.0f);
 	m_TextBox->setPosition(Center | Bottom);
-	m_TextBox->setOffset(5, 5);
-	m_TextBox->setText("The quick brown fox jumps over the lazy dog", 
+	m_TextBox->setOffset(30, 10);
+	m_TextBox->setText("the quick fox jumped over the lazy dog", 
 		Center, { 1.0f, 1.0f, 1.0f });
 	
 	m_Scene = std::make_shared<Scene>();
@@ -23,7 +28,7 @@ void OdiumAsceniunea::onAttach()
 
 	Map::Get()->loadMap("Resources/Map2.rmap");
 
-	WorldRenderer::setCeilGradient({ 0.5f, 0.8f, 1.0f }, { 1.0f, 1.0f, 1.0f }, 120.0f);
+	WorldRenderer::setCeilGradient({ 0.5f, 0.8f, 1.0f }, { 1.0f, 1.0f, 1.0f }, 100.0f);
 	WorldRenderer::setIntensity(0.8f);
 
 	ParticleProps Snow;
@@ -44,11 +49,15 @@ void OdiumAsceniunea::onAttach()
 
 	ParticleManager::addParticleType("Snow", Snow);
 
-	FontManager::addFont("Odium", m_Font);
-
-	m_Button = std::make_shared<Button>(vec3(0.2f, 0.5f, 0.9f), m_Font, 30.0f, 7.0f);
+	m_Button = std::make_shared<Button>(m_Frame, 30.0f, 7.0f);
 	m_Button->setPosition({ 100.0f, 100.0f });
-	m_Button->setText("Cata", Center, { 0.0f, 0.0f, 0.0f });
+	m_Button->setText("Cata", Center, { 1.0f, 1.0f, 1.0f });
+
+	m_DropdownMenu = std::make_shared<DropdownMenu>(m_Frame, 25.0f, 10.0f);
+	m_DropdownMenu->setPosition({ 100.0f, 100.0f });
+	m_DropdownMenu->setText("Drop", Center, { 1.0f, 0.0f, 0.0f });
+	m_DropdownMenu->addButton("cata", std::make_shared<Button>(vec3(0.8f, 0.1f, 0.6f), 10.0f, 10.0f));
+	(*m_DropdownMenu)["cata"]->setText("cata", Center, { 0.0f, 0.0f, 0.0f });
 
 	m_Camera = std::make_shared<Camera>(1.5f, 1.5f, 60.0f, 3.0f);
 }
@@ -56,30 +65,28 @@ void OdiumAsceniunea::onAttach()
 void OdiumAsceniunea::onUpdate(float dt)
 {
 	auto m_Buffer = getBuffer();
-	/*
-
-	m_Camera->onUpdate(dt);
+	//m_Camera->onUpdate(dt);
 	
-	WorldRenderer::Render(m_Buffer, m_Camera);
-	*/
 	Renderer::Clear(0.0f, 0.0f, 0.0f);
-
+	
+	//WorldRenderer::Render(m_Buffer, m_Camera);
+	
 	Renderer::beginScene(m_Camera);
-
 	Renderer::renderScene(m_Scene);
-
+	
 	ParticleManager::getParticle("Snow").m_Position.x = Random::Float() * m_Buffer->getWidth();
 	m_TextBox->Render();
-
+	
 	m_Emmiter.Emit(ParticleManager::getParticle("Snow"), dt);
 	m_Emmiter.Update(dt);
 	m_Emmiter.Render();
 	
-	Renderer::drawText("Padurea Spanzuratilor", m_Font, Center | Top, 1, { 0.0f, 0.0f, 0.0f });
-	m_Button->Render();
+	m_DropdownMenu->Render();
 
-	Renderer::endScene();
+	//m_Button->Render();
+	//m_InputBox->Render();
 	
+	Renderer::endScene();
 }
 
 bool OdiumAsceniunea::onEvent(Event& event)
@@ -89,10 +96,18 @@ bool OdiumAsceniunea::onEvent(Event& event)
 		auto ev = static_cast<MousePressedEvent&>(event);
 		if (ev.getMouseCode() == VK_MOUSE_LEFT)
 		{
-			vec2 mousePos = WindowToBufferCoordonates({ (float)ev.getX(), (float)ev.getY() });
-			if (m_Button->onMousePressed(mousePos.x, mousePos.y));
+			vec2 mousePos = Input::WindowToBufferCoordonates({ (float)ev.getX(), (float)ev.getY() });
+			if (m_DropdownMenu->onMousePressed(mousePos.x, mousePos.y))
+				return true;
+			else if (m_InputBox->onMousePressed(mousePos.x, mousePos.y))
 				return true;
 		}
+	}
+
+	if (event.getType() == EventType::KeyDown)
+	{
+		auto ev = static_cast<KeyDownEvent&>(event);
+		m_InputBox->onKeyDown(ev.getKeyCode());
 	}
 
 	return false;

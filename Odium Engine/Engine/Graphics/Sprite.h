@@ -15,7 +15,7 @@ public:
 	~Sprite() = default;
 
 	bool loadSprite(const std::string& filepath);
-	vec3& getPixelColor(float x, float y);
+	const vec3& getPixelColor(float x, float y) const;
 
 	float getAspectRatio() { return (float)m_Width / (float)m_Height; }
 
