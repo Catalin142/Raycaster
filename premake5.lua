@@ -1,4 +1,4 @@
-workspace "Odium Ascensiunea"
+workspace "Raycaster"
 	architecture "x86"
 	configurations { "Debug", "Release" }
 	flags
@@ -8,5 +8,5 @@ workspace "Odium Ascensiunea"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-include "Odium Engine"
-include "Odium Ascensiunea"
+include "Raycaster Engine"
+include "Raycaster Game"
