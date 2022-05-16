@@ -9,7 +9,12 @@ enum UIInterationType
 {
 	None =      0,
 	Mouse =	   (1 << 0),
-	Keyboard = (1 << 1),
+};
+
+enum UIType
+{
+	Dropdown,
+	Basic,
 };
 
 class InteractableUI
@@ -43,6 +48,7 @@ public:
 	virtual void Render();
 
 	virtual UIInterationType getInteractionType() { return None; }
+	UIType getType() const { return m_Type; }
 
 protected:
 	std::shared_ptr<Sprite> m_Sprite = nullptr;
@@ -55,6 +61,8 @@ protected:
 	vec2 m_PixelDimensions;
 
 	int m_Flags = Center;
+	UIType m_Type = UIType::Basic;
+
 	std::string m_Text;
 	vec2 m_TextPosition = { 0.0f, 0.0f };
 	vec3 m_TextColor = { 0.0f, 0.0f, 0.0f };

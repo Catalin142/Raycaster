@@ -13,10 +13,12 @@ public:
 
 	static uint getGlyphWidth(char c);
 
+	static uint getGlyphHeight() { return m_GlyphHeight; }
 	static uint getSymbolWidth(char s);
 	static uint getSymbolOffset(char s);
 
 	static uint getTextWidth(const std::string& text);
+	static uint getTextWidth(const std::string& text, int size);
 
 	static bool Exists(char c);
 

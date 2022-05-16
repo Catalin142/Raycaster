@@ -2,6 +2,7 @@
 #include "InteractableUI.h"
 #include "Button.h"
 #include "Utils/Color.h"
+#include "Events/Event.h"
 
 class DropdownMenu : public InteractableUI
 {
@@ -11,6 +12,8 @@ public:
 	DropdownMenu(const vec3& color, float width, float height);
 
 	virtual void Render() override;
+	bool onEvent(Event& event);
+
 	void addButton(const std::string& name, std::shared_ptr<Button>& button);
 
 	void useFrame(bool use) { m_useFrame = use; }

@@ -1,0 +1,4 @@
+m Resources/labyrinth.rmap
+c g 0.5 0.8 1.0 1.0 1.0 1.0 100.0
+p 23.5 43.5
+e 21.5 22.5 0.6 2.0 Resources/labyrinth/labyrinth_minotaur.spr

@@ -55,6 +55,8 @@ void TextBox::setPosition(int flags)
 
 	else if (flags & Top)
 		m_Position.y = bufferDim.y - dim.y;
+
+	m_Position = m_Position + m_Margin;
 }
 
 // ca sa fie putin mai rapid
@@ -62,15 +64,12 @@ void TextBox::setPosition(int flags)
 void TextBox::setText(const std::string& text, int flags, const vec3& color)
 {
 	START_SCOPE_PROFILE("Set text");
-	vec2 dim = { m_Frame->m_Width * m_Width, m_Frame->m_Height * m_Height };
-
-	m_SubStrings.clear();
+	vec2 dim = { m_Width * m_Frame->m_Width, m_Height * m_Frame->m_Height };
 
 	m_Text = text;
-	//std::for_each(m_Text.begin(), m_Text.end(), [](char& c) { c = std::tolower(c); });
 
-	m_TextLayout.m_TextSize = Font::getTextWidth(m_Text);
-	m_TextLayout.m_Rows = std::ceil((float)m_TextLayout.m_TextSize / (float)(dim.x - m_xOffset * 2));
+	m_TextLayout.m_TextWidth = Font::getTextWidth(m_Text, m_TextLayout.m_TextSize);
+	m_TextLayout.m_Rows = std::ceil((float)m_TextLayout.m_TextWidth / (float)(dim.x - m_xOffset * 2));
 	m_TextLayout.m_Flags = flags;
 	m_TextLayout.m_Color = color;
 
@@ -86,19 +85,19 @@ void TextBox::setText(const std::string& text, int flags, const vec3& color)
 			if (m_TextLayout.m_Rows == 2)
 				n = 0;
 			else n = (float)m_TextLayout.m_Rows / 2.0f;
-			startintYposition = m_Position.y + ((float)dim.y / 2.0f) + (((float)Font::m_GlyphHeight / 2.0f) * n);
+			startintYposition = m_Position.y + ((float)dim.y / 2.0f) + (((float)Font::getGlyphHeight() * m_TextLayout.m_TextSize / 2.0f) * n);
 		}
 
 		else
-			startintYposition = m_Position.y + ((float)dim.y / 2.0f) - ((float)Font::m_GlyphHeight / 2.0f) + (Font::m_GlyphHeight *
-				((m_TextLayout.m_Rows - 1.0f) / 2.0f));
+			startintYposition = m_Position.y + ((float)dim.y / 2.0f) - ((float)Font::getGlyphHeight() * m_TextLayout.m_TextSize / 2.0f) +
+			(Font::getGlyphHeight() * m_TextLayout.m_TextSize * ((m_TextLayout.m_Rows - 1.0f) / 2.0f));
 	}
 
 	if (m_TextLayout.m_Flags & Bottom)
-		startintYposition = m_Position.y + (m_TextLayout.m_Rows - 1) * Font::m_GlyphHeight;
+		startintYposition = m_Position.y + (m_TextLayout.m_Rows - 1) * Font::getGlyphHeight();
 
 	if (m_TextLayout.m_Flags & Top)
-		startintYposition = m_Position.y + dim.y - Font::m_GlyphHeight;
+		startintYposition = m_Position.y + dim.y - Font::getGlyphHeight() * m_TextLayout.m_TextSize;
 
 	int nTotalInsertedCharacters = 0;
 	for (int i = 0; i < m_TextLayout.m_Rows; i++)
@@ -107,19 +106,44 @@ void TextBox::setText(const std::string& text, int flags, const vec3& color)
 
 		int nCharacters = 0;
 		int nTextWidth = 0;
+
+		bool full = false;
 		while (nTextWidth < dim.x - (m_xOffset * 2))
 		{
 			if (nCharacters >= totalCharacters)
 				break;
 
 			auto c = *(m_Text.begin() + nTotalInsertedCharacters + nCharacters);
+
+			if (c == '\n')
+			{
+				m_TextLayout.m_Rows++;
+				nCharacters++;
+
+				break;
+			}
+
 			currentString += c;
 			if (c == ' ')
 				nTextWidth += 5;
-			else nTextWidth += Font::getGlyphWidth(c) + 1;
+			else nTextWidth += Font::getGlyphWidth(c) * m_TextLayout.m_TextSize + 1;
 
 			nCharacters++;
+
+			if (nTextWidth >= dim.x - (m_xOffset * 2) - 1)
+				full = true;
 		}
+
+		if (!currentString.empty() && full)
+		{
+			int index = currentString.find_last_of(' ');
+			if (index != -1)
+			{
+				nCharacters = nCharacters - (currentString.size() - (index + 1));
+				currentString.erase(currentString.begin() + index, currentString.end());
+			}
+		}
+
 
 		vec2 Pos = m_Position;
 
@@ -139,11 +163,11 @@ void TextBox::setText(const std::string& text, int flags, const vec3& color)
 			Pos.y = startintYposition + m_yOffset;
 
 		else if (m_TextLayout.m_Flags & Top)
-			Pos.y = startintYposition - m_yOffset ;
+			Pos.y = startintYposition - m_yOffset;
 
 		nTotalInsertedCharacters += nCharacters;
 		totalCharacters -= nCharacters;
-		startintYposition -= Font::m_GlyphHeight;
+		startintYposition -= Font::getGlyphHeight() * m_TextLayout.m_TextSize;
 
 		m_SubStrings.push_back({ currentString, Pos });
 	}

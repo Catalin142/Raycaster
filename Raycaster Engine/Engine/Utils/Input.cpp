@@ -54,7 +54,7 @@ void Input::pinMouse(bool status)
 	}
 }
 
-void Input::setCursorVisibility(bool cursor)
+void Input::showCursor(bool cursor)
 {
 	ShowCursor(cursor);
 }

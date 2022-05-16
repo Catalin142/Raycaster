@@ -10,6 +10,8 @@ std::shared_ptr<Camera> Renderer::m_Camera;
 uint32* Renderer::m_BuffersBuffer;
 float* Renderer::m_DepthBuffer;
 
+ vec3 Renderer::m_ClearColor;
+
 void Renderer::endScene()
 {
 	START_SCOPE_PROFILE("Draw");
@@ -26,6 +28,16 @@ void Renderer::Init(std::shared_ptr<ScreenBuffer>& buffer)
 void Renderer::Clear(float r, float g, float b)
 {
 	m_Buffer->Clear(r, g, b);
+}
+
+void Renderer::Clear()
+{
+	m_Buffer->Clear(m_ClearColor.r, m_ClearColor.g, m_ClearColor.b);
+}
+
+void Renderer::setClearColor(float r, float g, float b)
+{
+	m_ClearColor = { r, g, b };
 }
 
 void Renderer::drawQuad(const vec2& pos, const vec2& size, unsigned long color)

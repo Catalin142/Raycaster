@@ -6,6 +6,7 @@ class Camera
 {
 public:
 	Camera(float posx, float posy, float fov, float speed = 5.0f);
+	Camera(float fov, float speed = 5.0f);
 	~Camera() = default;
 
 	void onUpdate(float dt);

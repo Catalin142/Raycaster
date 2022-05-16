@@ -28,6 +28,8 @@ public:
 	static void Init(std::shared_ptr<ScreenBuffer>& buffer);
 
 	static void Clear(float r, float g, float b);
+	static void Clear();
+	static void setClearColor(float r, float g, float b);
 
 	static void drawQuad(const vec2& pos, const vec2& size, const vec3& color);
 	static void drawQuad(const vec2& pos, const vec2& size, unsigned long color);
@@ -66,6 +68,7 @@ private:
 	static std::shared_ptr<Camera> m_Camera;
 	static uint32* m_BuffersBuffer; // ;-?
 	static float* m_DepthBuffer;
+	static vec3 m_ClearColor;
 
 private:
 	static void drawChar(char c, vec2& pos, float size, unsigned int color);

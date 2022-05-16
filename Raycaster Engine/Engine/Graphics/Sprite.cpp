@@ -48,3 +48,15 @@ const vec3& Sprite::getPixelColor(float x, float y) const
 
 	return *(m_Buffer + (int)yCoord * m_Width + (int)xCoord);
 }
+
+std::unordered_map<std::string, std::shared_ptr<Sprite>> SpriteManager::m_SpriteCache;
+std::shared_ptr<Sprite>& SpriteManager::loadSprite(const std::string& filepath)
+{
+	if (m_SpriteCache.find(filepath) != m_SpriteCache.end())
+		return m_SpriteCache[filepath];
+
+	std::cout << "Load: " << filepath << std::endl;
+	std::shared_ptr<Sprite> spr = std::make_shared<Sprite>(filepath);
+	m_SpriteCache[filepath] = spr;
+	return m_SpriteCache[filepath];
+}

@@ -12,7 +12,8 @@ std::shared_ptr<Map> WorldRenderer::m_Map;
 float WorldRenderer::m_GlobalIlluminationIntensity = 1.0f;
 bool WorldRenderer::m_UseIntensity = false;
 
-unsigned long WorldRenderer::m_CeilColor = 0x0000000;
+vec3 WorldRenderer::m_CeilColor = {0.0f, 0.0f, 0.0f};
+vec3 WorldRenderer::m_FloorColor = { 0.0f, 0.0f, 0.0f };
 std::shared_ptr<Sprite> WorldRenderer::m_CeilTexture;
 
 vec3 WorldRenderer::Gradient::m_StartColor;
@@ -20,8 +21,10 @@ vec3 WorldRenderer::Gradient::m_EndColor;
 float WorldRenderer::Gradient::m_Scale;
 
 WorldRenderer::Gradient WorldRenderer::m_CeilGradient;
+WorldRenderer::Gradient WorldRenderer::m_FloorGradient;
 
-CeilShadingMode WorldRenderer::m_CeilMode = CeilShadingMode::SOLID;
+ShadingMode WorldRenderer::m_CeilMode = ShadingMode::SOLID;
+ShadingMode WorldRenderer::m_FloorMode = ShadingMode::TEXTURE;
 
 void WorldRenderer::Render(const std::shared_ptr<ScreenBuffer>& buffer, const std::shared_ptr<Camera>& cam)
 {
@@ -56,18 +59,33 @@ void WorldRenderer::Render(const std::shared_ptr<ScreenBuffer>& buffer, const st
 				if (m_UseIntensity == true)
 					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / Plane);
 
-				vec2 planePoint = cam->m_Position + rayDir * Plane * fishEyeCorrection;
-				vec2 pixel;
+				switch (m_FloorMode)
+				{
+				case ShadingMode::SOLID:
+					Color = m_FloorColor;
+					break;
 
-				pixel.x = planePoint.x - (int)planePoint.x;
-				pixel.y = planePoint.y - (int)planePoint.y;
+				case ShadingMode::TEXTURE:
+					vec2 planePoint = cam->m_Position + rayDir * Plane * fishEyeCorrection;
+					vec2 pixel;
 
-				Color = samplePixel(planePoint, pixel);
+					pixel.x = planePoint.x - (int)planePoint.x;
+					pixel.y = planePoint.y - (int)planePoint.y;
+
+					Color = samplePixel(planePoint, pixel);
+					break;
+
+				case ShadingMode::LERP:
+					vec3 col = lerp(m_FloorGradient.m_StartColor, m_FloorGradient.m_EndColor, m_FloorGradient.m_Scale / (BufferDim.y - y));
+					Color = col;
+					break;
+				}
 			}
 
 			// pereti
 			else if (y > (int)wallPos.y && y <= (int)wallPos.y + wallSize.y)
 			{
+				res.Length = std::max(1.0f, res.Length);
 				if (m_UseIntensity == true)
 					Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / res.Length);
 				Color = wallSpr->getPixelColor(res.HitPosition, (y - wallPos.y) / (int)(wallSize.y));
@@ -85,11 +103,11 @@ void WorldRenderer::Render(const std::shared_ptr<ScreenBuffer>& buffer, const st
 
 				switch (m_CeilMode)
 				{
-				case CeilShadingMode::SOLID:
-					Color = { 1.0f, 1.0f, 1.0f };
+				case ShadingMode::SOLID:
+					Color = m_CeilColor;
 					break;
 
-				case CeilShadingMode::TEXTURE:
+				case ShadingMode::TEXTURE:
 					vec2 planePoint = cam->m_Position - rayDir * Plane * fishEyeCorrection;
 					vec2 pixel;
 
@@ -99,7 +117,7 @@ void WorldRenderer::Render(const std::shared_ptr<ScreenBuffer>& buffer, const st
 					Color = m_CeilTexture->getPixelColor(pixel.x, pixel.y);
 					break;
 
-				case CeilShadingMode::LERP:
+				case ShadingMode::LERP:
 					vec3 col = lerp(m_CeilGradient.m_StartColor, m_CeilGradient.m_EndColor, m_CeilGradient.m_Scale / y);
 					Color = col;
 					break;

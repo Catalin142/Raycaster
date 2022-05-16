@@ -27,3 +27,11 @@ private:
 
 	std::string m_Filepath;
 };
+
+class SpriteManager
+{
+public:
+	static std::shared_ptr<Sprite>& loadSprite(const std::string& filepath);
+private:
+	static std::unordered_map<std::string, std::shared_ptr<Sprite>> m_SpriteCache;
+};

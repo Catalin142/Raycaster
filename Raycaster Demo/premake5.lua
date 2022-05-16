@@ -1,4 +1,4 @@
-project "Raycaster Game"
+project "Raycaster Demo"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"

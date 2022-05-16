@@ -25,6 +25,8 @@ class MouseReleasedEvent : public Event
 public:
 	MouseReleasedEvent(int code, int x, int y) : m_MouseCode(code), m_MouseX(x), m_MouseY(y), Event(EventType::MouseReleased) {}
 
+	static EventType getStaticType() { return EventType::MouseReleased; }
+
 	int getX() { return m_MouseX; }
 	int getY() { return m_MouseY; }
 
@@ -41,6 +43,8 @@ class MouseMovedEvent : public Event
 {
 public:
 	MouseMovedEvent(int x, int y) : m_MouseX(x), m_MouseY(y), Event(EventType::MouseMoved) {}
+
+	static EventType getStaticType() { return EventType::MouseMoved; }
 
 	int getX() { return m_MouseX; }
 	int getY() { return m_MouseY; }

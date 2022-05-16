@@ -14,6 +14,7 @@ public:
 	
 	void setPosition(const vec2& pos) { m_Position = pos; }
 	void setPosition(int flags);
+	void setMargin(const vec2& margin) { m_Margin = margin; }
 
 	void setText(const std::string& text, int flags, const vec3& color);
 
@@ -24,6 +25,7 @@ private:
 
 	float m_Width;
 	float m_Height;
+	vec2 m_Margin = { 0.0f, 0.0f };
 
 	vec2 m_Position = { 0.0f, 0.0f };
 
@@ -32,9 +34,10 @@ private:
 	struct TextLayout
 	{
 		int m_Rows;
-		int m_TextSize;
+		int m_TextWidth;
 		int m_Flags;
 		vec3 m_Color;
+		int m_TextSize = 1;
 
 	} m_TextLayout;
 

@@ -3,6 +3,7 @@
 #include "Events/KeyboardEvents.h"
 #include "Events/MouseEvents.h"
 #include "Utils/Input.h"
+#include "DropdownMenu.h"
 
 void UIManager::addButton(const char* name, const std::shared_ptr<Button>& button)
 {
@@ -34,21 +35,6 @@ void UIManager::addDropdownMenu(const char* name, const std::shared_ptr<Dropdown
 	}
 }
 
-void UIManager::addInputBox(const char* name, const std::shared_ptr<InputBox>& box)
-{
-	auto it = std::find_if(m_UIElements.begin(), m_UIElements.end(), [&](const UIElement& elem) -> bool {
-		return elem.Name == name;
-		});
-
-	if (it == m_UIElements.end())
-	{
-		UIElement elem;
-		elem.Name = name;
-		elem.UI = box;
-		m_UIElements.push_back(elem);
-	}
-}
-
 std::shared_ptr<InteractableUI>& UIManager::operator[](const char* name)
 {
 	auto it = std::find_if(m_UIElements.begin(), m_UIElements.end(), [&](const UIElement& elem) -> bool {
@@ -74,12 +60,8 @@ bool UIManager::onEvent(Event& event)
 			}
 		}
 
-		if (it->UI->getInteractionType() & Keyboard && event.getType() == EventType::KeyDown)
-		{
-			auto ev = static_cast<KeyDownEvent&>(event);
-			if (it->UI->onKeyDown(ev.getKeyCode()))
-				return true;
-		}
+		if (it->UI->getType() == UIType::Dropdown)
+			std::static_pointer_cast<DropdownMenu>(it->UI)->onEvent(event);
 	}
 }
 

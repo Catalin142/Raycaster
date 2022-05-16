@@ -22,7 +22,7 @@ void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 {
 	START_SCOPE_PROFILE("Entity render");
 
-	auto m_Buffer = Application::Get()->m_Buffer;
+	auto& m_Buffer = Application::Get()->m_Buffer;
 
 	vec2 Dist;
 	Dist.x = m_Position.x - cam->m_Position.x;
@@ -39,10 +39,12 @@ void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 
 	if (fabs(objAng) < degToRad(cam->m_FOV) / 2.0f && distFromPlayer > 1.0f)
 	{
-		float objHeight = (1600.0f / 900.0f) * m_Buffer->getHeight() / distFromPlayer;
-		float objFloor = m_Buffer->getHeight() / 2.0f - objHeight / 2.0f;
+		float windowWidth = (float)Application::Get()->getWindow()->getWidth();
+		float windowHeight = (float)Application::Get()->getWindow()->getHeight();
+		float objHeight = (windowWidth / windowHeight) * m_Buffer->getHeight() / distFromPlayer * m_Height;
+		float objFloor = m_Buffer->getHeight() / 2.0f - objHeight / 2.0f / m_Height;
 		float objCeil = m_Buffer->getHeight() - objFloor;
-		float objWidth = objHeight / m_Sprite->getAspectRatio();
+		float objWidth = objHeight / m_Sprite->getAspectRatio() * m_Width;
 		float objMiddle = (0.5f * (objAng / (degToRad(cam->m_FOV) / 2.0f)) + 0.5f) * (float)m_Buffer->getWidth();
 
 		for (int x = 0; x < objWidth; x++)
@@ -78,5 +80,5 @@ void Entity::setSprite(const std::string& filepath)
 		m_Sprite = nullptr;
 	}
 
-	m_Sprite = std::make_shared<Sprite>(filepath);
+	m_Sprite = SpriteManager::loadSprite(filepath);
 }

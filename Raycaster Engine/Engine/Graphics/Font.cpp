@@ -112,15 +112,36 @@ uint Font::getTextWidth(const std::string& text)
 	if (text.empty())
 		return 0;
 
-	uint size = 0;	
-	
-	for (int i = 0; i < text.size() - 1; i++)
+	uint size = 0;
+
+	for (int i = 0; i < text.size(); i++)
 	{
 		if (text[i] != ' ')
-			size += getGlyphWidth(text[i]) + 1;
+			size += getGlyphWidth(text[i]);
 		else size += 5;
 	}
-	size += getGlyphWidth(text[text.size() - 1]);
+
+	// pun aici spatiul intre caractere, mai putin la ultimul
+	size += text.size() - 1;
+
+	return size;
+}
+
+uint Font::getTextWidth(const std::string& text, int fsize)
+{
+	if (text.empty())
+		return 0;
+
+	uint size = 0;
+
+	for (int i = 0; i < text.size(); i++)
+	{
+		if (text[i] != ' ')
+			size += getGlyphWidth(text[i]) * fsize;
+		else size += 5;
+	}
+
+	size += text.size() - 1;
 
 	return size;
 }

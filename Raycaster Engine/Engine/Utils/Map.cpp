@@ -48,13 +48,12 @@ std::shared_ptr<Map> Map::Get()
 
 void Map::loadMap(const std::string& filepath)
 {
-	std::ifstream stream(filepath.c_str());
-
-	std::string mapStr;
+	m_Elements.clear();
+	m_SymbolCache.clear();
+	std::ifstream stream(filepath);
 
 	m_Map[0] = '\0';
 
-	bool mapFound = false;
 	std::string line;
 	while (std::getline(stream, line))
 	{
@@ -71,7 +70,7 @@ void Map::loadMap(const std::string& filepath)
 		{
 			std::string m_Filepath = "Resources/" + std::string(line.begin() + 4, line.end());
 			char Symbol = line[2];
-			std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>(m_Filepath);
+			std::shared_ptr<Sprite> sprite = SpriteManager::loadSprite(m_Filepath);
 			bool isWall;
 			if (line[0] == 's')
 				isWall = true;
@@ -85,6 +84,7 @@ void Map::loadMap(const std::string& filepath)
 			m_Elements.push_back(newElem);
 		}
 	}
+	stream.close();
 }
 
 void Map::Draw(float x, float y, float sizex, float sizey)
@@ -95,7 +95,7 @@ void Map::Draw(float x, float y, float sizex, float sizey)
 		float posX = x;
 		for (uint j = 0; j < m_Width; j++)
 		{
-			if (m_Map[i * m_Width + j] == '#')
+			if (m_Map[i * m_Width + j] == '1')
 				Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x00000000);
 
 			if (j == (int)m_PlayerPos.x && i == (int)m_PlayerPos.y)

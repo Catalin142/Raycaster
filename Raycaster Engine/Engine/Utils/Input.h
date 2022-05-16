@@ -10,7 +10,7 @@ public:
 	static vec2 getMousePosition();
 
 	static void setMousePosition(int x, int y);
-	static void setCursorVisibility(bool cursor);
+	static void showCursor(bool cursor);
 
 	static void pinMouse(bool status);
 

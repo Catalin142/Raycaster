@@ -1,8 +1,7 @@
-#pragma once
+	#pragma once
 #include "InteractableUI.h"
 #include "Button.h"
 #include "DropdownMenu.h"
-#include "InputBox.h"
 #include "Events/Event.h"
 
 class UIManager
@@ -13,7 +12,6 @@ public:
 
 	void addButton(const char* name, const std::shared_ptr<Button>& button);
 	void addDropdownMenu(const char* name, const std::shared_ptr<DropdownMenu>& menu);
-	void addInputBox(const char* name, const std::shared_ptr<InputBox>& box);
 
 	std::shared_ptr<InteractableUI>& operator[](const char* name);
 

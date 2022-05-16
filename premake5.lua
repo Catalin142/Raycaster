@@ -1,6 +1,7 @@
 workspace "Raycaster"
 	architecture "x86"
 	configurations { "Debug", "Release" }
+	startproject "Raycaster Demo"
 	flags
 	{
 		"MultiProcessorCompile"
@@ -9,4 +10,5 @@ workspace "Raycaster"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "Raycaster Engine"
-include "Raycaster Game"
+include "Raycaster Demo"
+include "UI Demo"

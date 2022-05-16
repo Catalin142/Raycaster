@@ -30,6 +30,7 @@ public:
 
 	void Draw(float x, float y, float sizex, float sizey);
 	void updatePlayerPosition(const vec2& pos);
+	const vec2& getPlayerPosition() const { return m_PlayerPos; }
 
 	char getSymbol(int x, int y) { return m_Map[y * m_Width + x]; }
 

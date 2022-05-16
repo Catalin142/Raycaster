@@ -12,9 +12,11 @@ public:
 	virtual ~Scene() = default;
 
 	void addEntity(const std::shared_ptr<Entity>& ent);
+	void loadScene(const std::string filepath);
 
 	std::shared_ptr<Entity>& createEntity(const std::string& filepath);
 	std::shared_ptr<Entity>& createEntity(const std::shared_ptr<Sprite>& spr);
+	std::shared_ptr<Entity>& createEntity(float x, float y, float width, float height, const std::string& spr);
 
 	void deleteEntity(const std::shared_ptr<Entity>& ent);
 
@@ -23,6 +25,5 @@ public:
 	void updateEntites(float dt);
 
 protected:
-	std::string m_MapPath;
 	std::vector<std::shared_ptr<Entity>> m_Entities;
 };
