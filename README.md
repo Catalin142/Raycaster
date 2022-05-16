@@ -6,10 +6,7 @@ Old school game engine that is based on the Wolfenstein Raycasting tehnique to g
 The engine is fully developed in C++ without the use of any other external libraries.
 
 # Photos
-<p align="center">
-  <img src="Media/dungeon.png" widht: "200px" height: "150px" alt="dungeon"/>
-</p>
-
+![dungeon](Media/dungeon.png)
 ![labyrinth](Media/labyrinth.png)
 
 # Gifs
