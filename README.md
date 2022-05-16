@@ -7,7 +7,7 @@ The engine is fully developed in C++ without the use of any other external libra
 
 # Photos
 <p align="center">
-  <img src="Media/dungeon.png" alt="dungeon"/>
+  <img src="Media/dungeon.png" widht: "200px" height: "150px" alt="dungeon"/>
 </p>
 
 ![labyrinth](Media/labyrinth.png)
