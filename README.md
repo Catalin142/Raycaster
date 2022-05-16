@@ -9,3 +9,6 @@ The engine is fully developed in C++ without the use of any other external libra
 ![dungeon](Media/dungeon.png)
 ![labyrinth](Media/labyrinth.png)
 
+# Gifs
+![dungeongif](Media/dungeon.gif)
+![labyrinthgif](Media/labyrinth.gif)
