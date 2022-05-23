@@ -1,5538 +1,1866 @@
 {"otherData": {},"traceEvents":[{}
 	,{
 	"cat":"function",
-	"dur":1510.000, 
+	"dur":12629.000, 
 	"name":"Init",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488460380.300
+	"tid":15116,
+	"ts":1982779806.300
 	}	,{
 	"cat":"function",
-	"dur":80.000, 
+	"dur":88.000, 
 	"name":"Set text",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488462387.600
+	"tid":15116,
+	"ts":1982797079.200
 	}	,{
 	"cat":"function",
-	"dur":17604.000, 
+	"dur":32189.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488466946.900
-	}	,{
-	"cat":"function",
-	"dur":8.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488484685.400
-	}	,{
-	"cat":"function",
-	"dur":607.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488484847.400
-	}	,{
-	"cat":"function",
-	"dur":150.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488485544.800
-	}	,{
-	"cat":"function",
-	"dur":19374.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488466487.800
-	}	,{
-	"cat":"function",
-	"dur":20125.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488486376.300
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488506643.900
-	}	,{
-	"cat":"function",
-	"dur":615.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488506803.300
-	}	,{
-	"cat":"function",
-	"dur":181.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488507520.800
-	}	,{
-	"cat":"function",
-	"dur":21923.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488485942.100
-	}	,{
-	"cat":"function",
-	"dur":18250.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488508553.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488526945.500
-	}	,{
-	"cat":"function",
-	"dur":584.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488527099.200
-	}	,{
-	"cat":"function",
-	"dur":133.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488527760.900
-	}	,{
-	"cat":"function",
-	"dur":20266.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488507963.800
-	}	,{
-	"cat":"function",
-	"dur":17543.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488528956.000
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488546635.000
-	}	,{
-	"cat":"function",
-	"dur":581.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488546789.700
-	}	,{
-	"cat":"function",
-	"dur":123.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488547448.400
-	}	,{
-	"cat":"function",
-	"dur":19331.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488528364.400
-	}	,{
-	"cat":"function",
-	"dur":17759.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488548168.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488566084.300
-	}	,{
-	"cat":"function",
-	"dur":589.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488566247.600
-	}	,{
-	"cat":"function",
-	"dur":150.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488566915.100
-	}	,{
-	"cat":"function",
-	"dur":19611.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488547776.300
-	}	,{
-	"cat":"function",
-	"dur":18664.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488567862.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488586657.300
-	}	,{
-	"cat":"function",
-	"dur":599.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488586810.800
-	}	,{
-	"cat":"function",
-	"dur":127.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488587487.100
-	}	,{
-	"cat":"function",
-	"dur":20332.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488567474.000
-	}	,{
-	"cat":"function",
-	"dur":17678.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488588440.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488606254.300
-	}	,{
-	"cat":"function",
-	"dur":578.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488606408.600
-	}	,{
-	"cat":"function",
-	"dur":124.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488607064.800
-	}	,{
-	"cat":"function",
-	"dur":19417.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488587898.700
-	}	,{
-	"cat":"function",
-	"dur":17606.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488607787.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488625531.500
-	}	,{
-	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488625686.100
-	}	,{
-	"cat":"function",
-	"dur":165.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488626345.200
-	}	,{
-	"cat":"function",
-	"dur":19502.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488607394.000
-	}	,{
-	"cat":"function",
-	"dur":17549.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488627375.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488645059.900
-	}	,{
-	"cat":"function",
-	"dur":706.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488645233.700
-	}	,{
-	"cat":"function",
-	"dur":160.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488646037.200
-	}	,{
-	"cat":"function",
-	"dur":19350.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488626983.100
-	}	,{
-	"cat":"function",
-	"dur":21181.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488646692.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488668009.700
-	}	,{
-	"cat":"function",
-	"dur":683.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488668175.300
-	}	,{
-	"cat":"function",
-	"dur":131.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488668940.000
-	}	,{
-	"cat":"function",
-	"dur":23051.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488646418.000
-	}	,{
-	"cat":"function",
-	"dur":17601.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488669944.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488687683.500
-	}	,{
-	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488687838.600
-	}	,{
-	"cat":"function",
-	"dur":145.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488688503.200
-	}	,{
-	"cat":"function",
-	"dur":19223.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488669557.200
-	}	,{
-	"cat":"function",
-	"dur":21910.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488689257.400
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488711309.900
-	}	,{
-	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488711465.900
-	}	,{
-	"cat":"function",
-	"dur":155.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488712130.200
-	}	,{
-	"cat":"function",
-	"dur":23711.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488688859.500
-	}	,{
-	"cat":"function",
-	"dur":18968.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488713056.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488732168.200
-	}	,{
-	"cat":"function",
-	"dur":586.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488732326.200
-	}	,{
-	"cat":"function",
-	"dur":162.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488732989.600
-	}	,{
-	"cat":"function",
-	"dur":20773.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488712661.200
-	}	,{
-	"cat":"function",
-	"dur":19467.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488734105.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488753705.400
-	}	,{
-	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488753861.200
-	}	,{
-	"cat":"function",
-	"dur":122.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488754520.700
-	}	,{
-	"cat":"function",
-	"dur":21312.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488733575.300
-	}	,{
-	"cat":"function",
-	"dur":18364.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488755356.200
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488773849.000
-	}	,{
-	"cat":"function",
-	"dur":581.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488774260.400
-	}	,{
-	"cat":"function",
-	"dur":145.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488774921.500
-	}	,{
-	"cat":"function",
-	"dur":20227.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488754969.500
-	}	,{
-	"cat":"function",
-	"dur":18168.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488775684.400
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488793985.600
-	}	,{
-	"cat":"function",
-	"dur":584.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488794138.300
-	}	,{
-	"cat":"function",
-	"dur":136.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488794799.100
-	}	,{
-	"cat":"function",
-	"dur":19903.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488775276.600
-	}	,{
-	"cat":"function",
-	"dur":18172.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488795662.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488813964.900
-	}	,{
-	"cat":"function",
-	"dur":577.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488814116.300
-	}	,{
-	"cat":"function",
-	"dur":121.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488814768.800
-	}	,{
-	"cat":"function",
-	"dur":19749.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488795263.000
-	}	,{
-	"cat":"function",
-	"dur":23052.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488815481.000
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488838633.100
-	}	,{
-	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488838786.300
-	}	,{
-	"cat":"function",
-	"dur":97.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488839450.700
-	}	,{
-	"cat":"function",
-	"dur":24677.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488815089.200
-	}	,{
-	"cat":"function",
-	"dur":18372.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488840243.900
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488858707.600
-	}	,{
-	"cat":"function",
-	"dur":590.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488858865.900
-	}	,{
-	"cat":"function",
-	"dur":96.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488859535.000
-	}	,{
-	"cat":"function",
-	"dur":19894.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488839849.700
-	}	,{
-	"cat":"function",
-	"dur":18250.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488860214.600
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488878565.400
-	}	,{
-	"cat":"function",
-	"dur":580.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488878716.200
-	}	,{
-	"cat":"function",
-	"dur":104.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488879372.100
-	}	,{
-	"cat":"function",
-	"dur":19878.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488859822.100
-	}	,{
-	"cat":"function",
-	"dur":18034.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488880171.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488898329.400
-	}	,{
-	"cat":"function",
-	"dur":638.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488898483.600
-	}	,{
-	"cat":"function",
-	"dur":125.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488899206.700
-	}	,{
-	"cat":"function",
-	"dur":19665.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488879788.000
-	}	,{
-	"cat":"function",
-	"dur":17999.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488899917.600
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488918008.000
-	}	,{
-	"cat":"function",
-	"dur":581.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488918159.200
-	}	,{
-	"cat":"function",
-	"dur":106.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488918816.600
-	}	,{
-	"cat":"function",
-	"dur":19592.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488899530.600
-	}	,{
-	"cat":"function",
-	"dur":18204.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488919591.700
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488937935.100
-	}	,{
-	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488938089.100
-	}	,{
-	"cat":"function",
-	"dur":153.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488938747.600
-	}	,{
-	"cat":"function",
-	"dur":19881.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488919206.400
-	}	,{
-	"cat":"function",
-	"dur":18524.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488939557.900
+	"tid":15116,
+	"ts":1983072073.600
 	}	,{
 	"cat":"function",
 	"dur":9.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488958223.300
+	"tid":15116,
+	"ts":1983104402.400
 	}	,{
 	"cat":"function",
-	"dur":576.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488958383.300
-	}	,{
-	"cat":"function",
-	"dur":138.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488959035.100
-	}	,{
-	"cat":"function",
-	"dur":20195.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488939165.900
-	}	,{
-	"cat":"function",
-	"dur":18275.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488959826.300
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":12.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488978479.500
+	"tid":15116,
+	"ts":1983104485.800
 	}	,{
 	"cat":"function",
-	"dur":573.000, 
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983104572.800
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983104654.500
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983104736.900
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983104815.800
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983104897.100
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983104978.100
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105057.700
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105136.400
+	}	,{
+	"cat":"function",
+	"dur":53.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105218.800
+	}	,{
+	"cat":"function",
+	"dur":30.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105342.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105443.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105514.400
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105585.600
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105657.400
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105729.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105801.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105873.100
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983105944.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106016.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106088.300
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106159.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106231.100
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106304.200
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106376.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106448.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106519.000
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983106589.900
+	}	,{
+	"cat":"function",
+	"dur":602.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488978632.900
+	"tid":15116,
+	"ts":1983106806.000
 	}	,{
 	"cat":"function",
 	"dur":142.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488979340.000
+	"tid":15116,
+	"ts":1983107501.600
 	}	,{
 	"cat":"function",
-	"dur":20234.000, 
+	"dur":36200.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488959440.100
+	"tid":15116,
+	"ts":1983071638.400
 	}	,{
 	"cat":"function",
-	"dur":18165.000, 
+	"dur":31534.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488980140.600
+	"tid":15116,
+	"ts":1983108312.100
 	}	,{
 	"cat":"function",
 	"dur":3.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258488998430.600
+	"tid":15116,
+	"ts":1983139975.800
 	}	,{
 	"cat":"function",
-	"dur":580.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488998584.500
-	}	,{
-	"cat":"function",
-	"dur":128.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488999245.200
-	}	,{
-	"cat":"function",
-	"dur":19801.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488979753.000
-	}	,{
-	"cat":"function",
-	"dur":18204.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489000022.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":11.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489018360.900
+	"tid":15116,
+	"ts":1983140050.100
 	}	,{
 	"cat":"function",
-	"dur":573.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489018514.700
-	}	,{
-	"cat":"function",
-	"dur":135.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489019163.500
-	}	,{
-	"cat":"function",
-	"dur":19854.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258488999633.700
-	}	,{
-	"cat":"function",
-	"dur":18387.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489019952.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":10.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489038482.500
+	"tid":15116,
+	"ts":1983140133.000
 	}	,{
 	"cat":"function",
-	"dur":579.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489038636.000
-	}	,{
-	"cat":"function",
-	"dur":158.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489039387.500
-	}	,{
-	"cat":"function",
-	"dur":20182.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489019566.700
-	}	,{
-	"cat":"function",
-	"dur":17601.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489040458.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":9.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489058205.600
+	"tid":15116,
+	"ts":1983140214.600
 	}	,{
 	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489058365.500
-	}	,{
-	"cat":"function",
-	"dur":165.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489059026.100
-	}	,{
-	"cat":"function",
-	"dur":19561.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489039833.300
-	}	,{
-	"cat":"function",
-	"dur":20608.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489059868.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":8.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489080644.200
+	"tid":15116,
+	"ts":1983140296.100
 	}	,{
 	"cat":"function",
-	"dur":891.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489080856.600
-	}	,{
-	"cat":"function",
-	"dur":167.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489081858.200
-	}	,{
-	"cat":"function",
-	"dur":22860.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489059475.700
-	}	,{
-	"cat":"function",
-	"dur":17994.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489082812.400
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":10.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489100938.800
+	"tid":15116,
+	"ts":1983140375.100
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489101096.700
-	}	,{
-	"cat":"function",
-	"dur":135.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489101761.200
-	}	,{
-	"cat":"function",
-	"dur":19662.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489082425.200
-	}	,{
-	"cat":"function",
-	"dur":17555.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489102767.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":10.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489120462.200
+	"tid":15116,
+	"ts":1983140456.100
 	}	,{
 	"cat":"function",
-	"dur":579.000, 
-	"name":"Text rendering",
+	"dur":9.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489120617.600
+	"tid":15116,
+	"ts":1983140536.900
 	}	,{
 	"cat":"function",
-	"dur":151.000, 
-	"name":"Draw",
+	"dur":8.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489121275.900
+	"tid":15116,
+	"ts":1983140616.300
 	}	,{
 	"cat":"function",
-	"dur":19452.000, 
-	"name":"Main loop",
+	"dur":11.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489102170.900
+	"tid":15116,
+	"ts":1983140697.200
 	}	,{
 	"cat":"function",
-	"dur":18596.000, 
-	"name":"Raycasting Render",
+	"dur":51.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489122092.300
+	"tid":15116,
+	"ts":1983140780.400
+	}	,{
+	"cat":"function",
+	"dur":31.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983140902.900
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983141004.300
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489140821.300
+	"tid":15116,
+	"ts":1983141075.800
 	}	,{
 	"cat":"function",
-	"dur":580.000, 
-	"name":"Text rendering",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489140974.900
-	}	,{
-	"cat":"function",
-	"dur":136.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489141631.400
-	}	,{
-	"cat":"function",
-	"dur":20261.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489121702.100
-	}	,{
-	"cat":"function",
-	"dur":17723.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489142437.700
+	"tid":15116,
+	"ts":1983141147.300
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489160295.200
-	}	,{
-	"cat":"function",
-	"dur":585.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489160449.800
-	}	,{
-	"cat":"function",
-	"dur":149.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489161111.900
-	}	,{
-	"cat":"function",
-	"dur":19398.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489142042.800
-	}	,{
-	"cat":"function",
-	"dur":17726.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489161914.700
+	"tid":15116,
+	"ts":1983141218.900
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489179768.000
+	"tid":15116,
+	"ts":1983141291.900
 	}	,{
 	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489179922.400
-	}	,{
-	"cat":"function",
-	"dur":124.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489180588.200
-	}	,{
-	"cat":"function",
-	"dur":19372.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489161521.100
-	}	,{
-	"cat":"function",
-	"dur":17850.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489181336.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489199321.900
-	}	,{
-	"cat":"function",
-	"dur":585.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489199476.700
-	}	,{
-	"cat":"function",
-	"dur":136.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489200138.500
-	}	,{
-	"cat":"function",
-	"dur":19484.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489180973.800
-	}	,{
-	"cat":"function",
-	"dur":18132.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489200932.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489219197.500
-	}	,{
-	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489219353.200
-	}	,{
-	"cat":"function",
-	"dur":155.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489220013.300
-	}	,{
-	"cat":"function",
-	"dur":19856.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489200537.700
-	}	,{
-	"cat":"function",
-	"dur":17745.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489220870.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489238771.700
-	}	,{
-	"cat":"function",
-	"dur":581.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489238924.800
-	}	,{
-	"cat":"function",
-	"dur":148.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489239581.800
-	}	,{
-	"cat":"function",
-	"dur":19466.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489220481.800
-	}	,{
-	"cat":"function",
-	"dur":18556.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489240420.700
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489259109.700
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489259269.600
-	}	,{
-	"cat":"function",
-	"dur":124.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489259935.000
-	}	,{
-	"cat":"function",
-	"dur":20278.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489240029.700
-	}	,{
-	"cat":"function",
-	"dur":17836.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489260794.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489278768.700
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489278923.200
-	}	,{
-	"cat":"function",
-	"dur":119.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489279588.900
-	}	,{
-	"cat":"function",
-	"dur":19468.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489260400.000
-	}	,{
-	"cat":"function",
-	"dur":17972.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489280343.300
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489298458.500
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489298617.300
-	}	,{
-	"cat":"function",
-	"dur":139.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489299283.000
-	}	,{
-	"cat":"function",
-	"dur":19662.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489279949.700
-	}	,{
-	"cat":"function",
-	"dur":18002.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489300086.700
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489318219.900
-	}	,{
-	"cat":"function",
-	"dur":585.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489318375.100
-	}	,{
-	"cat":"function",
-	"dur":129.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489319037.700
-	}	,{
-	"cat":"function",
-	"dur":19659.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489299692.700
-	}	,{
-	"cat":"function",
-	"dur":17783.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489319829.400
+	"tid":15116,
+	"ts":1983141364.300
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489337743.000
+	"tid":15116,
+	"ts":1983141435.800
 	}	,{
 	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489337895.700
-	}	,{
-	"cat":"function",
-	"dur":137.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489338553.800
-	}	,{
-	"cat":"function",
-	"dur":19458.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489319432.600
-	}	,{
-	"cat":"function",
-	"dur":18953.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489339330.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489358427.800
+	"tid":15116,
+	"ts":1983141509.500
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489358586.700
-	}	,{
-	"cat":"function",
-	"dur":131.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489359252.200
-	}	,{
-	"cat":"function",
-	"dur":20598.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489338969.800
-	}	,{
-	"cat":"function",
-	"dur":17785.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489360042.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489377952.500
+	"tid":15116,
+	"ts":1983141581.800
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489378106.600
-	}	,{
-	"cat":"function",
-	"dur":124.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489378771.100
-	}	,{
-	"cat":"function",
-	"dur":19415.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489359648.400
-	}	,{
-	"cat":"function",
-	"dur":17727.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489379538.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489397404.300
+	"tid":15116,
+	"ts":1983141653.400
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983141724.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983141797.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983141868.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983141940.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983142013.300
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983142085.200
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983142166.600
+	}	,{
+	"cat":"function",
+	"dur":605.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489397560.600
+	"tid":15116,
+	"ts":1983142320.200
 	}	,{
 	"cat":"function",
 	"dur":163.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489398228.100
+	"tid":15116,
+	"ts":1983143001.900
 	}	,{
 	"cat":"function",
-	"dur":19429.000, 
+	"dur":35390.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489379144.400
+	"tid":15116,
+	"ts":1983107920.600
 	}	,{
 	"cat":"function",
-	"dur":17971.000, 
+	"dur":31339.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489399048.600
+	"tid":15116,
+	"ts":1983143782.200
 	}	,{
 	"cat":"function",
 	"dur":3.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489417149.600
+	"tid":15116,
+	"ts":1983175258.800
 	}	,{
 	"cat":"function",
-	"dur":590.000, 
-	"name":"Text rendering",
+	"dur":11.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489417307.200
+	"tid":15116,
+	"ts":1983175337.100
 	}	,{
 	"cat":"function",
-	"dur":125.000, 
-	"name":"Draw",
+	"dur":10.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489417974.900
+	"tid":15116,
+	"ts":1983175421.300
 	}	,{
 	"cat":"function",
-	"dur":19644.000, 
-	"name":"Main loop",
+	"dur":9.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489398654.800
+	"tid":15116,
+	"ts":1983175502.800
 	}	,{
 	"cat":"function",
-	"dur":17520.000, 
-	"name":"Raycasting Render",
+	"dur":8.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489418778.300
+	"tid":15116,
+	"ts":1983175582.600
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983175661.800
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983175743.100
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983175823.800
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983175902.800
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983175982.400
+	}	,{
+	"cat":"function",
+	"dur":51.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983176064.600
+	}	,{
+	"cat":"function",
+	"dur":30.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983176186.800
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489436424.100
-	}	,{
-	"cat":"function",
-	"dur":578.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489436575.100
-	}	,{
-	"cat":"function",
-	"dur":129.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489437231.500
-	}	,{
-	"cat":"function",
-	"dur":19160.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489418389.900
-	}	,{
-	"cat":"function",
-	"dur":17595.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489438021.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489455766.100
-	}	,{
-	"cat":"function",
-	"dur":581.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489455918.900
-	}	,{
-	"cat":"function",
-	"dur":150.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489456575.800
-	}	,{
-	"cat":"function",
-	"dur":19288.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489437628.500
-	}	,{
-	"cat":"function",
-	"dur":17758.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489457390.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489475295.500
-	}	,{
-	"cat":"function",
-	"dur":579.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489475509.100
-	}	,{
-	"cat":"function",
-	"dur":135.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489476172.800
-	}	,{
-	"cat":"function",
-	"dur":19495.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489456995.100
-	}	,{
-	"cat":"function",
-	"dur":17456.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489476957.400
+	"tid":15116,
+	"ts":1983176288.800
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489494524.400
+	"tid":15116,
+	"ts":1983176384.600
 	}	,{
 	"cat":"function",
-	"dur":586.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489494678.500
-	}	,{
-	"cat":"function",
-	"dur":142.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489495342.100
-	}	,{
-	"cat":"function",
-	"dur":19132.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489476570.200
-	}	,{
-	"cat":"function",
-	"dur":19025.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489496179.800
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489515368.600
+	"tid":15116,
+	"ts":1983176457.100
 	}	,{
 	"cat":"function",
-	"dur":869.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489515586.600
-	}	,{
-	"cat":"function",
-	"dur":166.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489516576.800
-	}	,{
-	"cat":"function",
-	"dur":21262.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489495786.900
-	}	,{
-	"cat":"function",
-	"dur":21122.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489517909.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489539171.400
-	}	,{
-	"cat":"function",
-	"dur":688.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489539340.200
-	}	,{
-	"cat":"function",
-	"dur":146.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489540148.400
-	}	,{
-	"cat":"function",
-	"dur":23306.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489517187.200
-	}	,{
-	"cat":"function",
-	"dur":22442.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489540847.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489563455.200
-	}	,{
-	"cat":"function",
-	"dur":865.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489563667.900
-	}	,{
-	"cat":"function",
-	"dur":173.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489564655.300
-	}	,{
-	"cat":"function",
-	"dur":24507.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489540577.900
-	}	,{
-	"cat":"function",
-	"dur":18165.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489565491.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489583766.900
-	}	,{
-	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489583922.500
-	}	,{
-	"cat":"function",
-	"dur":115.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489584587.800
-	}	,{
-	"cat":"function",
-	"dur":19678.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489565203.900
-	}	,{
-	"cat":"function",
-	"dur":18541.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489585353.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489604031.500
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489604187.300
-	}	,{
-	"cat":"function",
-	"dur":146.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489604857.700
-	}	,{
-	"cat":"function",
-	"dur":20244.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489584961.800
-	}	,{
-	"cat":"function",
-	"dur":17457.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489605779.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489623346.900
-	}	,{
-	"cat":"function",
-	"dur":579.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489623498.500
-	}	,{
-	"cat":"function",
-	"dur":152.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489624154.400
-	}	,{
-	"cat":"function",
-	"dur":19204.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489605285.000
-	}	,{
-	"cat":"function",
-	"dur":17436.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489624957.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489642487.900
-	}	,{
-	"cat":"function",
-	"dur":582.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489642638.300
-	}	,{
-	"cat":"function",
-	"dur":117.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489643297.400
-	}	,{
-	"cat":"function",
-	"dur":19023.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489624569.100
-	}	,{
-	"cat":"function",
-	"dur":18363.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489644066.400
+	"tid":15116,
+	"ts":1983176529.100
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489662559.000
+	"tid":15116,
+	"ts":1983176600.700
 	}	,{
 	"cat":"function",
-	"dur":592.000, 
-	"name":"Text rendering",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489662713.400
-	}	,{
-	"cat":"function",
-	"dur":129.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489663380.800
-	}	,{
-	"cat":"function",
-	"dur":20019.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489643673.100
-	}	,{
-	"cat":"function",
-	"dur":20333.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489664143.700
+	"tid":15116,
+	"ts":1983176672.200
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489684615.100
+	"tid":15116,
+	"ts":1983176743.600
 	}	,{
 	"cat":"function",
-	"dur":590.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489684773.600
-	}	,{
-	"cat":"function",
-	"dur":131.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489685443.100
-	}	,{
-	"cat":"function",
-	"dur":21995.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489663771.700
-	}	,{
-	"cat":"function",
-	"dur":17817.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489686244.300
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489704183.600
+	"tid":15116,
+	"ts":1983176815.200
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489704338.400
+	"tid":15116,
+	"ts":1983176887.000
 	}	,{
 	"cat":"function",
-	"dur":123.000, 
-	"name":"Draw",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489705001.500
-	}	,{
-	"cat":"function",
-	"dur":19460.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489685848.200
-	}	,{
-	"cat":"function",
-	"dur":17696.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489705782.200
+	"tid":15116,
+	"ts":1983176958.200
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489723613.300
+	"tid":15116,
+	"ts":1983177029.600
 	}	,{
 	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489723766.600
-	}	,{
-	"cat":"function",
-	"dur":173.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489724432.500
-	}	,{
-	"cat":"function",
-	"dur":19454.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489705388.900
-	}	,{
-	"cat":"function",
-	"dur":17719.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489725323.700
+	"tid":15116,
+	"ts":1983177101.200
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489743142.100
+	"tid":15116,
+	"ts":1983177172.900
 	}	,{
 	"cat":"function",
-	"dur":584.000, 
-	"name":"Text rendering",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489743297.200
-	}	,{
-	"cat":"function",
-	"dur":105.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489743957.600
-	}	,{
-	"cat":"function",
-	"dur":19319.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489724928.400
-	}	,{
-	"cat":"function",
-	"dur":17432.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489744718.200
+	"tid":15116,
+	"ts":1983177244.100
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489762252.400
+	"tid":15116,
+	"ts":1983177329.400
 	}	,{
 	"cat":"function",
-	"dur":578.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489762404.100
-	}	,{
-	"cat":"function",
-	"dur":116.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489763058.200
-	}	,{
-	"cat":"function",
-	"dur":19049.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489744330.200
-	}	,{
-	"cat":"function",
-	"dur":17738.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489764066.800
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489781940.300
+	"tid":15116,
+	"ts":1983177406.500
 	}	,{
 	"cat":"function",
-	"dur":592.000, 
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983177478.700
+	}	,{
+	"cat":"function",
+	"dur":603.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489782097.600
+	"tid":15116,
+	"ts":1983177630.300
 	}	,{
 	"cat":"function",
 	"dur":133.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489782766.000
+	"tid":15116,
+	"ts":1983178311.900
 	}	,{
 	"cat":"function",
-	"dur":19632.000, 
+	"dur":35286.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489763461.200
+	"tid":15116,
+	"ts":1983143389.900
 	}	,{
 	"cat":"function",
-	"dur":17783.000, 
+	"dur":31283.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489783564.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489801484.300
-	}	,{
-	"cat":"function",
-	"dur":609.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489801639.000
-	}	,{
-	"cat":"function",
-	"dur":125.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489802328.500
-	}	,{
-	"cat":"function",
-	"dur":19460.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489783174.100
-	}	,{
-	"cat":"function",
-	"dur":19249.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489803108.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489822507.800
-	}	,{
-	"cat":"function",
-	"dur":579.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489822670.500
-	}	,{
-	"cat":"function",
-	"dur":135.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489823328.000
-	}	,{
-	"cat":"function",
-	"dur":20934.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489802714.600
-	}	,{
-	"cat":"function",
-	"dur":17828.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489824116.700
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489842090.800
-	}	,{
-	"cat":"function",
-	"dur":605.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489842250.300
-	}	,{
-	"cat":"function",
-	"dur":167.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489842940.000
-	}	,{
-	"cat":"function",
-	"dur":19615.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489823728.300
-	}	,{
-	"cat":"function",
-	"dur":17770.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489843846.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489861748.900
-	}	,{
-	"cat":"function",
-	"dur":605.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489861904.600
-	}	,{
-	"cat":"function",
-	"dur":109.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489862587.900
-	}	,{
-	"cat":"function",
-	"dur":19417.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489843447.300
-	}	,{
-	"cat":"function",
-	"dur":17912.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489863337.600
+	"tid":15116,
+	"ts":1983179143.700
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489881375.000
+	"tid":15116,
+	"ts":1983210555.400
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489881531.200
-	}	,{
-	"cat":"function",
-	"dur":190.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489882196.000
-	}	,{
-	"cat":"function",
-	"dur":19628.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489862945.000
-	}	,{
-	"cat":"function",
-	"dur":18016.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489883048.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":11.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489901197.300
+	"tid":15116,
+	"ts":1983210629.300
 	}	,{
 	"cat":"function",
-	"dur":586.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489901354.800
-	}	,{
-	"cat":"function",
-	"dur":126.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489902017.400
-	}	,{
-	"cat":"function",
-	"dur":19786.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489882653.900
-	}	,{
-	"cat":"function",
-	"dur":17864.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489902891.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":10.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489920900.300
+	"tid":15116,
+	"ts":1983210712.200
 	}	,{
 	"cat":"function",
-	"dur":635.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489921070.100
-	}	,{
-	"cat":"function",
-	"dur":157.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489921801.300
-	}	,{
-	"cat":"function",
-	"dur":19611.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489902561.500
-	}	,{
-	"cat":"function",
-	"dur":18784.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489922667.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":9.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489941592.500
+	"tid":15116,
+	"ts":1983210793.300
 	}	,{
 	"cat":"function",
-	"dur":784.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489941751.300
-	}	,{
-	"cat":"function",
-	"dur":164.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489942656.700
-	}	,{
-	"cat":"function",
-	"dur":20797.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489922284.100
-	}	,{
-	"cat":"function",
-	"dur":22947.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489943580.000
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
+	"dur":8.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489966737.200
+	"tid":15116,
+	"ts":1983210872.700
 	}	,{
 	"cat":"function",
-	"dur":959.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489966976.700
-	}	,{
-	"cat":"function",
-	"dur":254.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489968061.000
-	}	,{
-	"cat":"function",
-	"dur":25747.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489943195.900
-	}	,{
-	"cat":"function",
-	"dur":25498.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489969406.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":10.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258489995073.100
+	"tid":15116,
+	"ts":1983210951.200
 	}	,{
 	"cat":"function",
-	"dur":831.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489995280.300
-	}	,{
-	"cat":"function",
-	"dur":248.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489996216.000
-	}	,{
-	"cat":"function",
-	"dur":27635.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489969063.500
-	}	,{
-	"cat":"function",
-	"dur":24125.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489997077.400
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
+	"dur":10.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490021404.600
+	"tid":15116,
+	"ts":1983211032.300
 	}	,{
 	"cat":"function",
-	"dur":774.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490021633.800
-	}	,{
-	"cat":"function",
-	"dur":242.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490022530.500
-	}	,{
-	"cat":"function",
-	"dur":26268.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258489996785.900
-	}	,{
-	"cat":"function",
-	"dur":23873.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490023499.000
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
+	"dur":9.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490047553.800
+	"tid":15116,
+	"ts":1983211112.800
 	}	,{
 	"cat":"function",
-	"dur":881.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490047784.000
-	}	,{
-	"cat":"function",
-	"dur":231.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490048798.400
-	}	,{
-	"cat":"function",
-	"dur":26187.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490023156.400
-	}	,{
-	"cat":"function",
-	"dur":22767.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490049889.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":8.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490072840.000
+	"tid":15116,
+	"ts":1983211192.300
 	}	,{
 	"cat":"function",
-	"dur":811.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490073016.200
-	}	,{
-	"cat":"function",
-	"dur":208.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490073947.500
-	}	,{
-	"cat":"function",
-	"dur":24965.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490049469.300
-	}	,{
-	"cat":"function",
-	"dur":25939.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490075019.900
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
+	"dur":11.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490101149.600
+	"tid":15116,
+	"ts":1983211270.600
 	}	,{
 	"cat":"function",
-	"dur":874.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490101373.100
-	}	,{
-	"cat":"function",
-	"dur":224.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490102392.200
-	}	,{
-	"cat":"function",
-	"dur":28331.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490074553.800
-	}	,{
-	"cat":"function",
-	"dur":24333.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490103328.200
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
+	"dur":51.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490127861.300
+	"tid":15116,
+	"ts":1983211354.400
 	}	,{
 	"cat":"function",
-	"dur":910.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490128101.000
-	}	,{
-	"cat":"function",
-	"dur":198.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490129150.800
-	}	,{
-	"cat":"function",
-	"dur":26598.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490103006.600
-	}	,{
-	"cat":"function",
-	"dur":25066.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490130396.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":30.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490155610.200
+	"tid":15116,
+	"ts":1983211476.400
 	}	,{
 	"cat":"function",
-	"dur":761.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490155787.300
-	}	,{
-	"cat":"function",
-	"dur":278.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490156667.100
-	}	,{
-	"cat":"function",
-	"dur":27551.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490129704.700
-	}	,{
-	"cat":"function",
-	"dur":22202.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490157996.600
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490180342.700
-	}	,{
-	"cat":"function",
-	"dur":685.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490180514.200
-	}	,{
-	"cat":"function",
-	"dur":229.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490181304.400
-	}	,{
-	"cat":"function",
-	"dur":24531.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490157349.700
-	}	,{
-	"cat":"function",
-	"dur":21195.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490182324.000
+	"tid":15116,
+	"ts":1983211577.100
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490203655.200
+	"tid":15116,
+	"ts":1983211648.800
 	}	,{
 	"cat":"function",
-	"dur":687.000, 
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983211720.200
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983211792.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983211864.100
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983211935.400
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212006.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212078.200
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212149.500
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212220.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212292.200
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212365.200
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212436.700
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212570.700
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212651.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212724.200
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983212796.100
+	}	,{
+	"cat":"function",
+	"dur":602.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490203821.600
+	"tid":15116,
+	"ts":1983212946.700
 	}	,{
 	"cat":"function",
-	"dur":153.000, 
+	"dur":130.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490204589.600
+	"tid":15116,
+	"ts":1983213623.700
 	}	,{
 	"cat":"function",
-	"dur":22961.000, 
+	"dur":35119.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490181981.600
+	"tid":15116,
+	"ts":1983178757.600
 	}	,{
 	"cat":"function",
-	"dur":19802.000, 
+	"dur":31316.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490205296.200
+	"tid":15116,
+	"ts":1983214431.400
 	}	,{
 	"cat":"function",
 	"dur":3.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490225233.500
+	"tid":15116,
+	"ts":1983245886.900
 	}	,{
 	"cat":"function",
-	"dur":585.000, 
+	"dur":12.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983245962.900
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246047.700
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246129.300
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246209.300
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246290.000
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246373.100
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246453.700
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246533.200
+	}	,{
+	"cat":"function",
+	"dur":12.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246611.600
+	}	,{
+	"cat":"function",
+	"dur":52.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246694.200
+	}	,{
+	"cat":"function",
+	"dur":30.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246816.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246917.100
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983246988.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247060.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247132.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247203.200
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247274.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247348.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247419.200
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247490.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247563.100
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247634.300
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247705.500
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247783.100
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247862.400
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983247934.400
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983248006.400
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983248077.900
+	}	,{
+	"cat":"function",
+	"dur":606.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490225392.500
+	"tid":15116,
+	"ts":1983248228.200
 	}	,{
 	"cat":"function",
 	"dur":136.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490226056.300
+	"tid":15116,
+	"ts":1983248911.200
 	}	,{
 	"cat":"function",
-	"dur":21360.000, 
+	"dur":35409.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490205026.700
+	"tid":15116,
+	"ts":1983213953.800
 	}	,{
 	"cat":"function",
-	"dur":18166.000, 
+	"dur":31702.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490226850.700
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490245210.500
-	}	,{
-	"cat":"function",
-	"dur":801.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490245446.200
-	}	,{
-	"cat":"function",
-	"dur":189.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490246360.600
-	}	,{
-	"cat":"function",
-	"dur":20463.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490226466.100
-	}	,{
-	"cat":"function",
-	"dur":19889.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490247810.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490267899.400
-	}	,{
-	"cat":"function",
-	"dur":708.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490268076.100
-	}	,{
-	"cat":"function",
-	"dur":596.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490268897.600
-	}	,{
-	"cat":"function",
-	"dur":24002.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490247021.800
-	}	,{
-	"cat":"function",
-	"dur":19239.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490271584.900
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490291133.600
-	}	,{
-	"cat":"function",
-	"dur":801.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490291358.400
-	}	,{
-	"cat":"function",
-	"dur":188.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490292260.700
-	}	,{
-	"cat":"function",
-	"dur":21720.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490271171.600
-	}	,{
-	"cat":"function",
-	"dur":24913.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490293537.700
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490318635.100
-	}	,{
-	"cat":"function",
-	"dur":884.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490318854.000
-	}	,{
-	"cat":"function",
-	"dur":179.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490319844.400
-	}	,{
-	"cat":"function",
-	"dur":27283.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490293036.500
-	}	,{
-	"cat":"function",
-	"dur":19371.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490320823.800
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490340397.900
-	}	,{
-	"cat":"function",
-	"dur":995.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490340635.800
-	}	,{
-	"cat":"function",
-	"dur":252.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490341822.100
-	}	,{
-	"cat":"function",
-	"dur":21928.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490320429.400
-	}	,{
-	"cat":"function",
-	"dur":24253.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490342797.400
-	}	,{
-	"cat":"function",
-	"dur":5.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490367238.100
-	}	,{
-	"cat":"function",
-	"dur":825.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490367444.000
-	}	,{
-	"cat":"function",
-	"dur":359.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490368437.400
-	}	,{
-	"cat":"function",
-	"dur":26623.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490342489.000
-	}	,{
-	"cat":"function",
-	"dur":23509.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490369536.700
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490393231.800
-	}	,{
-	"cat":"function",
-	"dur":888.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490393461.500
-	}	,{
-	"cat":"function",
-	"dur":202.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490394487.300
-	}	,{
-	"cat":"function",
-	"dur":25769.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490369240.000
-	}	,{
-	"cat":"function",
-	"dur":25312.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490395459.300
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490420993.900
-	}	,{
-	"cat":"function",
-	"dur":717.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490421177.600
-	}	,{
-	"cat":"function",
-	"dur":222.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490422012.900
-	}	,{
-	"cat":"function",
-	"dur":27392.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490395137.400
-	}	,{
-	"cat":"function",
-	"dur":24065.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490422956.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490447196.500
-	}	,{
-	"cat":"function",
-	"dur":969.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490447452.400
-	}	,{
-	"cat":"function",
-	"dur":201.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490448550.200
-	}	,{
-	"cat":"function",
-	"dur":26403.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490422626.100
-	}	,{
-	"cat":"function",
-	"dur":25092.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490449574.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490474834.000
-	}	,{
-	"cat":"function",
-	"dur":741.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490475006.900
-	}	,{
-	"cat":"function",
-	"dur":228.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490475860.100
-	}	,{
-	"cat":"function",
-	"dur":27455.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490449144.100
-	}	,{
-	"cat":"function",
-	"dur":23816.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490477152.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490501110.300
-	}	,{
-	"cat":"function",
-	"dur":695.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490501279.700
-	}	,{
-	"cat":"function",
-	"dur":189.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490502057.900
-	}	,{
-	"cat":"function",
-	"dur":25776.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490476731.400
-	}	,{
-	"cat":"function",
-	"dur":24336.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490502892.400
-	}	,{
-	"cat":"function",
-	"dur":6.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490527534.600
-	}	,{
-	"cat":"function",
-	"dur":846.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490527789.300
-	}	,{
-	"cat":"function",
-	"dur":301.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490528772.100
-	}	,{
-	"cat":"function",
-	"dur":26818.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490502601.200
-	}	,{
-	"cat":"function",
-	"dur":23374.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490529869.400
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490553402.700
-	}	,{
-	"cat":"function",
-	"dur":693.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490553574.500
-	}	,{
-	"cat":"function",
-	"dur":178.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490554350.500
-	}	,{
-	"cat":"function",
-	"dur":25236.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490529515.700
-	}	,{
-	"cat":"function",
-	"dur":23761.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490555112.400
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490579043.000
-	}	,{
-	"cat":"function",
-	"dur":1074.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490579270.200
-	}	,{
-	"cat":"function",
-	"dur":167.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490580448.200
-	}	,{
-	"cat":"function",
-	"dur":26005.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490554837.800
-	}	,{
-	"cat":"function",
-	"dur":21974.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490581219.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490603365.200
-	}	,{
-	"cat":"function",
-	"dur":812.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490603560.900
-	}	,{
-	"cat":"function",
-	"dur":193.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490604474.000
-	}	,{
-	"cat":"function",
-	"dur":24051.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490580928.600
-	}	,{
-	"cat":"function",
-	"dur":26199.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490605867.900
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490632327.100
-	}	,{
-	"cat":"function",
-	"dur":876.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490632559.400
-	}	,{
-	"cat":"function",
-	"dur":277.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490633606.700
-	}	,{
-	"cat":"function",
-	"dur":29245.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490605160.600
-	}	,{
-	"cat":"function",
-	"dur":22377.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490635092.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490657621.500
-	}	,{
-	"cat":"function",
-	"dur":698.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490657790.700
-	}	,{
-	"cat":"function",
-	"dur":163.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490658571.100
-	}	,{
-	"cat":"function",
-	"dur":24417.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490634536.100
-	}	,{
-	"cat":"function",
-	"dur":22109.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490659317.300
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490681585.900
-	}	,{
-	"cat":"function",
-	"dur":876.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490681795.700
-	}	,{
-	"cat":"function",
-	"dur":201.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490682790.700
-	}	,{
-	"cat":"function",
-	"dur":24220.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490659039.400
-	}	,{
-	"cat":"function",
-	"dur":19638.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490683648.800
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490703420.500
-	}	,{
-	"cat":"function",
-	"dur":585.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490703578.700
-	}	,{
-	"cat":"function",
-	"dur":138.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490704241.200
-	}	,{
-	"cat":"function",
-	"dur":21227.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490683358.800
-	}	,{
-	"cat":"function",
-	"dur":21711.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490705064.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490726917.300
-	}	,{
-	"cat":"function",
-	"dur":697.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490727086.500
-	}	,{
-	"cat":"function",
-	"dur":156.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490727865.600
-	}	,{
-	"cat":"function",
-	"dur":23594.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490704668.300
-	}	,{
-	"cat":"function",
-	"dur":22547.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490728670.100
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490751399.900
-	}	,{
-	"cat":"function",
-	"dur":833.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490751622.500
-	}	,{
-	"cat":"function",
-	"dur":218.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490752588.100
-	}	,{
-	"cat":"function",
-	"dur":24946.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490728360.300
-	}	,{
-	"cat":"function",
-	"dur":20150.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490753844.600
-	}	,{
-	"cat":"function",
-	"dur":4.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490774162.400
-	}	,{
-	"cat":"function",
-	"dur":884.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490774453.500
-	}	,{
-	"cat":"function",
-	"dur":269.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490775512.700
-	}	,{
-	"cat":"function",
-	"dur":22742.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490753426.900
-	}	,{
-	"cat":"function",
-	"dur":20961.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490776642.700
+	"tid":15116,
+	"ts":1983249850.500
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490797751.200
+	"tid":15116,
+	"ts":1983281686.200
 	}	,{
 	"cat":"function",
-	"dur":593.000, 
-	"name":"Text rendering",
+	"dur":12.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490797912.500
+	"tid":15116,
+	"ts":1983281761.800
 	}	,{
 	"cat":"function",
-	"dur":168.000, 
-	"name":"Draw",
+	"dur":9.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490798591.700
+	"tid":15116,
+	"ts":1983281845.000
 	}	,{
 	"cat":"function",
-	"dur":22740.000, 
-	"name":"Main loop",
+	"dur":9.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490776293.200
+	"tid":15116,
+	"ts":1983281925.500
 	}	,{
 	"cat":"function",
-	"dur":21919.000, 
-	"name":"Raycasting Render",
+	"dur":8.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490799409.900
+	"tid":15116,
+	"ts":1983282005.700
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282084.100
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282165.600
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282247.900
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282329.500
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282408.200
+	}	,{
+	"cat":"function",
+	"dur":52.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282490.300
+	}	,{
+	"cat":"function",
+	"dur":30.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282613.100
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983282714.000
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490821467.200
+	"tid":15116,
+	"ts":1983282785.700
 	}	,{
 	"cat":"function",
-	"dur":598.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490821625.800
-	}	,{
-	"cat":"function",
-	"dur":171.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490822302.700
-	}	,{
-	"cat":"function",
-	"dur":23541.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490799131.100
-	}	,{
-	"cat":"function",
-	"dur":21363.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490823148.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490844665.600
-	}	,{
-	"cat":"function",
-	"dur":695.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490844835.400
-	}	,{
-	"cat":"function",
-	"dur":187.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490845613.300
-	}	,{
-	"cat":"function",
-	"dur":23299.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490822753.500
-	}	,{
-	"cat":"function",
-	"dur":24377.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490846429.700
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490870973.200
-	}	,{
-	"cat":"function",
-	"dur":783.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490871143.600
-	}	,{
-	"cat":"function",
-	"dur":309.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490872024.800
-	}	,{
-	"cat":"function",
-	"dur":26529.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490846152.000
-	}	,{
-	"cat":"function",
-	"dur":21929.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490873324.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490895405.400
-	}	,{
-	"cat":"function",
-	"dur":673.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490895567.900
-	}	,{
-	"cat":"function",
-	"dur":147.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490896336.000
-	}	,{
-	"cat":"function",
-	"dur":23911.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490872832.100
-	}	,{
-	"cat":"function",
-	"dur":21997.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490897439.300
-	}	,{
-	"cat":"function",
-	"dur":5.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490919662.600
-	}	,{
-	"cat":"function",
-	"dur":895.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490919934.500
-	}	,{
-	"cat":"function",
-	"dur":248.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490920995.800
-	}	,{
-	"cat":"function",
-	"dur":24645.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490896890.500
-	}	,{
-	"cat":"function",
-	"dur":23916.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490921954.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490946026.300
-	}	,{
-	"cat":"function",
-	"dur":773.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490946199.100
-	}	,{
-	"cat":"function",
-	"dur":182.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490947077.300
-	}	,{
-	"cat":"function",
-	"dur":25864.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490921658.200
-	}	,{
-	"cat":"function",
-	"dur":21662.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490947926.600
+	"tid":15116,
+	"ts":1983282857.100
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490969731.200
+	"tid":15116,
+	"ts":1983282928.700
 	}	,{
 	"cat":"function",
-	"dur":701.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490969898.200
-	}	,{
-	"cat":"function",
-	"dur":165.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490970681.500
-	}	,{
-	"cat":"function",
-	"dur":23436.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490947623.800
-	}	,{
-	"cat":"function",
-	"dur":21621.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490971420.300
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258490993191.400
-	}	,{
-	"cat":"function",
-	"dur":815.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490993360.000
-	}	,{
-	"cat":"function",
-	"dur":170.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490994294.500
-	}	,{
-	"cat":"function",
-	"dur":23575.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490971144.800
-	}	,{
-	"cat":"function",
-	"dur":21258.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490995116.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491016510.500
-	}	,{
-	"cat":"function",
-	"dur":578.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491016666.200
-	}	,{
-	"cat":"function",
-	"dur":146.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491017321.600
-	}	,{
-	"cat":"function",
-	"dur":22831.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258490994831.700
-	}	,{
-	"cat":"function",
-	"dur":17694.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491018130.800
+	"tid":15116,
+	"ts":1983283000.100
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491035950.400
+	"tid":15116,
+	"ts":1983283071.700
 	}	,{
 	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491036104.700
-	}	,{
-	"cat":"function",
-	"dur":114.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491036769.700
-	}	,{
-	"cat":"function",
-	"dur":19327.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491017741.600
-	}	,{
-	"cat":"function",
-	"dur":19735.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491037542.400
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491057411.800
-	}	,{
-	"cat":"function",
-	"dur":693.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491057577.900
-	}	,{
-	"cat":"function",
-	"dur":184.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491058359.200
-	}	,{
-	"cat":"function",
-	"dur":21641.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491037148.800
-	}	,{
-	"cat":"function",
-	"dur":18064.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491059156.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491077349.200
-	}	,{
-	"cat":"function",
-	"dur":597.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491077527.900
-	}	,{
-	"cat":"function",
-	"dur":120.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491078201.200
-	}	,{
-	"cat":"function",
-	"dur":19632.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491058879.000
-	}	,{
-	"cat":"function",
-	"dur":17754.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491078984.700
+	"tid":15116,
+	"ts":1983283143.300
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491096869.500
+	"tid":15116,
+	"ts":1983283214.600
 	}	,{
 	"cat":"function",
-	"dur":587.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491097023.100
-	}	,{
-	"cat":"function",
-	"dur":121.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491097688.200
-	}	,{
-	"cat":"function",
-	"dur":19404.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491078591.500
-	}	,{
-	"cat":"function",
-	"dur":17769.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491098469.000
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":1.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491116359.700
-	}	,{
-	"cat":"function",
-	"dur":574.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491116515.400
-	}	,{
-	"cat":"function",
-	"dur":124.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491117165.200
-	}	,{
-	"cat":"function",
-	"dur":19386.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491098075.400
-	}	,{
-	"cat":"function",
-	"dur":17687.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491117926.200
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491135747.300
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491135902.300
-	}	,{
-	"cat":"function",
-	"dur":140.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491136567.600
-	}	,{
-	"cat":"function",
-	"dur":19366.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491117541.900
-	}	,{
-	"cat":"function",
-	"dur":21272.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491137398.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491158819.700
-	}	,{
-	"cat":"function",
-	"dur":581.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491158976.100
-	}	,{
-	"cat":"function",
-	"dur":137.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491159634.600
-	}	,{
-	"cat":"function",
-	"dur":22976.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491136987.700
-	}	,{
-	"cat":"function",
-	"dur":17747.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491160432.900
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491178312.300
-	}	,{
-	"cat":"function",
-	"dur":585.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491178467.300
-	}	,{
-	"cat":"function",
-	"dur":126.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491179129.600
-	}	,{
-	"cat":"function",
-	"dur":19397.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491160043.200
-	}	,{
-	"cat":"function",
-	"dur":17780.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491179920.100
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491197835.400
-	}	,{
-	"cat":"function",
-	"dur":586.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491197991.000
-	}	,{
-	"cat":"function",
-	"dur":122.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491198655.300
-	}	,{
-	"cat":"function",
-	"dur":19427.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491179527.200
-	}	,{
-	"cat":"function",
-	"dur":20263.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491199423.100
+	"tid":15116,
+	"ts":1983283286.300
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491219837.000
-	}	,{
-	"cat":"function",
-	"dur":687.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491220001.600
-	}	,{
-	"cat":"function",
-	"dur":148.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491220769.600
-	}	,{
-	"cat":"function",
-	"dur":22093.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491199033.500
-	}	,{
-	"cat":"function",
-	"dur":21069.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491221482.400
+	"tid":15116,
+	"ts":1983283359.800
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491242687.100
+	"tid":15116,
+	"ts":1983283442.500
 	}	,{
 	"cat":"function",
-	"dur":686.000, 
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983283518.600
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983283590.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983283662.100
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983283733.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983283806.000
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983283877.200
+	}	,{
+	"cat":"function",
+	"dur":606.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491242851.800
+	"tid":15116,
+	"ts":1983284029.300
 	}	,{
 	"cat":"function",
-	"dur":153.000, 
+	"dur":134.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491243620.400
+	"tid":15116,
+	"ts":1983284712.700
 	}	,{
 	"cat":"function",
-	"dur":22799.000, 
+	"dur":35507.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491221210.400
+	"tid":15116,
+	"ts":1983249463.500
 	}	,{
 	"cat":"function",
-	"dur":19307.000, 
+	"dur":31678.000, 
 	"name":"Raycasting Render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491244485.400
+	"tid":15116,
+	"ts":1983285437.800
 	}	,{
 	"cat":"function",
 	"dur":3.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491263933.600
+	"tid":15116,
+	"ts":1983317260.100
 	}	,{
 	"cat":"function",
-	"dur":635.000, 
-	"name":"Text rendering",
+	"dur":11.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491264101.300
+	"tid":15116,
+	"ts":1983317337.000
 	}	,{
 	"cat":"function",
-	"dur":136.000, 
-	"name":"Draw",
+	"dur":10.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491264822.300
+	"tid":15116,
+	"ts":1983317420.500
 	}	,{
 	"cat":"function",
-	"dur":21141.000, 
-	"name":"Main loop",
+	"dur":9.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491244092.500
+	"tid":15116,
+	"ts":1983317501.500
 	}	,{
 	"cat":"function",
-	"dur":18592.000, 
-	"name":"Raycasting Render",
+	"dur":8.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491265740.400
+	"tid":15116,
+	"ts":1983317581.100
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983317659.900
+	}	,{
+	"cat":"function",
+	"dur":10.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983317741.100
+	}	,{
+	"cat":"function",
+	"dur":9.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983317821.600
+	}	,{
+	"cat":"function",
+	"dur":8.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983317904.500
+	}	,{
+	"cat":"function",
+	"dur":11.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983317983.700
+	}	,{
+	"cat":"function",
+	"dur":51.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983318065.900
+	}	,{
+	"cat":"function",
+	"dur":30.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983318187.500
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983318288.200
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491284459.000
-	}	,{
-	"cat":"function",
-	"dur":585.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491284615.900
-	}	,{
-	"cat":"function",
-	"dur":118.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491285277.200
-	}	,{
-	"cat":"function",
-	"dur":20308.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491265326.600
-	}	,{
-	"cat":"function",
-	"dur":17800.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491286112.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491304036.600
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491304190.800
-	}	,{
-	"cat":"function",
-	"dur":121.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491304855.600
-	}	,{
-	"cat":"function",
-	"dur":19453.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491285718.300
-	}	,{
-	"cat":"function",
-	"dur":17665.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491305646.300
+	"tid":15116,
+	"ts":1983318362.800
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491323436.100
+	"tid":15116,
+	"ts":1983318434.600
 	}	,{
 	"cat":"function",
-	"dur":583.000, 
-	"name":"Text rendering",
+	"dur":1.000, 
+	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491323594.200
-	}	,{
-	"cat":"function",
-	"dur":118.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491324254.900
-	}	,{
-	"cat":"function",
-	"dur":19328.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491305252.900
-	}	,{
-	"cat":"function",
-	"dur":17698.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491325054.800
+	"tid":15116,
+	"ts":1983318506.200
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491342868.000
-	}	,{
-	"cat":"function",
-	"dur":588.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491343021.600
-	}	,{
-	"cat":"function",
-	"dur":113.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491343686.200
-	}	,{
-	"cat":"function",
-	"dur":19351.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491324662.800
-	}	,{
-	"cat":"function",
-	"dur":17960.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491344488.400
+	"tid":15116,
+	"ts":1983318577.500
 	}	,{
 	"cat":"function",
 	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491362579.000
+	"tid":15116,
+	"ts":1983318648.900
 	}	,{
 	"cat":"function",
-	"dur":610.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491362739.300
-	}	,{
-	"cat":"function",
-	"dur":170.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491363461.700
-	}	,{
-	"cat":"function",
-	"dur":19771.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491344094.800
-	}	,{
-	"cat":"function",
-	"dur":18463.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491364344.800
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
+	"dur":2.000, 
 	"name":"Entity render",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491382947.500
+	"tid":15116,
+	"ts":1983318720.700
 	}	,{
 	"cat":"function",
-	"dur":687.000, 
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983318792.400
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983318863.800
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983318941.300
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319016.000
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319088.500
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319160.200
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319231.700
+	}	,{
+	"cat":"function",
+	"dur":1.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319303.300
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319376.800
+	}	,{
+	"cat":"function",
+	"dur":2.000, 
+	"name":"Entity render",
+	"ph":"X",
+	"pid":1,
+	"tid":15116,
+	"ts":1983319448.600
+	}	,{
+	"cat":"function",
+	"dur":602.000, 
 	"name":"Text rendering",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491383112.400
+	"tid":15116,
+	"ts":1983319598.500
 	}	,{
 	"cat":"function",
 	"dur":144.000, 
 	"name":"Draw",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491383879.700
+	"tid":15116,
+	"ts":1983320278.000
 	}	,{
 	"cat":"function",
-	"dur":20283.000, 
+	"dur":35511.000, 
 	"name":"Main loop",
 	"ph":"X",
 	"pid":1,
-	"tid":20272,
-	"ts":258491363948.100
-	}	,{
-	"cat":"function",
-	"dur":21031.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491384586.500
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491405742.800
-	}	,{
-	"cat":"function",
-	"dur":685.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491405905.800
-	}	,{
-	"cat":"function",
-	"dur":148.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491406670.600
-	}	,{
-	"cat":"function",
-	"dur":22679.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491384317.600
-	}	,{
-	"cat":"function",
-	"dur":20881.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491407369.600
-	}	,{
-	"cat":"function",
-	"dur":3.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491428388.700
-	}	,{
-	"cat":"function",
-	"dur":577.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491428547.300
-	}	,{
-	"cat":"function",
-	"dur":127.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491429200.700
-	}	,{
-	"cat":"function",
-	"dur":22438.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491407080.000
-	}	,{
-	"cat":"function",
-	"dur":17638.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491429986.300
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491447717.000
-	}	,{
-	"cat":"function",
-	"dur":575.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491447875.800
-	}	,{
-	"cat":"function",
-	"dur":97.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491448529.600
-	}	,{
-	"cat":"function",
-	"dur":19194.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491429598.900
-	}	,{
-	"cat":"function",
-	"dur":17688.000, 
-	"name":"Raycasting Render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491449252.600
-	}	,{
-	"cat":"function",
-	"dur":2.000, 
-	"name":"Entity render",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491467044.600
-	}	,{
-	"cat":"function",
-	"dur":596.000, 
-	"name":"Text rendering",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491467194.800
-	}	,{
-	"cat":"function",
-	"dur":104.000, 
-	"name":"Draw",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491467867.300
-	}	,{
-	"cat":"function",
-	"dur":22004.000, 
-	"name":"Main loop",
-	"ph":"X",
-	"pid":1,
-	"tid":20272,
-	"ts":258491448871.400
+	"tid":15116,
+	"ts":1983285048.400
 	}]}
