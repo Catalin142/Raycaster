@@ -1,5 +1,5 @@
 # Raycaster Engine
-Old school game engine that is based on the Wolfenstein Raycasting tehnique to generate pseudo 3D environment. The game engine comes with it's own:
+Old school framework that is based on the Wolfenstein Raycasting tehnique to generate pseudo 3D environment. The game engine comes with it's own:
 - Sprite editor
 - Map editor, both developed in C++ with OpenGL
 
