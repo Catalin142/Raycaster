@@ -31,6 +31,10 @@ std::shared_ptr<Sprite>& Map::getSprite(char symbol)
 			m_SymbolCache[symbol] = it->Sprite;
 			return it->Sprite;
 		}
+		else
+		{
+			std::cout << symbol << std::endl;
+		}
 	}
 	return m_SymbolCache[symbol];
 }

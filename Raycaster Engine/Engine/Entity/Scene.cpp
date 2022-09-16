@@ -32,6 +32,7 @@ void Scene::loadScene(const std::string filepath)
 		case 'm':
 			streamLine >> filepath;
 			Map::Get()->loadMap(filepath);
+			WorldRenderer::setMap(Map::Get());
 			break;
 
 		case 'p':

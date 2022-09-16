@@ -19,7 +19,7 @@ class Application
 
 public:
 	Application(const wchar_t* title, uint32 width = 1600, uint32 height = 900, uint32 bufferWidth = 320, uint32 bufferHeight = 200);
-	virtual ~Application() = default;
+	virtual ~Application();
 	
 	void pushLayer(Layer* layer);
 	void pushOverlay(Layer* layer);

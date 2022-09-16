@@ -13,7 +13,8 @@ void RaycasterDemo::onAttach()
 	m_Scene->loadScene("Resources/dungeon.scene");
 
 	m_Camera = std::make_shared<Camera>(60.0f, 3.0f);
-	WorldRenderer::setGlobalIlluminationIntensity(0.9f);
+	WorldRenderer::setGlobalIlluminationIntensity(0.4f);
+	WorldRenderer::setCamera(m_Camera);
 
 	Input::showCursor(false);
 }
@@ -27,8 +28,8 @@ void RaycasterDemo::onUpdate(float dt)
 	auto m_Buffer = getBuffer();
 	
 	Renderer::Clear(0.0f, 0.0f, 0.0f);
-	WorldRenderer::Render(m_Buffer, m_Camera);
+	WorldRenderer::Render();
 	Renderer::renderScene(m_Scene);
-	m_TextBox->Render();
+	//m_TextBox->Render();
 	UiManager->onRender();
 }

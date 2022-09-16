@@ -12,6 +12,9 @@
 
 #include "Utils/Color.h"
 
+#include <thread>
+#include <mutex>
+
 enum class ShadingMode : short
 {
 	LERP,
@@ -19,12 +22,28 @@ enum class ShadingMode : short
 	TEXTURE,
 };
 
+struct RenderThread
+{
+	bool s_isRunning = false;
+	bool s_Quit = false;
+
+	std::condition_variable s_Condition;
+	std::mutex s_ThreadMutex;
+	std::thread s_WorkerThread;
+};
+
 class WorldRenderer
 {
 	friend class Entity;
 
 public:
-	static void Render(const std::shared_ptr<ScreenBuffer>& buffer, const std::shared_ptr<Camera>& cam);
+	static void Init();
+	static void Destroy();
+
+	static void Render();
+
+	static void setCamera(const std::shared_ptr<Camera>& cam);
+	static void setMap(const std::shared_ptr<Map>& map);
 
 	static void setGlobalIlluminationIntensity(float intensity) { m_UseIntensity = true; m_GlobalIlluminationIntensity = intensity; }
 	static void setGlobalIlluminationIntensity(bool state) { m_UseIntensity = state; }
@@ -54,6 +73,7 @@ private:
 	static vec3 m_CeilColor;
 	static vec3 m_FloorColor;
 	static std::shared_ptr<Sprite> m_CeilTexture;
+	static std::shared_ptr<Camera> m_Camera;
 
 	struct Gradient
 	{
@@ -68,7 +88,12 @@ private:
 	static float m_GlobalIlluminationIntensity;
 	static bool m_UseIntensity;
 
+	static RenderThread* m_Threads[5];
+	static std::mutex m_ThreadsMutex;
+
 private:
 	WorldRenderer() = default;
 	~WorldRenderer() = default;
+
+	static void threadRender(RenderThread* thread, uint32 minx, uint32 maxx);
 };

@@ -7,13 +7,13 @@
 
 struct RaycastResult
 {
-	float Length;
-	float Depth;
+	float Length = 0;
+	float Depth = 0;
 
-	float HitPosition;
-	int Side;
+	float HitPosition = 0.0f;
+	int Side = 0;
 
-	char Symbol;
+	char Symbol = ' ';
 };
 
 static RaycastResult castRay(const std::shared_ptr<Camera>& cam, float angle)

@@ -3,6 +3,7 @@
 #include "Win32Window.h"
 #include "ScreenBuffer.h"
 #include "Renderer/Renderer.h"
+#include "Renderer/WorldRenderer.h"
 #include "Utils/Color.h"
 #include "Renderer/Camera.h"
 #include "Utils/Raycaster.h"
@@ -20,8 +21,15 @@ Application::Application(const wchar_t* title, uint32 width, uint32 height, uint
 	m_Buffer(std::make_shared<ScreenBuffer>(m_Window, bufferWidth, bufferHeight))
 {
 	START_SCOPE_PROFILE("Init");
-	Font::Init("Resources/Font.spr", "Resources/Numbers.spr", "Resources/Symbols.spr", 6, 7);
 	m_Instance = this;
+
+	Font::Init("Resources/Font.spr", "Resources/Numbers.spr", "Resources/Symbols.spr", 6, 7);
+	WorldRenderer::Init();
+}
+
+Application::~Application()
+{
+	WorldRenderer::Destroy();
 }
 
 void Application::pushLayer(Layer* layer)
