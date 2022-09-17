@@ -5,10 +5,10 @@
 #include "Utils/Map.h"
 #include "System/Win32Window.h"
 
-Camera::Camera(float posx, float posy, float fov, float speed) : m_Position(posx, posy), m_FOV(fov), m_Speed(speed), m_LastMousePosition(0.0f, 0.0f), 
+Camera::Camera(float posx, float posy, float fov, float speed) : m_Position(posx, posy), m_FOV(fov), m_Speed(speed), m_Sprint(m_Speed + 3.0f), m_LastMousePosition(0.0f, 0.0f),
 m_Velocity(0.0f, 0.0f) { }
 
-Camera::Camera(float fov, float speed) :  m_FOV(fov), m_Speed(speed), m_LastMousePosition(0.0f, 0.0f),
+Camera::Camera(float fov, float speed) :  m_FOV(fov), m_Speed(speed), m_Sprint(m_Speed + 3.0f), m_LastMousePosition(0.0f, 0.0f),
 m_Velocity(0.0f, 0.0f) 
 {
 	m_Position = Map::Get()->getPlayerPosition();

@@ -99,8 +99,9 @@ void Map::Draw(float x, float y, float sizex, float sizey)
 		float posX = x;
 		for (uint j = 0; j < m_Width; j++)
 		{
-			if (m_Map[i * m_Width + j] == '1')
-				Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x00000000);
+			for (const auto& elem : getElements())
+				if (m_Map[i * m_Width + j] == elem.Symbol && elem.isWall)
+					Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x00000000);
 
 			if (j == (int)m_PlayerPos.x && i == (int)m_PlayerPos.y)
 				Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x000000ff);

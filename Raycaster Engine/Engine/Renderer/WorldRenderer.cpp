@@ -173,6 +173,11 @@ ShadingMode WorldRenderer::m_FloorMode = ShadingMode::TEXTURE;
 RenderThread* WorldRenderer::m_Threads[5];
 std::mutex WorldRenderer::m_ThreadsMutex;
 
+bool WorldRenderer::m_LSD = false;
+
+bool WorldRenderer::m_Fog = false;
+float WorldRenderer::m_FogIntensity = 1.0f;
+
 void WorldRenderer::Init()
 {
 	int slice_width = Application::Get()->getBuffer()->getWidth() / 5;
@@ -250,7 +255,9 @@ void WorldRenderer::threadRender(RenderThread* thread, uint32 minx, uint32 maxx)
 
 				auto& wallSpr = m_Map->getSprite(res.Symbol);
 				vec3 Shade = { 1.0f, 1.0f, 1.0f };
+				vec3 Fog = { 1.0f, 1.0f, 1.0f };
 				vec3 Color = { 0.0f, 0.0f, 0.0f };
+
 				for (int y = 0; y < buffer_size.y; y++)
 				{
 					// podea
@@ -258,8 +265,11 @@ void WorldRenderer::threadRender(RenderThread* thread, uint32 minx, uint32 maxx)
 					{
 						float Plane = (buffer_size.y / 2.0f) / ((buffer_size.y / 2.0f) - float(y));
 
-						if (m_UseIntensity == true)
+						if (m_UseIntensity)
 							Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / Plane);
+
+						if (m_Fog)
+							Fog = vec3(1.8f, 1.8f, 1.8f) * (Plane) * m_FogIntensity;
 
 						switch (m_FloorMode)
 						{
@@ -288,8 +298,12 @@ void WorldRenderer::threadRender(RenderThread* thread, uint32 minx, uint32 maxx)
 					else if (y > (int)wallPos.y && y <= (int)wallPos.y + wallSize.y)
 					{
 						res.Length = std::max(1.0f, res.Length);
-						if (m_UseIntensity == true)
+						if (m_UseIntensity)
 							Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / res.Length);
+
+						if (m_Fog)
+							Fog = vec3(1.0f, 1.0f, 1.0f) * res.Length * m_FogIntensity;
+
 						Color = wallSpr->getPixelColor(res.HitPosition, (y - wallPos.y) / (int)(wallSize.y));
 
 						Renderer::setDepthPixel(x, res.Depth);
@@ -300,9 +314,12 @@ void WorldRenderer::threadRender(RenderThread* thread, uint32 minx, uint32 maxx)
 					{
 						float Plane = (buffer_size.y / 2.0f) / ((buffer_size.y / 2.0f) - float(y));
 
-						if (m_UseIntensity == true)
+						if (m_UseIntensity)
 							Shade = vec3(1.0f, 1.0f, 1.0f) * (m_GlobalIlluminationIntensity / (-Plane));
-
+						
+						if (m_Fog)
+							Fog = vec3(1.8f, 1.8f, 1.8f) * (-Plane) * m_FogIntensity;
+						
 						switch (m_CeilMode)
 						{
 						case ShadingMode::SOLID:
@@ -326,10 +343,23 @@ void WorldRenderer::threadRender(RenderThread* thread, uint32 minx, uint32 maxx)
 						}
 					}
 
-					if (m_UseIntensity == false)
-						Renderer::setPixel({ (float)x, (float)y }, Color);
-					else // aici merge ff prost ca il fac in rgb dupa iara in hex pt fiecare pixel si ia prea mult
-						Renderer::setPixel({ (float)x, (float)y }, Color * Shade);
+					if (m_LSD)
+						Color = Color * vec3(100.0f, 100.0f, 100.0f);
+
+					else
+					{
+						if (m_UseIntensity)
+							Color = Color * Shade;
+
+						if (m_Fog)
+						{
+							Fog = Fog / 20.0f;
+							Color = { (1.0f - Fog.r) * Color.r + (Fog.r),
+								(1.0f - Fog.g) * Color.g + (Fog.g), (1.0f - Fog.b) * Color.b + (Fog.b) };
+						}
+					}
+
+					Renderer::setPixel({ (float)x, (float)y }, Color);
 				}
 			}
 			thread->s_isRunning = false;

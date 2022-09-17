@@ -48,7 +48,7 @@ public:
 
 	static void renderSprite(const std::shared_ptr<Sprite>& sprite, const vec2& pos, const vec2& size, const vec3& color = { 1.0f, 1.0f, 1.0f });
 
-	static void setPixel(const vec2& pos, const vec3& color);
+	static void setPixel(const vec2& pos, vec3 color);
 	static void setPixel_s(const vec2& pos, const vec3& color);
 	static void setPixel(const vec2& pos, unsigned long hexColor);
 	static void setPixel_s(const vec2& pos, unsigned long hexColor);

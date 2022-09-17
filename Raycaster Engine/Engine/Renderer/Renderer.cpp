@@ -82,8 +82,11 @@ void Renderer::plotQuad(const vec2& pos, const vec2& size, const vec3& color)
 	plotQuad(pos, size, hexColor);
 }
 
-void Renderer::setPixel(const vec2& pos, const vec3& color)
+void Renderer::setPixel(const vec2& pos, vec3 color)
 {
+	color.x = Clamp(color.x, 0.0f, 1.0f);
+	color.y = Clamp(color.y, 0.0f, 1.0f);
+	color.z = Clamp(color.z, 0.0f, 1.0f);
 	int pixel = (int)pos.y * m_Buffer->m_Width + (int)pos.x;
 	*(m_BuffersBuffer + pixel) = createHex(color.r * 255, color.g * 255, color.b * 255);
 }

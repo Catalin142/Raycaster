@@ -65,6 +65,15 @@ void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 					if (m_UseObjIntensity)
 						color = color * (m_ObjectIntensity / distFromPlayer);
 
+					if (WorldRenderer::m_Fog)
+					{
+						vec3 Fog = vec3(1.0f, 1.0f, 1.0f) * distFromPlayer * WorldRenderer::m_FogIntensity;
+						Fog = Fog / 20.0f;
+						color = { (1.0f - Fog.r) * color.r + (Fog.r),
+							(1.0f - Fog.g) * color.g + (Fog.g), (1.0f - Fog.b) * color.b + (Fog.b) };
+
+					}
+
 					Renderer::setPixel_s(vec2((int)objColumn, (int)objFloor + y), color);
 					Renderer::setDepthPixel(objColumn, distFromPlayer);
 				}

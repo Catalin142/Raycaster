@@ -3,7 +3,8 @@
 class Game : public Application
 {
 public:
-	Game(const wchar_t* title) : Application(title, 1600, 900, 900, 500) {
+	Game(const wchar_t* title) : Application(title, 1600, 900, 425, 240) {
+	//Game(const wchar_t* title) : Application(title, 1600, 900, 900, 500) {
 		pushLayer(new RaycasterDemo());
 	}
 };

@@ -65,6 +65,10 @@ public:
 		m_FloorMode = ShadingMode::LERP;
 	}
 
+	static void secretMode(bool t) { m_LSD = t; }
+
+	static void setFog(bool t, float intensity = 1.0f) { m_Fog = true; m_FogIntensity = intensity; }
+
 private:
 	static std::shared_ptr<Map> m_Map;
 
@@ -90,6 +94,11 @@ private:
 
 	static RenderThread* m_Threads[5];
 	static std::mutex m_ThreadsMutex;
+
+	static bool m_LSD;
+
+	static bool m_Fog;
+	static float m_FogIntensity;
 
 private:
 	WorldRenderer() = default;
