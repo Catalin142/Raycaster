@@ -40,12 +40,10 @@ public:
 	static void Init();
 	static void Destroy();
 
-	static void Render();
-
-	static void setCamera(const std::shared_ptr<Camera>& cam);
-	static void setMap(const std::shared_ptr<Map>& map);
+	static void Render(const std::shared_ptr<Scene>& scn);
 
 	static void setGlobalIlluminationIntensity(float intensity) { m_UseIntensity = true; m_GlobalIlluminationIntensity = intensity; }
+	static float getGlobalIlluminationIntensity() { return m_GlobalIlluminationIntensity; }
 	static void setGlobalIlluminationIntensity(bool state) { m_UseIntensity = state; }
 
 	static void setCeilTexture(const std::shared_ptr<Sprite>& tex) { m_CeilTexture = tex; m_CeilMode = ShadingMode::TEXTURE; }
@@ -70,14 +68,13 @@ public:
 	static void setFog(bool t, float intensity = 1.0f) { m_Fog = true; m_FogIntensity = intensity; }
 
 private:
-	static std::shared_ptr<Map> m_Map;
+	static std::shared_ptr<Scene> m_Scene;
 
 	static const vec3& samplePixel(const vec2& loc, const vec2& pixel);
 
 	static vec3 m_CeilColor;
 	static vec3 m_FloorColor;
 	static std::shared_ptr<Sprite> m_CeilTexture;
-	static std::shared_ptr<Camera> m_Camera;
 
 	struct Gradient
 	{

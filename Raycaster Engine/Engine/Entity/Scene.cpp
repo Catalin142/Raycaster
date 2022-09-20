@@ -4,6 +4,12 @@
 #include "Renderer/WorldRenderer.h"
 #include "Utils/Map.h"
 
+Scene::~Scene()
+{
+	for (auto& l : m_Lights)
+		delete l;
+}
+
 void Scene::addEntity(const std::shared_ptr<Entity>& ent)
 {
 	auto it = std::find(m_Entities.begin(), m_Entities.end(), ent);
@@ -31,14 +37,14 @@ void Scene::loadScene(const std::string filepath)
 		{
 		case 'm':
 			streamLine >> filepath;
-			Map::Get()->loadMap(filepath);
-			WorldRenderer::setMap(Map::Get());
+			m_Map->loadMap(filepath);
 			break;
 
 		case 'p':
 			float x, y;
 			streamLine >> x >> y;
-			Map::Get()->updatePlayerPosition({ x, y });
+			m_Map->updatePlayerPosition({ x, y });
+			m_Camera->m_Position = { x, y };
 			break;
 
 		case 'e':
@@ -77,6 +83,11 @@ void Scene::loadScene(const std::string filepath)
 		}
 	}
 	stream.close();
+}
+
+bool Scene::Update(float dt)
+{
+	return m_Camera->onUpdate(m_Map, dt);
 }
 
 std::shared_ptr<Entity>& Scene::createEntity(const std::string& filepath)

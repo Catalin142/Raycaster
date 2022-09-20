@@ -28,6 +28,7 @@ struct ParticleProps
 class ParticleEmmiter
 {
 public:
+	ParticleEmmiter() = default;
 	ParticleEmmiter(uint32 size = 200);
 	~ParticleEmmiter();
 

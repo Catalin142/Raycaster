@@ -19,6 +19,8 @@ public:
 
 	float getAspectRatio() { return (float)m_Width / (float)m_Height; }
 
+	int getWidth() { return m_Width; }
+	int getHeight() { return m_Height; }
 private:
 	vec3* m_Buffer = nullptr;
 

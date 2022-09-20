@@ -3,16 +3,6 @@
 
 #include "Renderer/Renderer.h"
 
-char Map::m_Map[50 * 50];
-
-uint Map::m_Width;
-uint Map::m_Height;
-
-vec2 Map::m_PlayerPos = { -1.0f, -1.0f };
-
-std::vector<MapElement> Map::m_Elements;
-std::unordered_map<char, std::shared_ptr<Sprite>> Map::m_SymbolCache;
-
 void Map::setMap(const std::string& filepath)
 {
 	loadMap(filepath);
@@ -31,23 +21,13 @@ std::shared_ptr<Sprite>& Map::getSprite(char symbol)
 			m_SymbolCache[symbol] = it->Sprite;
 			return it->Sprite;
 		}
-		else
-		{
-			std::cout << symbol << std::endl;
-		}
 	}
 	return m_SymbolCache[symbol];
 }
 
 std::shared_ptr<Sprite>& Map::getSprite(int x, int y)
 {
-	return getSprite(m_Map[y * m_Width + x]);
-}
-
-std::shared_ptr<Map> Map::Get()
-{
-	static std::shared_ptr<Map> map;
-	return map;
+	return getSprite(m_Buffer[y * m_Width + x]);
 }
 
 void Map::loadMap(const std::string& filepath)
@@ -56,13 +36,13 @@ void Map::loadMap(const std::string& filepath)
 	m_SymbolCache.clear();
 	std::ifstream stream(filepath);
 
-	m_Map[0] = '\0';
+	m_Buffer[0] = '\0';
 
 	std::string line;
 	while (std::getline(stream, line))
 	{
 		if (line[0] == 'm')
-			strcat_s(m_Map, std::string(line.begin() + 2, line.end()).c_str());
+			strcat_s(m_Buffer, std::string(line.begin() + 2, line.end()).c_str());
 
 		if (line[0] == 'w')
 			m_Width = std::atoi(std::string(line.begin() + 2, line.end()).c_str());
@@ -100,7 +80,7 @@ void Map::Draw(float x, float y, float sizex, float sizey)
 		for (uint j = 0; j < m_Width; j++)
 		{
 			for (const auto& elem : getElements())
-				if (m_Map[i * m_Width + j] == elem.Symbol && elem.isWall)
+				if (m_Buffer[i * m_Width + j] == elem.Symbol && elem.isWall)
 					Renderer::drawQuad({ posX, posY }, { sizex, sizey }, 0x00000000);
 
 			if (j == (int)m_PlayerPos.x && i == (int)m_PlayerPos.y)

@@ -25,6 +25,7 @@ Application::Application(const wchar_t* title, uint32 width, uint32 height, uint
 
 	Font::Init("Resources/Font.spr", "Resources/Numbers.spr", "Resources/Symbols.spr", 6, 7);
 	WorldRenderer::Init();
+	Random::Init();
 }
 
 Application::~Application()

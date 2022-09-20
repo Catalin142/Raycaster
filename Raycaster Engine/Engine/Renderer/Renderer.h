@@ -50,6 +50,7 @@ public:
 
 	static void setPixel(const vec2& pos, vec3 color);
 	static void setPixel_s(const vec2& pos, const vec3& color);
+	static void setPixel_n(const vec2& pos, const vec3& color);
 	static void setPixel(const vec2& pos, unsigned long hexColor);
 	static void setPixel_s(const vec2& pos, unsigned long hexColor);
 

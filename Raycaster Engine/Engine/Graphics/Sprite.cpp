@@ -40,13 +40,17 @@ bool Sprite::loadSprite(const std::string& filepath)
 
 const vec3& Sprite::getPixelColor(float x, float y) const
 {
-	if (x < 0) x = -x;
-	if (y < 0) y = -y;
-	
-	float xCoord = x * m_Width;
-	float yCoord = y * m_Height;
+	if (this)
+	{
+		if (x < 0) x = -x;
+		if (y < 0) y = -y;
 
-	return *(m_Buffer + (int)yCoord * m_Width + (int)xCoord);
+		float xCoord = x * m_Width;
+		float yCoord = y * m_Height;
+
+		return *(m_Buffer + (int)yCoord * m_Width + (int)xCoord);
+	}
+	return { 0.0f, 0.0f, 0.0f };
 }
 
 std::unordered_map<std::string, std::shared_ptr<Sprite>> SpriteManager::m_SpriteCache;

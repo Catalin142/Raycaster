@@ -18,9 +18,11 @@ Entity::Entity(const std::shared_ptr<Sprite>& spr)
 	m_Sprite = spr;
 }
 
-void Entity::onDraw(const std::shared_ptr<Camera>& cam)
+void Entity::onDraw(const std::shared_ptr<Scene>& scn)
 {
 	START_SCOPE_PROFILE("Entity render");
+
+	auto& cam = scn->getCamera();
 
 	auto& m_Buffer = Application::Get()->m_Buffer;
 
@@ -52,6 +54,7 @@ void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 			{
 				int objColumn = (int)(objMiddle + x - (objWidth / 2.0f));
 
+				vec3 shade = { 1.0f, 1.0f, 1.0f };
 				if (distFromPlayer <= Renderer::getPixelDepth(objColumn))
 				{
 					vec2 samplePoint = { (float)x / objWidth, (float)y / objHeight };
@@ -59,11 +62,34 @@ void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 					if (color == vec3(-1.0f, -1.0f, -1.0f))
 						continue;
 
+					bool light = false;
+					vec2 planePoint = m_Position + samplePoint;
+					float intensity = 1.0f;
+					
 					if (WorldRenderer::m_UseIntensity && m_ApplyGlobalIllumination)
-						color = color * (WorldRenderer::m_GlobalIlluminationIntensity / distFromPlayer);
+						shade = vec3(1.0f, 1.0f, 1.0f) * (WorldRenderer::m_GlobalIlluminationIntensity / distFromPlayer);
 
+					for (const auto& l : scn->getLights())
+					{
+						float d = (planePoint.x - l->light_source.x) * (planePoint.x - l->light_source.x) +
+							(planePoint.y - l->light_source.y) * (planePoint.y - l->light_source.y);
+						if (d < l->light_radius * l->light_radius)
+						{
+							light = true;
+							intensity = l->light_intensity * (1.0f - d / (l->light_radius * l->light_radius));
+							color = { (1.0f - intensity) * color.r + (intensity * l->light_color.r),
+							(1.0f - intensity) * color.g + (intensity * l->light_color.g), (1.0f - intensity) * color.b + (intensity * l->light_color.b) };
+
+							shade = { (1.0f - intensity) * shade.r + (intensity * l->light_color.r),
+								(1.0f - intensity) * shade.g + (intensity * l->light_color.g), (1.0f - intensity) * shade.b + (intensity * l->light_color.b) };
+						}
+					}
+
+					color = color * shade;
+						
 					if (m_UseObjIntensity)
 						color = color * (m_ObjectIntensity / distFromPlayer);
+					
 
 					if (WorldRenderer::m_Fog)
 					{
@@ -71,7 +97,6 @@ void Entity::onDraw(const std::shared_ptr<Camera>& cam)
 						Fog = Fog / 20.0f;
 						color = { (1.0f - Fog.r) * color.r + (Fog.r),
 							(1.0f - Fog.g) * color.g + (Fog.g), (1.0f - Fog.b) * color.b + (Fog.b) };
-
 					}
 
 					Renderer::setPixel_s(vec2((int)objColumn, (int)objFloor + y), color);

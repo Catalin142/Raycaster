@@ -38,6 +38,11 @@ vec2 operator+(const vec2& left, float scalar)
 	return vec2(left.x + scalar, left.y + scalar);
 }
 
+vec2 operator-(const vec2& left, float scalar)
+{
+	return vec2(left.x - scalar, left.y - scalar);
+}
+
 vec2 operator*(const vec2& left, float scalar)
 {
 	return vec2(left.x * scalar, left.y * scalar);
@@ -144,4 +149,9 @@ vec2 lerp(const vec2& left, const vec2& right, float t)
 vec3 lerp(const vec3& left, const vec3& right, float t)
 {
 	return vec3(lerp(left.x, right.x, t), lerp(left.y, right.y, t), lerp(left.z, right.z, t));
+}
+
+float MAX(float a, float b)
+{
+	return a > b ? a : b;
 }

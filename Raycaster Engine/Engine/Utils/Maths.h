@@ -9,6 +9,7 @@ class vec2
 	friend vec2 operator/(const vec2& left, const vec2& right);
 
 	friend vec2 operator+(const vec2& left, float scalar);
+	friend vec2 operator-(const vec2& left, float scalar);
 	friend vec2 operator*(const vec2& left, float scalar);
 	friend vec2 operator/(const vec2& left, float scalar);
 
@@ -22,7 +23,7 @@ public:
 
 	vec2 normalize();
 	float magnitude();
-
+	const float dot(const vec2& r) const { return x * r.x + y * r.y; }
 	bool operator==(const vec2& other) const;
 };
 
@@ -63,3 +64,5 @@ float radToDeg(float rad);
 float lerp(float a, float b, float t);
 vec2 lerp(const vec2& left, const vec2& right, float t);
 vec3 lerp(const vec3& left, const vec3& right, float t);
+
+float MAX(float a, float b);

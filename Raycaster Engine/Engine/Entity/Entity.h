@@ -20,8 +20,10 @@ public:
 	virtual void onCreate() { }
 	virtual void onUpdate(float dt) { }
 
-	void onDraw(const std::shared_ptr<Camera>& cam);
+	void onDraw(const std::shared_ptr<Scene>& scn);
 	void setSprite(const std::string& filepath);
+
+	vec2 getPosition() { return m_Position; }
 
 	void setWidth(float width) { m_Width = width; }
 	void setHeight(float height) { m_Height = height; }

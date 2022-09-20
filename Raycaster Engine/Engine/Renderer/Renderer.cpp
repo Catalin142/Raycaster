@@ -98,6 +98,12 @@ void Renderer::setPixel_s(const vec2& pos, const vec3& color)
 	setPixel(pos, color);
 }
 
+void Renderer::setPixel_n(const vec2& pos, const vec3& color)
+{
+	int pixel = (int)pos.y * m_Buffer->m_Width + (int)pos.x;
+	*(m_BuffersBuffer + pixel) = createHex(color.r * 255, color.g * 255, color.b * 255);
+}
+
 void Renderer::setPixel(const vec2& pos, unsigned long hexColor)
 {
 	int pixel = (int)pos.y * m_Buffer->m_Width + (int)pos.x;
@@ -116,7 +122,7 @@ void Renderer::renderScene(const std::shared_ptr<Scene>& scene)
 	for (const auto& ent : scene->m_Entities)
 	{
 		if (ent->m_Visible)
-			ent->onDraw(m_Camera);
+			ent->onDraw(scene);
 	}
 }
 

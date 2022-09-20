@@ -1,7 +1,6 @@
 m Resources/dungeon.rmap
 c t Resources/dungeon/dungeon_ceil_floor.spr
 p 1.5 1.5
-e 1.5 1.5 0.2 0.8 Resources/dungeon/skeleton.spr
 e 14.5 1.5 0.7 0.5 Resources/dungeon/barrel.spr
 e 15.5 1.5 0.7 0.5 Resources/dungeon/barrel.spr
 e 16.5 1.5 0.7 0.5 Resources/dungeon/barrel.spr
@@ -10,23 +9,4 @@ e 14.5 2.5 0.7 0.5 Resources/dungeon/barrel.spr
 e 15.5 2.5 0.7 0.5 Resources/dungeon/barrel.spr
 e 16.5 2.5 0.7 0.5 Resources/dungeon/barrel.spr
 e 17.5 2.5 0.7 0.5 Resources/dungeon/barrel.spr
-e 15.5 5.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 7.5 2.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 9.5 2.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 8.5 8.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 13.5 9.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 2.5 17.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 4.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
 e 6.5 14.5 0.7 0.5 Resources/dungeon/barrel.spr
-e 6.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 7.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 8.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 9.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 10.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 11.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 13.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 14.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 15.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 16.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 17.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
-e 18.5 18.5 0.2 0.8 Resources/dungeon/skeleton.spr
